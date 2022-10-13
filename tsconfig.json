@@ -1,0 +1,54 @@
+{
+  "compilerOptions": {
+    "noEmit": true,
+    "skipLibCheck": true,
+    "jsx": "react",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "preserveConstEnums": true,
+    "resolveJsonModule": true,
+    "removeComments": true,
+    "rootDirs": ["src", "stories", "e2e"],
+    "target": "es6",
+    "lib": ["es2015", "es2017", "esnext", "dom"],
+    "module": "esnext",
+    "allowSyntheticDefaultImports": true,
+    "moduleResolution": "node",
+    "allowJs": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@assets": ["../assets"],
+      "@components": ["../components"],
+      "@config": ["../config"],
+      "@hooks": ["../hooks"],
+      "@mocks": ["../mocks"],
+      "@native": ["../native"],
+      "@navigation": ["../navigation"],
+      "@screens": ["../screens"],
+      "@services-api": ["../services-api"],
+      "@store": ["../store"],
+      "@ui": ["../ui"],
+      "@utils": ["../utils"]
+    },
+    "noUnusedLocals": true,
+    "strictNullChecks": true,
+    "esModuleInterop": true
+  },
+  "include": [
+    "src",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "__tests__/**/*.test.tsx",
+    "./index.js",
+    "scripts",
+    "*.stories.tsx",
+    "e2e"
+  ],
+  "exclude": ["node_modules"],
+  "ts-node": {
+    // these options are overrides used only by ts-node
+    "compilerOptions": {
+      "module": "commonjs"
+    }
+  }
+}
