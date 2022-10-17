@@ -1,22 +1,19 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * Generated with the TypeScript template
- * https://github.com/react-native-community/react-native-template-typescript
- *
- * @format
- */
-
 import React from 'react';
-import { SafeAreaView, Text } from 'react-native';
+
+import Navigation from './navigation/Navigation';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { AnimatedScrollProvider } from './hooks/ui/useAnimatedScroll';
+import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 
 const App = () => {
   return (
-    <SafeAreaView
-      style={{ justifyContent: 'center', alignItems: 'center', flex: 1 }}>
-      <Text>dsadasd</Text>
-    </SafeAreaView>
+    <SafeAreaProvider>
+      <ErrorBoundary>
+        <AnimatedScrollProvider>
+          <Navigation />
+        </AnimatedScrollProvider>
+      </ErrorBoundary>
+    </SafeAreaProvider>
   );
 };
 
