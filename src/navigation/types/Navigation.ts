@@ -1,15 +1,25 @@
-import { AppRouteType } from './AppRouteType';
+import { AppRouteScreensType, AppRouteTabsType } from './AppRouteType';
 import { ParamListBase } from '@react-navigation/native';
 
 type MainTabParamList = {
-  [AppRouteType.homeScreen]: ParamListBase | undefined;
+  [AppRouteScreensType.homeScreen]: ParamListBase | undefined;
+  [AppRouteScreensType.welcomeScreen]: ParamListBase | undefined;
+  [AppRouteScreensType.mainScreen]: ParamListBase | undefined;
 };
 
 type AppRootNavigationParamList = {
-  [AppRouteType.welcomeScreen]: ParamListBase | undefined;
-  [AppRouteType.mainTabs]: {
-    screen: object;
-  };
+  [AppRouteTabsType.authTabs]: ParamListBase | undefined;
+  [AppRouteTabsType.mainTabs]: ParamListBase | undefined;
 };
 
-export { AppRootNavigationParamList, MainTabParamList };
+type AuthorizationRootParamList = {
+  [AppRouteScreensType.splashScreen]: ParamListBase | undefined;
+  [AppRouteScreensType.loginScreen]: ParamListBase | undefined;
+  [AppRouteScreensType.registerScreen]: ParamListBase | undefined;
+};
+
+export {
+  AuthorizationRootParamList,
+  AppRootNavigationParamList,
+  MainTabParamList,
+};

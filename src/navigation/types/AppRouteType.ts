@@ -1,7 +1,15 @@
-enum AppRouteType {
+enum AppRouteScreensType {
+  splashScreen = 'SplashScreen',
+  loginScreen = 'LoginScreen',
+  registerScreen = 'RegisterScreen',
   welcomeScreen = 'WelcomeScreen',
-  mainTabs = 'MainTabs',
   homeScreen = 'HomeScreen',
+  mainScreen = 'MainScreen',
 }
 
-export { AppRouteType };
+enum AppRouteTabsType {
+  mainTabs = 'MainTabs',
+  authTabs = 'AuthTabs',
+}
+
+export { AppRouteTabsType, AppRouteScreensType };

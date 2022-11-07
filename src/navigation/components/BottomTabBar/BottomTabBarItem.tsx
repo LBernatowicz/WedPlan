@@ -9,23 +9,23 @@ import Animated, {
 import useAnimatedPress, {
   AnimationType,
 } from '../../../hooks/ui/useAnimatedPress';
-import { AppRouteType } from '../../types/AppRouteType';
-import { HashIconImg } from '../../../assets/icons';
+import { AppRouteScreensType } from '../../types/AppRouteType';
+import {
+  HashIconImg,
+  ChurchIcon,
+  WedRingIcon,
+  TipLocationIcon,
+} from '../../../assets/icons';
 import { useTranslation } from 'react-i18next';
 
 type Props = {
   isActive: boolean;
   routeName: string;
   onPress: (route: { key: string; name: string }, isActive: boolean) => void;
-  notification: boolean;
+  notification?: boolean;
 };
 
-const BottomTabBarItem = ({
-  isActive,
-  routeName,
-  onPress,
-  notification,
-}: Props) => {
+const BottomTabBarItem = ({ isActive, routeName, onPress }: Props) => {
   const { t } = useTranslation();
   const { animation, handlePressIn, handlePressOut } = useAnimatedPress({
     animationType: AnimationType.spring,
@@ -49,17 +49,25 @@ const BottomTabBarItem = ({
 
   const routeTranslation = useMemo(() => {
     switch (routeName) {
-      case AppRouteType.homeScreen:
+      case AppRouteScreensType.homeScreen:
         return t('HomeScreen');
+      case AppRouteScreensType.welcomeScreen:
+        return t('WelcomeScreen');
+      case AppRouteScreensType.mainScreen:
+        return t('MainScreen');
       default:
         return '';
     }
-  }, [routeName]);
+  }, [routeName, t]);
 
   const routeIcon = useMemo(() => {
     switch (routeName) {
-      case AppRouteType.homeScreen:
-        return HashIconImg;
+      case AppRouteScreensType.homeScreen:
+        return WedRingIcon;
+      case AppRouteScreensType.welcomeScreen:
+        return TipLocationIcon;
+      case AppRouteScreensType.mainScreen:
+        return ChurchIcon;
       default:
         return HashIconImg;
     }
@@ -111,4 +119,4 @@ const BottomTabBarItem = ({
   );
 };
 
-export default BottomTabBarItem;
+export default React.memo(BottomTabBarItem);
