@@ -1,3 +1,8 @@
+project.ext.envConfigFiles = [
+        staging: ".env.staging",
+        production: ".env.production",
+]
+
 apply plugin: "com.android.application"
 
 import com.android.build.OutputFile
@@ -221,6 +226,7 @@ android {
     buildTypes {
         debug {
             signingConfig signingConfigs.debug
+            matchingFallbacks = ['debug', 'release']
         }
         release {
             // Caution! In production, you need to generate your own keystore file.
@@ -228,6 +234,22 @@ android {
             signingConfig signingConfigs.debug
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+        }
+    }
+
+    flavorDimensions "default"
+    productFlavors {
+        staging {
+            minSdkVersion rootProject.ext.minSdkVersion
+            applicationId "com.wedplan.staging"
+            targetSdkVersion rootProject.ext.targetSdkVersion
+            resValue "string", "build_config_package", "com.wedplan"
+        }
+        production {
+            minSdkVersion rootProject.ext.minSdkVersion
+            applicationId "com.wedplan"
+            targetSdkVersion rootProject.ext.targetSdkVersion
+            resValue "string", "build_config_package", "com.wedplan"
         }
     }
 
@@ -302,6 +324,7 @@ task copyDownloadableDepsToLibs(type: Copy) {
     into 'libs'
 }
 
+apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
 apply from: file("../../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesAppBuildGradle(project)
 
 def isNewArchitectureEnabled() {

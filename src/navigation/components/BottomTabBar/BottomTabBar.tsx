@@ -11,7 +11,7 @@ import Animated, {
   withSpring,
 } from 'react-native-reanimated';
 import { useAnimatedScrollValue } from '../../../hooks/ui/useAnimatedScroll';
-import { AppRouteType } from '../../types/AppRouteType';
+import { AppRouteScreensType } from '../../types/AppRouteType';
 import BottomTabBarItem from './BottomTabBarItem';
 
 const BottomTabBar = ({
@@ -39,7 +39,7 @@ const BottomTabBar = ({
 
   const animatedStyle = useAnimatedStyle(() => {
     const animatedValue =
-      name !== AppRouteType.homeScreen ? 0 : animation.value;
+      name !== AppRouteScreensType.homeScreen ? 0 : animation.value;
     // Animate bottom tab bar
     const height = interpolate(
       animatedValue + keyboardAnim.value,
@@ -72,7 +72,7 @@ const BottomTabBar = ({
   const showMessagesNotification = hasNewMessages || hasNewNotifications;
 
   return (
-    <Animated.View style={[animatedStyle, { backgroundColor: 'blue' }]}>
+    <Animated.View style={[animatedStyle, { backgroundColor: 'transparent' }]}>
       <View
         testID="NavigationBar"
         style={[
@@ -80,7 +80,7 @@ const BottomTabBar = ({
           {
             height: bottomTabBarHeight,
             paddingBottom: paddingBottomTabBar,
-            backgroundColor: 'white',
+            backgroundColor: 'transparent',
           },
         ]}>
         {state.routes.map((route, index) => {
@@ -92,7 +92,7 @@ const BottomTabBar = ({
               isActive={isActive}
               onPress={tabBarPress}
               notification={
-                route.name === AppRouteType.homeScreen &&
+                route.name === AppRouteScreensType.homeScreen &&
                 showMessagesNotification
               }
             />

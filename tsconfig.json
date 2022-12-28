@@ -36,6 +36,7 @@
   },
   "include": [
     "src",
+    "src/index.d.ts",
     "src/**/*.ts",
     "src/**/*.tsx",
     "__tests__/**/*.test.tsx",
