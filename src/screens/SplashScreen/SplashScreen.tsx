@@ -11,7 +11,7 @@ const SplashScreen = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      replace(AppRouteScreensType.loginScreen);
+      replace(AppRouteScreensType.registerScreen);
     }, 1000);
   }, [replace]);
 
