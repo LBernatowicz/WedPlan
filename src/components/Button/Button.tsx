@@ -1,27 +1,29 @@
 import React, { useEffect } from 'react';
 import { TouchableOpacity, StyleSheet, Text } from 'react-native';
+import { EButtonType } from './type/EButtonType';
+import { colors } from '../../assets/utils/colors';
 
 type Props = {
   title: string;
   action?: () => void;
-  buttonType?: string;
+  buttonType?: EButtonType;
 };
 
 const Button = ({
   title,
-  buttonType = 'primary',
+  buttonType = EButtonType.primary,
   action = () => console.log('ok'),
 }: Props) => {
   const selectButtonType = (type: string) => {
     switch (type) {
-      case 'primary':
+      case EButtonType.primary:
         return styles.primaryButton;
-      case 'secondary':
+      case EButtonType.secondary:
         return styles.secondaryButton;
-      case 'ghost':
+      case EButtonType.ghost:
         return styles.ghostButton;
       default:
-        break;
+        return styles.primaryButton;
     }
   };
 
@@ -37,7 +39,7 @@ const Button = ({
         styles.enableShadow,
       ]}
       onPress={action}>
-      <Text style={styles.text}>{title}</Text>
+      <Text style={[styles.text, selectButtonType(buttonType)]}>{title}</Text>
     </TouchableOpacity>
   );
 };
@@ -49,9 +51,9 @@ const styles = StyleSheet.create({
     marginHorizontal: 15,
     marginVertical: 10,
     height: 50,
-    flex: 1,
   },
   text: {
+    color: colors.text.black,
     fontWeight: '500',
     fontSize: 14,
   },
@@ -63,15 +65,16 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
   },
   primaryButton: {
-    backgroundColor: 'white',
+    backgroundColor: colors.main.primary,
     borderRadius: 10,
   },
   secondaryButton: {
-    backgroundColor: '#F7CE5B',
+    backgroundColor: colors.main.secondary,
     borderRadius: 10,
   },
   ghostButton: {
     borderRadius: 10,
+    color: colors.text.blue,
   },
 });
 

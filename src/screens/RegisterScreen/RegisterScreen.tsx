@@ -11,6 +11,7 @@ import Button from '../../components/Button/Button';
 import { paddings } from '../../assets/utils/paddings';
 import { TValidationRules } from '../../components/InputWithForm/ValidationRules/TValidationRules';
 
+import { firebase } from '@react-native-firebase/auth';
 const RegisterScreen = () => {
   const { control, handleSubmit } = useForm({});
   const navigation = useNavigation();
@@ -31,6 +32,11 @@ const RegisterScreen = () => {
     });
   };
   const onSubmit = () => {
+    firebase
+      .auth()
+      .createUserWithEmailAndPassword('bernatowicz122@gmail.com', '1234567')
+      .then((response) => console.log('@done', response))
+      .catch((error) => console.log('@error', error));
     console.log('!', data);
   };
   return (
@@ -46,6 +52,7 @@ const RegisterScreen = () => {
           control={control}
           name={'password'}
           placeholder={'Password'}
+          rule={{ pattern: TValidationRules.passwordValidation }}
           secureTextEntry
         />
         <InputWithForm
