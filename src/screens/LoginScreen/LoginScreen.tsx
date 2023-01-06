@@ -4,21 +4,21 @@ import { useNavigation } from '@react-navigation/native';
 import {
   AppRouteScreensType,
   AppRouteTabsType,
-} from '../../navigation/types/AppRouteType';
+} from 'navigation/types/AppRouteType';
 import { useForm, useWatch } from 'react-hook-form';
-import Button from '../../components/Button/Button';
-import InputWithForm from '../../components/InputWithForm/InputWithForm';
-import { paddings } from '../../assets/utils/paddings';
+import Button from 'components/Button/Button';
+import InputWithForm from 'components/InputWithForm/InputWithForm';
+import { paddings } from 'assets/utils/paddings';
 import { firebase } from '@react-native-firebase/auth';
-import { TValidationRules } from '../../components/InputWithForm/ValidationRules/TValidationRules';
 
 import {
   GoogleSignin,
   GoogleSigninButton,
   statusCodes,
 } from '@react-native-google-signin/google-signin';
-import { Divider } from '../../components/Divider/Divider';
-import { EButtonType } from '../../components/Button/type/EButtonType';
+import { Divider } from 'components/Divider/Divider';
+import { EButtonType } from 'components/Button/type/EButtonType';
+import { TValidationRules } from 'components/InputWithForm/ValidationRules/TValidationRules';
 
 const LoginScreen = () => {
   const { control, handleSubmit } = useForm({
