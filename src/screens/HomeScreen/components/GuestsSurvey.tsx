@@ -3,6 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { useForm, useWatch } from 'react-hook-form';
 import Button from '../../../components/Button/Button';
 import RadioButtonController from '../../../components/RadioButtonController/RadioButtonController';
+import { EButtonType } from '../../../components/Button/type/EButtonType';
 
 export const dataMock = [
   {
@@ -53,7 +54,7 @@ const GuestsSurvey = () => {
       {!submit && (
         <View style={styles.buttonsContainers}>
           <Button title={'Potwierdz'} action={() => setSubmit(!submit)} />
-          <Button title={'Odmów'} buttonType={'secondary'} />
+          <Button title={'Odmów'} buttonType={EButtonType.ghost} />
         </View>
       )}
       {submit &&

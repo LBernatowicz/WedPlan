@@ -16,6 +16,8 @@ import { Divider } from 'components/Divider/Divider';
 import { EButtonType } from 'components/Button/type/EButtonType';
 import { TValidationRules } from 'components/InputWithForm/ValidationRules/TValidationRules';
 import { handleGoogleSignIn } from '../../helpers/Authorization/AuthorizationHelpers';
+import { fontSize } from '../../assets/utils/fonts';
+import { colors } from '../../assets/utils/colors';
 
 const lottie = require('../../assets/lottie/weddingRings.json');
 
@@ -71,7 +73,8 @@ const LoginScreen = () => {
         />
       </View>
       <View style={styles.inputsContainer}>
-        <Text>Log to your account!</Text>
+        <Text style={styles.headerText}>Login!</Text>
+        <Text style={styles.secondaryText}>Please log in to continue</Text>
         <InputWithForm
           control={control}
           name={'email'}
@@ -131,7 +134,7 @@ const styles = StyleSheet.create({
 
   buttonContainer: {
     width: '100%',
-    flex: 1,
+    marginVertical: 20,
   },
   inputsContainer: {
     justifyContent: 'center',
@@ -148,6 +151,17 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
+  },
+  headerText: {
+    fontSize: fontSize.header,
+    fontWeight: 'bold',
+    color: colors.text.blue,
+    marginVertical: 10,
+  },
+  secondaryText: {
+    fontSize: fontSize.normal,
+    fontWeight: 'bold',
+    color: colors.text.blue,
   },
 });
 
