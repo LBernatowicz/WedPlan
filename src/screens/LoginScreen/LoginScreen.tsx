@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { SafeAreaView, StyleSheet, View, Text } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import {
@@ -10,15 +10,14 @@ import Button from 'components/Button/Button';
 import InputWithForm from 'components/InputWithForm/InputWithForm';
 import { paddings } from 'assets/utils/paddings';
 import { firebase } from '@react-native-firebase/auth';
-
-import {
-  GoogleSignin,
-  GoogleSigninButton,
-  statusCodes,
-} from '@react-native-google-signin/google-signin';
+import LottieView from 'lottie-react-native';
+import { GoogleSigninButton } from '@react-native-google-signin/google-signin';
 import { Divider } from 'components/Divider/Divider';
 import { EButtonType } from 'components/Button/type/EButtonType';
 import { TValidationRules } from 'components/InputWithForm/ValidationRules/TValidationRules';
+import { handleGoogleSignIn } from '../../helpers/Authorization/AuthorizationHelpers';
+
+const lottie = require('../../assets/lottie/weddingRings.json');
 
 const LoginScreen = () => {
   const { control, handleSubmit } = useForm({
@@ -30,6 +29,11 @@ const LoginScreen = () => {
   const navigation = useNavigation();
 
   const formControl = useWatch({ control });
+
+  const lottieRef = useCallback(
+    (node: LottieView | null | undefined) => node?.play(),
+    [],
+  );
 
   const handleNavigationToMain = () => {
     // @ts-ignore
@@ -56,45 +60,18 @@ const LoginScreen = () => {
     }
   };
 
-  const _signIn = async () => {
-    await GoogleSignin.configure({
-      iosClientId:
-        '970877023178-5f01tuu62g78fbpgk37oh0l9d0hq1tuf.apps.googleusercontent.com',
-      offlineAccess: false,
-    });
-    // It will prompt google Signin Widget
-    try {
-      await GoogleSignin.hasPlayServices({
-        // Check if device has Google Play Services installed
-        // Always resolves to true on iOS
-      });
-      const userInfo = await GoogleSignin.signIn();
-      const credential = firebase.auth.GoogleAuthProvider.credential(
-        userInfo.idToken,
-      );
-      // login with credential
-      await firebase.auth().signInWithCredential(credential);
-      console.log('User Info --> ', userInfo);
-    } catch (error) {
-      console.log('Message', JSON.stringify(error));
-      if (error.code === statusCodes.SIGN_IN_CANCELLED) {
-        console.log('User Cancelled the Login Flow');
-      } else if (error.code === statusCodes.IN_PROGRESS) {
-        console.log('Signing In');
-      } else if (error.code === statusCodes.PLAY_SERVICES_NOT_AVAILABLE) {
-        console.log('Play Services Not Available or Outdated');
-      } else {
-        console.log(error.message);
-      }
-    }
-  };
-
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.logoContainer}>
-        <Text>dasdas</Text>
+        <LottieView
+          ref={lottieRef}
+          source={lottie}
+          loop={false}
+          style={{ transform: [{ scale: 1.2 }] }}
+        />
       </View>
       <View style={styles.inputsContainer}>
+        <Text>Log to your account!</Text>
         <InputWithForm
           control={control}
           name={'email'}
@@ -126,7 +103,7 @@ const LoginScreen = () => {
         <GoogleSigninButton
           size={GoogleSigninButton.Size.Icon}
           color={GoogleSigninButton.Color.Light}
-          onPress={_signIn}
+          onPress={handleGoogleSignIn}
         />
       </View>
       <View style={styles.registerContainer}>
@@ -149,7 +126,7 @@ const styles = StyleSheet.create({
   },
   logoContainer: {
     flex: 1,
-    height: 20,
+    width: '100%',
   },
 
   buttonContainer: {

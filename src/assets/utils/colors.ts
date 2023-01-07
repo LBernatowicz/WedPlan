@@ -9,5 +9,6 @@ export const colors = {
   text: {
     black: '#000000',
     blue: '#023047',
+    red: '#cc0303',
   },
 };

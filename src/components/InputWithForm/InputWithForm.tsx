@@ -9,6 +9,7 @@ import {
 } from 'react-native';
 import { paddings } from '../../assets/utils/paddings';
 import { margins } from '../../assets/utils/margins';
+import { colors } from '../../assets/utils/colors';
 
 type TInputWithForm = {
   control: Control<any>;
@@ -44,7 +45,11 @@ const InputWithForm = ({
               ref={ref}
               {...rest}
             />
-            {error && <Text>{error.message || 'Error'}</Text>}
+            {error ? (
+              <Text style={styles.errorText}>{error.message || 'Error'}</Text>
+            ) : (
+              <View style={styles.emptyError} />
+            )}
           </View>
         );
       }}
@@ -65,6 +70,14 @@ const styles = StyleSheet.create({
       height: 5,
     },
     shadowOpacity: 0.1,
+  },
+  errorText: {
+    color: colors.text.red,
+    fontWeight: '500',
+    lineHeight: 20,
+  },
+  emptyError: {
+    height: 20,
   },
 });
 
