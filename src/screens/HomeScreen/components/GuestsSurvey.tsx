@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { useForm, useWatch } from 'react-hook-form';
-import Button from '../../../components/Button/Button';
+import Button from '../../../components/Buttons/Button';
 import RadioButtonController from '../../../components/RadioButtonController/RadioButtonController';
-import { EButtonType } from '../../../components/Button/type/EButtonType';
+import { EButtonType } from '../../../components/Buttons/type/EButtonType';
 
 export const dataMock = [
   {

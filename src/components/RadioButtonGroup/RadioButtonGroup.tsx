@@ -102,6 +102,8 @@ const RadioButtonGroup = ({
     }
   };
 
+  console.log('@@');
+
   return (
     <View
       style={[

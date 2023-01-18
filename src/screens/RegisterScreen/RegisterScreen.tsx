@@ -1,22 +1,39 @@
-import React from 'react';
-import { SafeAreaView, StyleSheet, View } from 'react-native';
+import React, { useCallback } from 'react';
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import { useForm, useWatch } from 'react-hook-form';
 import { useNavigation } from '@react-navigation/native';
 import {
   AppRouteScreensType,
   AppRouteTabsType,
-} from '../../navigation/types/AppRouteType';
-import InputWithForm from '../../components/InputWithForm/InputWithForm';
-import Button from '../../components/Button/Button';
-import { paddings } from '../../assets/utils/paddings';
-import { TValidationRules } from '../../components/InputWithForm/ValidationRules/TValidationRules';
+} from 'navigation/types/AppRouteType';
+import InputWithForm from 'components/InputWithForm/InputWithForm';
+import Button from 'components/Buttons/Button';
+import { paddings } from 'assets/utils/paddings';
+import { TValidationRules } from 'components/InputWithForm/ValidationRules/TValidationRules';
 
-import { firebase } from '@react-native-firebase/auth';
+import { fontSize } from 'assets/utils/fonts';
+import { colors } from 'assets/utils/colors';
+import { Divider } from 'components/Divider/Divider';
+import { GoogleSigninButton } from '@react-native-google-signin/google-signin';
+import {
+  handleGoogleSignIn,
+  HandleSignUp,
+} from '../../helpers/Authorization/AuthorizationHelpers';
+import { EButtonType } from 'components/Buttons/type/EButtonType';
+import LottieView from 'lottie-react-native';
+
+const lottie = require('assets/lottie/WeddingRings2.json');
+
 const RegisterScreen = () => {
   const { control, handleSubmit } = useForm({});
   const navigation = useNavigation();
 
-  const data = useWatch({ control });
+  const formControl = useWatch({ control });
+
+  const lottieRef = useCallback(
+    (node: LottieView | null | undefined) => node?.play(),
+    [],
+  );
 
   const handleNavigationToMain = () => {
     // @ts-ignore
@@ -25,27 +42,37 @@ const RegisterScreen = () => {
     });
   };
 
-  const handleNavigationToRegister = () => {
+  const handleNavigationToLogin = () => {
     // @ts-ignore
     navigation.navigate(AppRouteTabsType.authTabs, {
-      screen: AppRouteScreensType.registerScreen,
+      screen: AppRouteScreensType.loginScreen,
     });
   };
-  const onSubmit = () => {
-    firebase
-      .auth()
-      .createUserWithEmailAndPassword('bernatowicz122@gmail.com', '1234567')
-      .then((response) => console.log('@done', response))
-      .catch((error) => console.log('@error', error));
-    console.log('!', data);
+
+  const onSubmitSignUp = () => {
+    formControl.email &&
+      formControl.password &&
+      HandleSignUp(formControl.email, formControl.password).then(
+        handleNavigationToMain,
+      );
   };
   return (
     <SafeAreaView style={styles.container}>
+      <View style={styles.logoContainer}>
+        <LottieView
+          ref={lottieRef}
+          source={lottie}
+          loop={false}
+          style={{ transform: [{ scale: 1.1 }] }}
+        />
+      </View>
       <View style={styles.inputsContainer}>
+        <Text style={styles.headerText}>Sign Up!</Text>
+        <Text style={styles.secondaryText}>Please sign up to continue</Text>
         <InputWithForm
           control={control}
           name={'email'}
-          placeholder={'email'}
+          placeholder={'Email'}
           rule={{ pattern: TValidationRules.emailValidation }}
         />
         <InputWithForm
@@ -53,21 +80,40 @@ const RegisterScreen = () => {
           name={'password'}
           placeholder={'Password'}
           rule={{ pattern: TValidationRules.passwordValidation }}
-          secureTextEntry
         />
         <InputWithForm
           control={control}
-          name={'repeadPassword'}
-          placeholder={'Repead Password'}
-          secureTextEntry
+          name={'repeatPassword'}
+          placeholder={'Repeat Password'}
+          rule={{
+            validate: (repeatPassword: string) =>
+              repeatPassword === formControl.password ||
+              'Password is not match',
+          }}
         />
       </View>
       <View style={styles.buttonContainer}>
-        <Button title={'register'} action={handleSubmit(onSubmit)} />
+        <Button
+          title={'Register'}
+          action={handleSubmit(onSubmitSignUp)}
+          buttonType={EButtonType.secondary}
+        />
       </View>
-      <View style={styles.buttonContainer}>
-        <Button title={'Login'} action={handleNavigationToMain} />
-        <Button title={'Register'} action={handleNavigationToRegister} />
+      <Divider text={'or'} />
+      <View style={styles.externalLoginContainer}>
+        <GoogleSigninButton
+          size={GoogleSigninButton.Size.Icon}
+          color={GoogleSigninButton.Color.Light}
+          onPress={handleGoogleSignIn}
+        />
+      </View>
+      <View style={styles.registerContainer}>
+        <Text>You can create account here!</Text>
+        <Button
+          title={'Login'}
+          action={handleNavigationToLogin}
+          buttonType={EButtonType.ghost}
+        />
       </View>
     </SafeAreaView>
   );
@@ -79,12 +125,41 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     flex: 1,
   },
+  logoContainer: {
+    flex: 1,
+    width: '100%',
+  },
+
   buttonContainer: {
-    flexDirection: 'row',
+    width: '100%',
+    marginTop: 50,
   },
   inputsContainer: {
+    justifyContent: 'center',
     padding: paddings.maxAroundPadding,
     width: '100%',
+    flex: 1,
+  },
+  externalLoginContainer: {
+    justifyContent: 'center',
+    alignItems: 'flex-end',
+  },
+  registerContainer: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+  },
+  headerText: {
+    fontSize: fontSize.header,
+    fontWeight: 'bold',
+    color: colors.text.blue,
+    marginVertical: 10,
+  },
+  secondaryText: {
+    fontSize: fontSize.normal,
+    fontWeight: 'bold',
+    color: colors.text.blue,
   },
 });
 

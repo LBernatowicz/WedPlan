@@ -4,8 +4,18 @@ import {
   statusCodes,
 } from '@react-native-google-signin/google-signin';
 
-export const HandleSingIn = (email: string, password: string) => {
-  firebase.auth().signInWithEmailAndPassword(email, password);
+export const HandleSingIn = async (email: string, password: string) => {
+  firebase
+    .auth()
+    .signInWithEmailAndPassword(email, password)
+    .catch((error) => console.log(error));
+};
+
+export const HandleSignUp = async (email: string, password: string) => {
+  firebase
+    .auth()
+    .createUserWithEmailAndPassword(email, password)
+    .catch((error) => console.log('@error', error));
 };
 
 export const handleGoogleSignIn = async () => {

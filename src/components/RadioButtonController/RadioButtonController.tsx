@@ -15,6 +15,7 @@ const RadioButtonController = ({
   orientation = 'row',
   formData,
 }: TRadioButtonController) => {
+  console.log('render buttonu');
   return (
     <Controller
       control={control}
@@ -35,4 +36,4 @@ const RadioButtonController = ({
   );
 };
 
-export default RadioButtonController;
+export default React.memo(RadioButtonController);

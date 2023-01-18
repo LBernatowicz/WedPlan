@@ -6,20 +6,22 @@ import {
   AppRouteTabsType,
 } from 'navigation/types/AppRouteType';
 import { useForm, useWatch } from 'react-hook-form';
-import Button from 'components/Button/Button';
+import Button from 'components/Buttons/Button';
 import InputWithForm from 'components/InputWithForm/InputWithForm';
 import { paddings } from 'assets/utils/paddings';
-import { firebase } from '@react-native-firebase/auth';
 import LottieView from 'lottie-react-native';
 import { GoogleSigninButton } from '@react-native-google-signin/google-signin';
 import { Divider } from 'components/Divider/Divider';
-import { EButtonType } from 'components/Button/type/EButtonType';
+import { EButtonType } from 'components/Buttons/type/EButtonType';
 import { TValidationRules } from 'components/InputWithForm/ValidationRules/TValidationRules';
-import { handleGoogleSignIn } from '../../helpers/Authorization/AuthorizationHelpers';
-import { fontSize } from '../../assets/utils/fonts';
-import { colors } from '../../assets/utils/colors';
+import {
+  handleGoogleSignIn,
+  HandleSingIn,
+} from 'helpers/Authorization/AuthorizationHelpers';
+import { fontSize } from 'assets/utils/fonts';
+import { colors } from 'assets/utils/colors';
 
-const lottie = require('../../assets/lottie/weddingRings.json');
+const lottie = require('assets/lottie/weddingRings.json');
 
 const LoginScreen = () => {
   const { control, handleSubmit } = useForm({
@@ -50,16 +52,12 @@ const LoginScreen = () => {
       screen: AppRouteScreensType.registerScreen,
     });
   };
-  const onSubmit = () => {
-    {
-      formControl.email &&
-        formControl.password &&
-        firebase
-          .auth()
-          .signInWithEmailAndPassword(formControl.email, formControl.password)
-          .then(handleNavigationToMain)
-          .catch((error) => console.log(error));
-    }
+  const onSubmitSignIn = () => {
+    formControl.email &&
+      formControl.password &&
+      HandleSingIn(formControl.email, formControl.password).then(
+        handleNavigationToMain,
+      );
   };
 
   return (
@@ -86,18 +84,18 @@ const LoginScreen = () => {
           name={'password'}
           placeholder={'Password'}
           rule={{ pattern: TValidationRules.passwordValidation }}
-          secureTextEntry
+          secured
         />
       </View>
       <View style={styles.buttonContainer}>
         <Button
           title={'Login'}
-          action={handleSubmit(onSubmit)}
+          action={handleSubmit(onSubmitSignIn)}
           buttonType={EButtonType.secondary}
         />
         <Button
           title={'Forgot password'}
-          action={handleSubmit(onSubmit)}
+          action={handleSubmit(onSubmitSignIn)}
           buttonType={EButtonType.primary}
         />
       </View>

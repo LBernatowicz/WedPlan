@@ -1,14 +1,12 @@
 import React, { useCallback, useEffect, useMemo } from 'react';
 import { Text } from 'react-native';
 import { Pressable } from 'react-native';
-import { Image } from '../../../ui/primitives/Image/Image';
+import { Image } from 'ui/primitives/Image/Image';
 import Animated, {
   interpolate,
   useAnimatedStyle,
 } from 'react-native-reanimated';
-import useAnimatedPress, {
-  AnimationType,
-} from '../../../hooks/ui/useAnimatedPress';
+import useAnimatedPress, { AnimationType } from 'hooks/ui/useAnimatedPress';
 import { AppRouteScreensType } from '../../types/AppRouteType';
 import {
   HashIconImg,
@@ -50,7 +48,7 @@ const BottomTabBarItem = ({ isActive, routeName, onPress }: Props) => {
   const routeTranslation = useMemo(() => {
     switch (routeName) {
       case AppRouteScreensType.homeScreen:
-        return t('HomeScreen');
+        return t('HomeScreen.KnL');
       case AppRouteScreensType.welcomeScreen:
         return t('WelcomeScreen');
       case AppRouteScreensType.mainScreen:
