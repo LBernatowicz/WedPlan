@@ -20,8 +20,25 @@ const Icon = ({
   style,
 }: IIconProps) => {
   return (
-    <Svg width={width} height={height} color={color} style={style}>
-      <SvgXml xml={iconName} />
+    <Svg
+      width={width}
+      height={height}
+      style={[
+        style,
+        {
+          justifyContent: 'center',
+          alignItems: 'center',
+          top: width / 2,
+          left: width / 2,
+        },
+      ]}>
+      <SvgXml
+        xml={iconName}
+        fill={color}
+        style={{}}
+        width={width}
+        height={height}
+      />
     </Svg>
   );
 };

@@ -46,15 +46,17 @@ const Button = ({
 
 const styles = StyleSheet.create({
   enableButton: {
-    justifyContent: 'center',
-    alignItems: 'center',
     marginHorizontal: 15,
     marginVertical: 10,
-    height: 50,
+    maxHeight: 50,
+    textAlign: 'center',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   text: {
     color: colors.text.black,
     fontWeight: '500',
+    lineHeight: 50,
     fontSize: 14,
   },
   enableShadow: {
@@ -67,10 +69,12 @@ const styles = StyleSheet.create({
   primaryButton: {
     backgroundColor: colors.main.primary,
     borderRadius: 10,
+    flex: 1,
   },
   secondaryButton: {
     backgroundColor: colors.main.secondary,
     borderRadius: 10,
+    flex: 1,
   },
   ghostButton: {
     borderRadius: 10,

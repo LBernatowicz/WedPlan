@@ -53,8 +53,12 @@ const GuestsSurvey = () => {
       </View>
       {!submit && (
         <View style={styles.buttonsContainers}>
-          <Button title={'Potwierdz'} action={() => setSubmit(!submit)} />
-          <Button title={'Odmów'} buttonType={EButtonType.ghost} />
+          <Button
+            title={'Potwierdz'}
+            buttonType={EButtonType.secondary}
+            action={() => setSubmit(!submit)}
+          />
+          <Button title={'Odmów'} />
         </View>
       )}
       {submit &&
@@ -86,6 +90,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#F8C586',
     borderRadius: 20,
     margin: 10,
+    flex: 1,
   },
   buttonsContainers: {
     flexDirection: 'row',

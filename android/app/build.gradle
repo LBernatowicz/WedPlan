@@ -1,5 +1,5 @@
 project.ext.envConfigFiles = [
-        staging: ".env.staging",
+        staging: ".env",
         production: ".env.production",
 ]
 
@@ -279,6 +279,8 @@ dependencies {
     implementation "com.facebook.react:react-native:+"  // From node_modules
 
     implementation platform('com.google.firebase:firebase-bom:31.1.1')
+
+    implementation project(':react-native-config')
 
     implementation 'com.google.firebase:firebase-analytics'
 

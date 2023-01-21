@@ -22,6 +22,7 @@ import LoginScreen from '../screens/LoginScreen/LoginScreen';
 import RegisterScreen from '../screens/RegisterScreen/RegisterScreen';
 import WelcomeScreen from '../screens/WelcomeScreen/WelcomeScreen';
 import HomeScreen from '../screens/HomeScreen/HomeScreen';
+import ResetPasswordScreen from '../screens/ResetPasswordScreen/ResetPasswordScreen';
 
 const Stack = createNativeStackNavigator<AppRootNavigationParamList>();
 const Tab = createBottomTabNavigator<MainTabParamList>();
@@ -43,6 +44,11 @@ const TabAuthorization = () => {
       <Auth.Screen
         name={AppRouteScreensType.registerScreen}
         component={RegisterScreen}
+        options={{ headerShown: false, gestureEnabled: false }}
+      />
+      <Auth.Screen
+        name={AppRouteScreensType.resetPasswordScreen}
+        component={ResetPasswordScreen}
         options={{ headerShown: false, gestureEnabled: false }}
       />
     </Auth.Navigator>

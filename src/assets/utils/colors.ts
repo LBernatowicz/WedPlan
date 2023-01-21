@@ -6,6 +6,12 @@ export const colors = {
     deepBlue: '#219EBC',
     lightBlue: '#8ECAE6',
   },
+  external: {
+    facebook: '#4267B2',
+    twitter: '#1DA1F2',
+    white: '#ffffff',
+    black: '#000000',
+  },
   text: {
     black: '#000000',
     blue: '#023047',

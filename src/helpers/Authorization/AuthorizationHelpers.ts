@@ -3,6 +3,7 @@ import {
   GoogleSignin,
   statusCodes,
 } from '@react-native-google-signin/google-signin';
+import Config from 'react-native-config';
 
 export const HandleSingIn = async (email: string, password: string) => {
   firebase
@@ -18,10 +19,17 @@ export const HandleSignUp = async (email: string, password: string) => {
     .catch((error) => console.log('@error', error));
 };
 
+export const HandleResetPassword = async (email: string) => {
+  firebase
+    .auth()
+    .sendPasswordResetEmail(email)
+    .catch((error) => console.log('@error', error));
+};
+
 export const handleGoogleSignIn = async () => {
   await GoogleSignin.configure({
-    iosClientId:
-      '970877023178-5f01tuu62g78fbpgk37oh0l9d0hq1tuf.apps.googleusercontent.com',
+    iosClientId: Config.IOS_CLIENT_ID,
+    //'970877023178-5f01tuu62g78fbpgk37oh0l9d0hq1tuf.apps.googleusercontent.com',
     offlineAccess: false,
   });
   // It will prompt google Signin Widget

@@ -20,6 +20,7 @@ import {
 } from 'helpers/Authorization/AuthorizationHelpers';
 import { fontSize } from 'assets/utils/fonts';
 import { colors } from 'assets/utils/colors';
+import SdkLoginButton from 'components/Buttons/SdkLoginButton';
 
 const lottie = require('assets/lottie/weddingRings.json');
 
@@ -43,6 +44,13 @@ const LoginScreen = () => {
     // @ts-ignore
     navigation.navigate(AppRouteTabsType.mainTabs, {
       screen: AppRouteScreensType.welcomeScreen,
+    });
+  };
+
+  const handleNavigationToResetPassword = () => {
+    // @ts-ignore
+    navigation.navigate(AppRouteTabsType.authTabs, {
+      screen: AppRouteScreensType.resetPasswordScreen,
     });
   };
 
@@ -95,7 +103,7 @@ const LoginScreen = () => {
         />
         <Button
           title={'Forgot password'}
-          action={handleSubmit(onSubmitSignIn)}
+          action={handleNavigationToResetPassword}
           buttonType={EButtonType.primary}
         />
       </View>
@@ -105,6 +113,21 @@ const LoginScreen = () => {
           size={GoogleSigninButton.Size.Icon}
           color={GoogleSigninButton.Color.Light}
           onPress={handleGoogleSignIn}
+        />
+        <SdkLoginButton
+          size={'small'}
+          icon={'facebook'}
+          action={() => console.log('ds')}
+        />
+        <SdkLoginButton
+          size={'small'}
+          icon={'twitter'}
+          action={() => console.log('ds')}
+        />
+        <SdkLoginButton
+          size={'small'}
+          icon={'github'}
+          action={() => console.log('ds')}
         />
       </View>
       <View style={styles.registerContainer}>
@@ -133,7 +156,9 @@ const styles = StyleSheet.create({
   buttonContainer: {
     width: '100%',
     marginVertical: 20,
+    height: 150,
   },
+
   inputsContainer: {
     justifyContent: 'center',
     padding: paddings.maxAroundPadding,
@@ -141,8 +166,10 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   externalLoginContainer: {
-    justifyContent: 'center',
-    alignItems: 'flex-end',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width: '50%',
   },
   registerContainer: {
     flexDirection: 'row',

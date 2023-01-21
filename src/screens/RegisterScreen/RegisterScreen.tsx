@@ -18,9 +18,10 @@ import { GoogleSigninButton } from '@react-native-google-signin/google-signin';
 import {
   handleGoogleSignIn,
   HandleSignUp,
-} from '../../helpers/Authorization/AuthorizationHelpers';
+} from 'helpers/Authorization/AuthorizationHelpers';
 import { EButtonType } from 'components/Buttons/type/EButtonType';
 import LottieView from 'lottie-react-native';
+import SdkLoginButton from 'components/Buttons/SdkLoginButton';
 
 const lottie = require('assets/lottie/WeddingRings2.json');
 
@@ -63,7 +64,7 @@ const RegisterScreen = () => {
           ref={lottieRef}
           source={lottie}
           loop={false}
-          style={{ transform: [{ scale: 1.1 }] }}
+          style={{ transform: [{ scale: 1.2 }] }}
         />
       </View>
       <View style={styles.inputsContainer}>
@@ -77,12 +78,14 @@ const RegisterScreen = () => {
         />
         <InputWithForm
           control={control}
+          secured
           name={'password'}
           placeholder={'Password'}
           rule={{ pattern: TValidationRules.passwordValidation }}
         />
         <InputWithForm
           control={control}
+          secured
           name={'repeatPassword'}
           placeholder={'Repeat Password'}
           rule={{
@@ -106,6 +109,21 @@ const RegisterScreen = () => {
           color={GoogleSigninButton.Color.Light}
           onPress={handleGoogleSignIn}
         />
+        <SdkLoginButton
+          size={'small'}
+          icon={'facebook'}
+          action={() => console.log('ds')}
+        />
+        <SdkLoginButton
+          size={'small'}
+          icon={'twitter'}
+          action={() => console.log('ds')}
+        />
+        <SdkLoginButton
+          size={'small'}
+          icon={'github'}
+          action={() => console.log('ds')}
+        />
       </View>
       <View style={styles.registerContainer}>
         <Text>You can create account here!</Text>
@@ -126,23 +144,26 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   logoContainer: {
-    flex: 1,
+    flex: 3,
     width: '100%',
   },
 
   buttonContainer: {
+    justifyContent: 'flex-end',
     width: '100%',
-    marginTop: 50,
+    height: 100,
   },
   inputsContainer: {
-    justifyContent: 'center',
+    justifyContent: 'flex-end',
     padding: paddings.maxAroundPadding,
     width: '100%',
-    flex: 1,
+    flex: 5,
   },
   externalLoginContainer: {
-    justifyContent: 'center',
-    alignItems: 'flex-end',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width: '50%',
   },
   registerContainer: {
     flexDirection: 'row',
