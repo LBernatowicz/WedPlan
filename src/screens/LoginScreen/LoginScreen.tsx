@@ -15,8 +15,9 @@ import { Divider } from 'components/Divider/Divider';
 import { EButtonType } from 'components/Buttons/type/EButtonType';
 import { TValidationRules } from 'components/InputWithForm/ValidationRules/TValidationRules';
 import {
+  handlerFacebookSignIn,
   handleGoogleSignIn,
-  HandleSingIn,
+  handleSignIn,
 } from 'helpers/Authorization/AuthorizationHelpers';
 import { fontSize } from 'assets/utils/fonts';
 import { colors } from 'assets/utils/colors';
@@ -63,9 +64,17 @@ const LoginScreen = () => {
   const onSubmitSignIn = () => {
     formControl.email &&
       formControl.password &&
-      HandleSingIn(formControl.email, formControl.password).then(
+      handleSignIn(formControl.email, formControl.password).then(
         handleNavigationToMain,
       );
+  };
+
+  const onFacebookSignIn = () => {
+    handlerFacebookSignIn(handleNavigationToMain);
+  };
+
+  const onGoogleSignIn = () => {
+    handleGoogleSignIn(handleNavigationToMain);
   };
 
   return (
@@ -112,12 +121,12 @@ const LoginScreen = () => {
         <GoogleSigninButton
           size={GoogleSigninButton.Size.Icon}
           color={GoogleSigninButton.Color.Light}
-          onPress={handleGoogleSignIn}
+          onPress={onGoogleSignIn}
         />
         <SdkLoginButton
           size={'small'}
           icon={'facebook'}
-          action={() => console.log('ds')}
+          action={onFacebookSignIn}
         />
         <SdkLoginButton
           size={'small'}

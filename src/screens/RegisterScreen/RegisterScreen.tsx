@@ -17,7 +17,7 @@ import { Divider } from 'components/Divider/Divider';
 import { GoogleSigninButton } from '@react-native-google-signin/google-signin';
 import {
   handleGoogleSignIn,
-  HandleSignUp,
+  handleSignUp,
 } from 'helpers/Authorization/AuthorizationHelpers';
 import { EButtonType } from 'components/Buttons/type/EButtonType';
 import LottieView from 'lottie-react-native';
@@ -53,7 +53,7 @@ const RegisterScreen = () => {
   const onSubmitSignUp = () => {
     formControl.email &&
       formControl.password &&
-      HandleSignUp(formControl.email, formControl.password).then(
+      handleSignUp(formControl.email, formControl.password).then(
         handleNavigationToMain,
       );
   };

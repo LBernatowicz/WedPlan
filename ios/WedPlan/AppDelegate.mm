@@ -7,6 +7,7 @@
 #import <React/RCTAppSetupUtils.h>
 #import <FirebaseCore/FirebaseCore.h>
 #import <FBSDKCoreKit/FBSDKCoreKit-swift.h>
+#import <GoogleSignIn/GIDSignIn.h>
 
 #if RCT_NEW_ARCH_ENABLED
 #import <React/CoreModulesPlugins.h>
@@ -31,7 +32,8 @@ static NSString *const kRNConcurrentRoot = @"concurrentRoot";
 
 @implementation AppDelegate
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+- (BOOL)application:(UIApplication *)application
+            didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
   [FIRApp configure];
   [[FBSDKApplicationDelegate sharedInstance] application:application

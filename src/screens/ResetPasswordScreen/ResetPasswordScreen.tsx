@@ -6,7 +6,7 @@ import {
   AppRouteScreensType,
   AppRouteTabsType,
 } from 'navigation/types/AppRouteType';
-import { HandleResetPassword } from 'helpers/Authorization/AuthorizationHelpers';
+import { handleResetPassword } from 'helpers/Authorization/AuthorizationHelpers';
 import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import InputWithForm from 'components/InputWithForm/InputWithForm';
 import { TValidationRules } from 'components/InputWithForm/ValidationRules/TValidationRules';
@@ -41,7 +41,7 @@ const ResetPasswordScreen = () => {
 
   const onResetPassword = () => {
     formControl.email &&
-      HandleResetPassword(formControl.email).then(() => {
+      handleResetPassword(formControl.email).then(() => {
         setEmailSend(true);
         setInterval(handleNavigationToLogin, 1000);
       });

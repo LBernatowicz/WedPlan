@@ -43,6 +43,7 @@
     "./index.js",
     "scripts",
     "*.stories.tsx",
+    "delegate.d.ts",
     "e2e"
   ],
   "exclude": ["node_modules"],

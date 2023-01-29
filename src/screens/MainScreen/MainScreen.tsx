@@ -1,11 +1,12 @@
 import React from 'react';
-import { SafeAreaView, View, Text, StyleSheet } from 'react-native';
+import { SafeAreaView, View, StyleSheet } from 'react-native';
+import IconTest from 'assets/svg/test.svg';
 
 const MainScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View>
-        <Text>Main screen</Text>
+        <IconTest width={150} height={150} fill={'red'} />
       </View>
     </SafeAreaView>
   );

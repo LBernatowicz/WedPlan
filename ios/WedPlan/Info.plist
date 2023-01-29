@@ -22,18 +22,34 @@
 	<string>????</string>
 	<key>CFBundleURLTypes</key>
 	<array>
-		<dict/>
+		<dict>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>fb1374911209984852</string>
+			</array>
+		</dict>
 		<dict>
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>com.googleusercontent.apps.970877023178-5f01tuu62g78fbpgk37oh0l9d0hq1tuf</string>
+				<string>com.googleusercontent.apps.970877023178-8tussr469ib51n4e37tj4da2ui9deger</string>
 			</array>
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>FacebookAppID</key>
+	<string>1374911209984852</string>
+	<key>FacebookClientToken</key>
+	<string>9701475c2aee0215e1f73ab78f7f9cc8</string>
+	<key>FacebookDisplayName</key>
+	<string>WedPlan</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>fbapi</string>
+		<string>fb-messenger-share-api</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
