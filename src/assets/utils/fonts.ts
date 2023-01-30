@@ -7,5 +7,6 @@ export const weight = {
 export const fontSize = {
   normal: 12,
   medium: 14,
+  large: 18,
   header: 36,
 };

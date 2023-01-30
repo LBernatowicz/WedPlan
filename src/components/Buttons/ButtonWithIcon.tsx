@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import { TouchableOpacity, StyleSheet, StyleProp } from 'react-native';
-import Svg, { SvgXml } from 'react-native-svg';
-import { EIconsName } from 'assets/svg/Icons';
+import Svg from 'react-native-svg';
 import { StyleProps } from 'react-native-reanimated';
 
 type TButtonWithIcon = {
-  iconName: EIconsName;
+  iconName: ReactElement;
   onPress?: () => void;
   disable?: boolean;
   width?: number;
@@ -29,7 +28,7 @@ const ButtonWithIcon = ({
       disabled={disable}
       style={[styles.container, style]}>
       <Svg width={width} height={height} color={color}>
-        <SvgXml xml={iconName} />
+        {iconName}
       </Svg>
     </TouchableOpacity>
   );

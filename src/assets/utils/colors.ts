@@ -11,10 +11,14 @@ export const colors = {
     twitter: '#1DA1F2',
     white: '#ffffff',
     black: '#000000',
+    red: '#cc0303',
+    yellow: '#eabc26',
+    blue: '#3b9eec',
   },
   text: {
     black: '#000000',
     blue: '#023047',
     red: '#cc0303',
+    grey: '#797878',
   },
 };

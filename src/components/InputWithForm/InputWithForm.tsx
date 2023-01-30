@@ -7,11 +7,11 @@ import {
   TextInputProps,
   View,
 } from 'react-native';
-import { paddings } from '../../assets/utils/paddings';
-import { margins } from '../../assets/utils/margins';
-import { colors } from '../../assets/utils/colors';
-import { EIconsName } from '../../assets/svg/Icons';
-import ButtonWithIcon from '../Buttons/ButtonWithIcon';
+import { paddings } from 'assets/utils/paddings';
+import { margins } from 'assets/utils/margins';
+import { colors } from 'assets/utils/colors';
+import ButtonWithIcon from 'components/Buttons/ButtonWithIcon';
+import { IconEyeSplash, IconEye } from 'assets/svg/Index';
 
 type TInputWithForm = {
   control: Control<any>;
@@ -59,7 +59,13 @@ const InputWithForm = ({
             />
             {secured && (
               <ButtonWithIcon
-                iconName={hidePassword ? EIconsName.eyeSlash : EIconsName.eye}
+                iconName={
+                  hidePassword ? (
+                    <IconEyeSplash width={20} height={20} />
+                  ) : (
+                    <IconEye width={20} height={20} />
+                  )
+                }
                 onPress={() => setHidePassword(!hidePassword)}
                 width={20}
                 height={20}

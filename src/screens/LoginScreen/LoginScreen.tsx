@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import { SafeAreaView, StyleSheet, View, Text } from 'react-native';
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import {
   AppRouteScreensType,
@@ -12,20 +12,27 @@ import { paddings } from 'assets/utils/paddings';
 import LottieView from 'lottie-react-native';
 import { GoogleSigninButton } from '@react-native-google-signin/google-signin';
 import { Divider } from 'components/Divider/Divider';
-import { EButtonType } from 'components/Buttons/type/EButtonType';
+import {
+  EButtonType,
+  ESdkButtonType,
+  ESizeButton,
+} from 'components/Buttons/type/EButtonType';
 import { TValidationRules } from 'components/InputWithForm/ValidationRules/TValidationRules';
 import {
-  handlerFacebookSignIn,
   handleGoogleSignIn,
+  handlerFacebookSignIn,
   handleSignIn,
 } from 'helpers/Authorization/AuthorizationHelpers';
 import { fontSize } from 'assets/utils/fonts';
 import { colors } from 'assets/utils/colors';
 import SdkLoginButton from 'components/Buttons/SdkLoginButton';
+import { EToastMessageType, showToast } from 'store/toastSlice';
+import { useAppDispatch } from 'store/setupStore';
 
 const lottie = require('assets/lottie/weddingRings.json');
 
 const LoginScreen = () => {
+  const dispatch = useAppDispatch();
   const { control, handleSubmit } = useForm({
     defaultValues: {
       email: '',
@@ -124,19 +131,28 @@ const LoginScreen = () => {
           onPress={onGoogleSignIn}
         />
         <SdkLoginButton
-          size={'small'}
-          icon={'facebook'}
+          size={ESizeButton.small}
+          icon={ESdkButtonType.facebook}
           action={onFacebookSignIn}
         />
         <SdkLoginButton
-          size={'small'}
-          icon={'twitter'}
+          size={ESizeButton.small}
+          icon={ESdkButtonType.twitter}
           action={() => console.log('ds')}
         />
         <SdkLoginButton
-          size={'small'}
-          icon={'github'}
-          action={() => console.log('ds')}
+          size={ESizeButton.small}
+          icon={ESdkButtonType.github}
+          action={() =>
+            dispatch(
+              showToast({
+                toastMessageType: EToastMessageType.default,
+                title: '1',
+                body: '2',
+                inModal: false,
+              }),
+            )
+          }
         />
       </View>
       <View style={styles.registerContainer}>
