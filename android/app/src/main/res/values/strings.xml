@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">WedPlan</string>
+    <string name="facebook_app_id">1374911209984852</string>
+    <string name="facebook_client_token">9701475c2aee0215e1f73ab78f7f9cc8</string>
 </resources>

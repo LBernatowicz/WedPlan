@@ -16,4 +16,5 @@ export enum ESdkButtonType {
   twitter = 'twitter',
   github = 'github',
   apple = 'apple',
+  google = 'google',
 }

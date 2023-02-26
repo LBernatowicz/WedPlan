@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { TouchableOpacity, StyleSheet, Text } from 'react-native';
+import { TouchableOpacity, StyleSheet, Text, Platform } from 'react-native';
 import { EButtonType } from './type/EButtonType';
 import { colors } from '../../assets/utils/colors';
 
@@ -36,7 +36,7 @@ const Button = ({
       style={[
         styles.enableButton,
         selectButtonType(buttonType),
-        styles.enableShadow,
+        buttonType !== EButtonType.ghost && styles.enableShadow,
       ]}
       onPress={action}>
       <Text style={[styles.text, selectButtonType(buttonType)]}>{title}</Text>
@@ -48,33 +48,37 @@ const styles = StyleSheet.create({
   enableButton: {
     marginHorizontal: 15,
     marginVertical: 10,
-    maxHeight: 50,
+    height: 50,
     textAlign: 'center',
+    borderRadius: 10,
     justifyContent: 'center',
     alignItems: 'center',
   },
   text: {
     color: colors.text.black,
     fontWeight: '500',
-    lineHeight: 50,
+    lineHeight: 40,
     fontSize: 14,
+    borderRadius: 10,
+    width: Platform.OS === 'android' ? '100%' : 'auto',
+    textAlign: 'center',
+    backgroundColor: 'transparent',
   },
   enableShadow: {
+    elevation: 5,
     shadowOffset: {
       width: 5,
       height: 5,
     },
+    shadowColor: 'black',
     shadowOpacity: 0.1,
   },
   primaryButton: {
     backgroundColor: colors.main.primary,
-    borderRadius: 10,
-    flex: 1,
   },
   secondaryButton: {
     backgroundColor: colors.main.secondary,
     borderRadius: 10,
-    flex: 1,
   },
   ghostButton: {
     borderRadius: 10,

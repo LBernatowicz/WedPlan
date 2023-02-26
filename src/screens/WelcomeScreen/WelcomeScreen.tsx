@@ -5,7 +5,7 @@ const WelcomeScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View>
-        <Text>Welcomjkhjhke screen</Text>
+        <Text>fsdgdfg</Text>
       </View>
     </SafeAreaView>
   );

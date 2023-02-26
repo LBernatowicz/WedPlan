@@ -1,24 +1,28 @@
-/* eslint-disable */
-import React, {ReactElement, useEffect, useState} from 'react';
-import {StyleProp, StyleSheet, TouchableOpacity} from 'react-native';
-import { colors } from '../../assets/utils/colors';
-import {IconFacebook, IconGithub, IconTwitter} from '../../assets/svg/Index';
+import React, { ReactElement, useEffect, useState } from 'react';
+import { StyleProp, StyleSheet, TouchableOpacity } from 'react-native';
+import { colors } from 'assets/utils/colors';
+import {
+  IconFacebook,
+  IconGithub,
+  IconGoogle,
+  IconTwitter,
+} from 'assets/svg/Index';
 
 interface ISdkLoginProps {
   size: 'small' | 'medium' | 'large';
-  icon: 'facebook' | 'twitter' | 'github';
+  icon: 'facebook' | 'twitter' | 'github' | 'google';
   action: () => void;
 }
 
 interface IIconInterface {
-  icon: ReactElement,
-  bgColor: string,
-  externalStyle?: StyleProp<any>,
+  icon: ReactElement;
+  bgColor: string;
+  externalStyle?: StyleProp<any>;
 }
 
 const SdkLoginButton = ({ size, icon, action }: ISdkLoginProps) => {
   const [iconType, setIconType] = useState<IIconInterface>({
-    icon: <IconFacebook width={20} height={20} color={'red'}/>,
+    icon: <IconFacebook width={20} height={20} color={'red'} />,
     bgColor: 'blue',
     externalStyle: null,
   });
@@ -39,24 +43,45 @@ const SdkLoginButton = ({ size, icon, action }: ISdkLoginProps) => {
     switch (icon) {
       case 'facebook':
         return setIconType({
-          icon: <IconFacebook width={30} height={30} fill={colors.external.white}/>,
+          icon: (
+            <IconFacebook width={30} height={30} fill={colors.external.white} />
+          ),
           bgColor: colors.external.facebook,
           externalStyle: styles.facebookIcon,
         });
       case 'twitter':
         return setIconType({
-          icon: <IconTwitter width={30} height={30} fill={colors.external.twitter}/>,
+          icon: (
+            <IconTwitter
+              width={30}
+              height={30}
+              fill={colors.external.twitter}
+            />
+          ),
           bgColor: colors.external.white,
+          externalStyle: { marginHorizontal: 5 },
         });
       case 'github':
         return setIconType({
-          icon: <IconGithub width={35} height={35} fill={colors.external.white}/>,
+          icon: (
+            <IconGithub width={35} height={35} fill={colors.external.white} />
+          ),
           bgColor: colors.external.black,
+          externalStyle: { marginHorizontal: 5 },
+        });
+      case 'google':
+        return setIconType({
+          icon: <IconGoogle width={35} height={35} />,
+          bgColor: colors.external.white,
+          externalStyle: { marginHorizontal: 5 },
         });
       default:
         return setIconType({
-          icon: <IconFacebook width={20} height={20} fill={colors.external.white}/>,
+          icon: (
+            <IconGoogle width={20} height={20} fill={colors.external.white} />
+          ),
           bgColor: colors.external.twitter,
+          externalStyle: { marginHorizontal: 5 },
         });
     }
   };
@@ -70,8 +95,8 @@ const SdkLoginButton = ({ size, icon, action }: ISdkLoginProps) => {
       style={[
         sizeSelectorHandler(),
         styles.shadows,
-          styles.iconCenter,
-          iconType.externalStyle && iconType.externalStyle,
+        styles.iconCenter,
+        iconType.externalStyle && iconType.externalStyle,
         { backgroundColor: iconType.bgColor },
       ]}
       onPress={action}>
@@ -87,6 +112,7 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   shadows: {
+    elevation: 5,
     shadowOpacity: 0.2,
     shadowOffset: {
       width: 1,
@@ -108,7 +134,8 @@ const styles = StyleSheet.create({
   facebookIcon: {
     justifyContent: 'flex-end',
     alignItems: 'flex-end',
-  }
+    marginHorizontal: 10,
+  },
 });
 
 export default SdkLoginButton;

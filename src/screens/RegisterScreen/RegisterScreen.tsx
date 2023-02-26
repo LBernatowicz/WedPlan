@@ -19,13 +19,20 @@ import {
   handleGoogleSignIn,
   handleSignUp,
 } from 'helpers/Authorization/AuthorizationHelpers';
-import { EButtonType } from 'components/Buttons/type/EButtonType';
+import {
+  EButtonType,
+  ESdkButtonType,
+  ESizeButton,
+} from 'components/Buttons/type/EButtonType';
 import LottieView from 'lottie-react-native';
 import SdkLoginButton from 'components/Buttons/SdkLoginButton';
+import { useTranslation } from 'react-i18next';
 
 const lottie = require('assets/lottie/WeddingRings2.json');
 
 const RegisterScreen = () => {
+  const { t } = useTranslation();
+
   const { control, handleSubmit } = useForm({});
   const navigation = useNavigation();
 
@@ -68,41 +75,41 @@ const RegisterScreen = () => {
         />
       </View>
       <View style={styles.inputsContainer}>
-        <Text style={styles.headerText}>Sign Up!</Text>
-        <Text style={styles.secondaryText}>Please sign up to continue</Text>
+        <Text style={styles.headerText}>{t('RegisterScreen.title')}</Text>
+        <Text style={styles.secondaryText}>{t('RegisterScreen.bio')}</Text>
         <InputWithForm
           control={control}
           name={'email'}
-          placeholder={'Email'}
+          placeholder={t('RegisterScreen.form.textInput.login')}
           rule={{ pattern: TValidationRules.emailValidation }}
         />
         <InputWithForm
           control={control}
           secured
           name={'password'}
-          placeholder={'Password'}
+          placeholder={t('RegisterScreen.form.textInput.password')}
           rule={{ pattern: TValidationRules.passwordValidation }}
         />
         <InputWithForm
           control={control}
           secured
           name={'repeatPassword'}
-          placeholder={'Repeat Password'}
+          placeholder={t('RegisterScreen.form.textInput.repeatPassword')}
           rule={{
             validate: (repeatPassword: string) =>
               repeatPassword === formControl.password ||
-              'Password is not match',
+              t('RegisterScreen.form.textInput.repeatPasswordError'),
           }}
         />
       </View>
       <View style={styles.buttonContainer}>
         <Button
-          title={'Register'}
+          title={t('RegisterScreen.button.register')}
           action={handleSubmit(onSubmitSignUp)}
           buttonType={EButtonType.secondary}
         />
       </View>
-      <Divider text={'or'} />
+      <Divider text={t('RegisterScreen.divider')} />
       <View style={styles.externalLoginContainer}>
         <GoogleSigninButton
           size={GoogleSigninButton.Size.Icon}
@@ -110,25 +117,25 @@ const RegisterScreen = () => {
           onPress={handleGoogleSignIn}
         />
         <SdkLoginButton
-          size={'small'}
-          icon={'facebook'}
+          size={ESizeButton.small}
+          icon={ESdkButtonType.facebook}
           action={() => console.log('ds')}
         />
         <SdkLoginButton
-          size={'small'}
-          icon={'twitter'}
+          size={ESizeButton.small}
+          icon={ESdkButtonType.twitter}
           action={() => console.log('ds')}
         />
         <SdkLoginButton
-          size={'small'}
-          icon={'github'}
+          size={ESizeButton.small}
+          icon={ESdkButtonType.github}
           action={() => console.log('ds')}
         />
       </View>
       <View style={styles.registerContainer}>
-        <Text>You can create account here!</Text>
+        <Text>{t('RegisterScreen.goToRegister.info')}</Text>
         <Button
-          title={'Login'}
+          title={t('RegisterScreen.goToRegister.register')}
           action={handleNavigationToLogin}
           buttonType={EButtonType.ghost}
         />

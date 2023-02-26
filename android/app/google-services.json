@@ -14,6 +14,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "970877023178-2b4hca06im54etestjuuch7llql5k6vq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.wedplan",
+            "certificate_hash": "a0c07d056c79b12e23e420404625e30673a82ea1"
+          }
+        },
+        {
           "client_id": "970877023178-hutr7os4nj9fk9ojk41mr3tvm6tpv1l3.apps.googleusercontent.com",
           "client_type": 3
         }

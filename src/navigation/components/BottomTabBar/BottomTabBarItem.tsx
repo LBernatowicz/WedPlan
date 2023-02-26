@@ -7,13 +7,13 @@ import Animated, {
   useAnimatedStyle,
 } from 'react-native-reanimated';
 import useAnimatedPress, { AnimationType } from 'hooks/ui/useAnimatedPress';
-import { AppRouteScreensType } from '../../types/AppRouteType';
+import { AppRouteScreensType } from 'navigation/types/AppRouteType';
 import {
   HashIconImg,
   ChurchIcon,
   WedRingIcon,
   TipLocationIcon,
-} from '../../../assets/icons';
+} from 'assets/icons';
 import { useTranslation } from 'react-i18next';
 
 type Props = {
@@ -48,11 +48,11 @@ const BottomTabBarItem = ({ isActive, routeName, onPress }: Props) => {
   const routeTranslation = useMemo(() => {
     switch (routeName) {
       case AppRouteScreensType.homeScreen:
-        return t('HomeScreen.KnL');
+        return t('BottomBar.invitationTitle');
       case AppRouteScreensType.welcomeScreen:
-        return t('WelcomeScreen');
+        return t('BottomBar.infoTitle');
       case AppRouteScreensType.mainScreen:
-        return t('MainScreen');
+        return t('BottomBar.fotoVideoTitle');
       default:
         return '';
     }

@@ -12,22 +12,15 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		2C89EBDE29688A93003D034E /* FBAEMKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C89EBDD29688A93003D034E /* FBAEMKit.xcframework */; };
-		2C89EBE029688B1B003D034E /* FBSDKCoreKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C89EBDF29688B1B003D034E /* FBSDKCoreKit.xcframework */; };
-		2C89EBE229688B5D003D034E /* FBSDKCoreKit_Basics.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C89EBE129688B5D003D034E /* FBSDKCoreKit_Basics.xcframework */; };
-		2C89EBE429688B63003D034E /* FBSDKGamingServicesKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C89EBE329688B63003D034E /* FBSDKGamingServicesKit.xcframework */; };
-		2C89EBE629688B69003D034E /* FBSDKLoginKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C89EBE529688B69003D034E /* FBSDKLoginKit.xcframework */; };
-		2C89EBE829688B72003D034E /* FBSDKShareKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C89EBE729688B72003D034E /* FBSDKShareKit.xcframework */; };
-		2C89EBEA29688BA1003D034E /* OpenSSL.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C89EBE929688BA1003D034E /* OpenSSL.xcframework */; };
-		2C89EBEC29688BB2003D034E /* glog.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C89EBEB29688BB2003D034E /* glog.xcframework */; };
-		2C89EBEE29688C10003D034E /* double-conversion.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C89EBED29688C10003D034E /* double-conversion.xcframework */; };
-		2C89EBF029688EE4003D034E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2C89EBEF29688EE4003D034E /* GoogleService-Info.plist */; };
-		2CCE0267295E50A700B86DAC /* hermes.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CCE0266295E50A700B86DAC /* hermes.xcframework */; };
-		2CCE0268295E50A700B86DAC /* hermes.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2CCE0266295E50A700B86DAC /* hermes.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		43D2884CF2564F8DB11B671D /* Lobster-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3C1CC1E4FB3C4C8C9D35FAEB /* Lobster-Regular.ttf */; };
+		2CC7F74B2996E91600761580 /* FBSDKCoreKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC7F7472996E90000761580 /* FBSDKCoreKit.xcframework */; };
+		2CC7F74C2996E91600761580 /* FBSDKCoreKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC7F7472996E90000761580 /* FBSDKCoreKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2CC7F74F2996E94600761580 /* FBSDKCoreKit_Basics.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC7F74E2996E94600761580 /* FBSDKCoreKit_Basics.xcframework */; };
+		2CC7F7502996E94600761580 /* FBSDKCoreKit_Basics.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC7F74E2996E94600761580 /* FBSDKCoreKit_Basics.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2CC7F7552996F0D600761580 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CC7F7542996F0D600761580 /* GoogleService-Info.plist */; };
+		2CC7F7562997990D00761580 /* FBSDKGamingServicesKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC7F7512996E96D00761580 /* FBSDKGamingServicesKit.xcframework */; };
+		2CC7F7572997990D00761580 /* FBSDKGamingServicesKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC7F7512996E96D00761580 /* FBSDKGamingServicesKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		7699B88040F8A987B510C191 /* libPods-WedPlan-WedPlanTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-WedPlan-WedPlanTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		A537F8EC7EF342829524C095 /* GreatVibes-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 95639FA3BDFA4BAF996B9C7B /* GreatVibes-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,13 +34,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		2CCE0269295E50A800B86DAC /* Embed Frameworks */ = {
+		2CC7F74D2996E91600761580 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				2CCE0268295E50A700B86DAC /* hermes.xcframework in Embed Frameworks */,
+				2CC7F74C2996E91600761580 /* FBSDKCoreKit.xcframework in Embed Frameworks */,
+				2CC7F7572997990D00761580 /* FBSDKGamingServicesKit.xcframework in Embed Frameworks */,
+				2CC7F7502996E94600761580 /* FBSDKCoreKit_Basics.xcframework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -65,26 +60,19 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = WedPlan/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = WedPlan/main.m; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-WedPlan-WedPlanTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WedPlan-WedPlanTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2C89EBDD29688A93003D034E /* FBAEMKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FBAEMKit.xcframework; path = Pods/FBAEMKit/XCFrameworks/FBAEMKit.xcframework; sourceTree = "<group>"; };
-		2C89EBDF29688B1B003D034E /* FBSDKCoreKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FBSDKCoreKit.xcframework; path = Pods/FBSDKCoreKit/XCFrameworks/FBSDKCoreKit.xcframework; sourceTree = "<group>"; };
-		2C89EBE129688B5D003D034E /* FBSDKCoreKit_Basics.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FBSDKCoreKit_Basics.xcframework; path = Pods/FBSDKCoreKit_Basics/XCFrameworks/FBSDKCoreKit_Basics.xcframework; sourceTree = "<group>"; };
-		2C89EBE329688B63003D034E /* FBSDKGamingServicesKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FBSDKGamingServicesKit.xcframework; path = Pods/FBSDKGamingServicesKit/XCFrameworks/FBSDKGamingServicesKit.xcframework; sourceTree = "<group>"; };
-		2C89EBE529688B69003D034E /* FBSDKLoginKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FBSDKLoginKit.xcframework; path = Pods/FBSDKLoginKit/XCFrameworks/FBSDKLoginKit.xcframework; sourceTree = "<group>"; };
-		2C89EBE729688B72003D034E /* FBSDKShareKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FBSDKShareKit.xcframework; path = Pods/FBSDKShareKit/XCFrameworks/FBSDKShareKit.xcframework; sourceTree = "<group>"; };
-		2C89EBE929688BA1003D034E /* OpenSSL.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = OpenSSL.xcframework; path = "Pods/OpenSSL-Universal/Frameworks/OpenSSL.xcframework"; sourceTree = "<group>"; };
-		2C89EBEB29688BB2003D034E /* glog.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = glog.xcframework; path = "Pods/Flipper-Glog/Frameworks/glog.xcframework"; sourceTree = "<group>"; };
-		2C89EBED29688C10003D034E /* double-conversion.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = "double-conversion.xcframework"; path = "Pods/Flipper-DoubleConversion/Frameworks/double-conversion.xcframework"; sourceTree = "<group>"; };
-		2C89EBEF29688EE4003D034E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "WedPlan/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		2CCE0266295E50A700B86DAC /* hermes.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = hermes.xcframework; path = "Pods/hermes-engine/destroot/Library/Frameworks/universal/hermes.xcframework"; sourceTree = "<group>"; };
-		2CE55D96297BFED0006808A4 /* WedPlan.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = WedPlan.entitlements; path = WedPlan/WedPlan.entitlements; sourceTree = "<group>"; };
+		2CC7F73D2996E82C00761580 /* FBAEMKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FBAEMKit.xcframework; path = Pods/FBAEMKit/XCFrameworks/FBAEMKit.xcframework; sourceTree = "<group>"; };
+		2CC7F7412996E83100761580 /* libFirebaseAuth.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libFirebaseAuth.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CC7F7432996E83800761580 /* glog.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = glog.xcframework; path = "Pods/Flipper-Glog/Frameworks/glog.xcframework"; sourceTree = "<group>"; };
+		2CC7F7472996E90000761580 /* FBSDKCoreKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FBSDKCoreKit.xcframework; path = Pods/FBSDKCoreKit/XCFrameworks/FBSDKCoreKit.xcframework; sourceTree = "<group>"; };
+		2CC7F74E2996E94600761580 /* FBSDKCoreKit_Basics.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FBSDKCoreKit_Basics.xcframework; path = Pods/FBSDKCoreKit_Basics/XCFrameworks/FBSDKCoreKit_Basics.xcframework; sourceTree = "<group>"; };
+		2CC7F7512996E96D00761580 /* FBSDKGamingServicesKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FBSDKGamingServicesKit.xcframework; path = Pods/FBSDKGamingServicesKit/XCFrameworks/FBSDKGamingServicesKit.xcframework; sourceTree = "<group>"; };
+		2CC7F7542996F0D600761580 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Desktop/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-WedPlan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WedPlan.debug.xcconfig"; path = "Target Support Files/Pods-WedPlan/Pods-WedPlan.debug.xcconfig"; sourceTree = "<group>"; };
-		3C1CC1E4FB3C4C8C9D35FAEB /* Lobster-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lobster-Regular.ttf"; path = "../src/assets/fonts/Lobster-Regular.ttf"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-WedPlan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WedPlan.release.xcconfig"; path = "Target Support Files/Pods-WedPlan/Pods-WedPlan.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-WedPlan-WedPlanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WedPlan-WedPlanTests.debug.xcconfig"; path = "Target Support Files/Pods-WedPlan-WedPlanTests/Pods-WedPlan-WedPlanTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-WedPlan.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WedPlan.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = WedPlan/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-WedPlan-WedPlanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WedPlan-WedPlanTests.release.xcconfig"; path = "Target Support Files/Pods-WedPlan-WedPlanTests/Pods-WedPlan-WedPlanTests.release.xcconfig"; sourceTree = "<group>"; };
-		95639FA3BDFA4BAF996B9C7B /* GreatVibes-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "GreatVibes-Regular.ttf"; path = "../src/assets/fonts/GreatVibes-Regular.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -101,17 +89,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C89EBEE29688C10003D034E /* double-conversion.xcframework in Frameworks */,
-				2C89EBEC29688BB2003D034E /* glog.xcframework in Frameworks */,
-				2C89EBEA29688BA1003D034E /* OpenSSL.xcframework in Frameworks */,
-				2C89EBE829688B72003D034E /* FBSDKShareKit.xcframework in Frameworks */,
-				2C89EBE629688B69003D034E /* FBSDKLoginKit.xcframework in Frameworks */,
-				2C89EBE429688B63003D034E /* FBSDKGamingServicesKit.xcframework in Frameworks */,
-				2C89EBE229688B5D003D034E /* FBSDKCoreKit_Basics.xcframework in Frameworks */,
-				2C89EBE029688B1B003D034E /* FBSDKCoreKit.xcframework in Frameworks */,
-				2C89EBDE29688A93003D034E /* FBAEMKit.xcframework in Frameworks */,
+				2CC7F74B2996E91600761580 /* FBSDKCoreKit.xcframework in Frameworks */,
+				2CC7F74F2996E94600761580 /* FBSDKCoreKit_Basics.xcframework in Frameworks */,
+				2CC7F7562997990D00761580 /* FBSDKGamingServicesKit.xcframework in Frameworks */,
 				0C80B921A6F3F58F76C31292 /* libPods-WedPlan.a in Frameworks */,
-				2CCE0267295E50A700B86DAC /* hermes.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,8 +119,6 @@
 		13B07FAE1A68108700A75B9A /* WedPlan */ = {
 			isa = PBXGroup;
 			children = (
-				2CE55D96297BFED0006808A4 /* WedPlan.entitlements */,
-				2C89EBEF29688EE4003D034E /* GoogleService-Info.plist */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -153,16 +132,12 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2C89EBED29688C10003D034E /* double-conversion.xcframework */,
-				2C89EBEB29688BB2003D034E /* glog.xcframework */,
-				2C89EBE929688BA1003D034E /* OpenSSL.xcframework */,
-				2C89EBE729688B72003D034E /* FBSDKShareKit.xcframework */,
-				2C89EBE529688B69003D034E /* FBSDKLoginKit.xcframework */,
-				2C89EBE329688B63003D034E /* FBSDKGamingServicesKit.xcframework */,
-				2C89EBE129688B5D003D034E /* FBSDKCoreKit_Basics.xcframework */,
-				2C89EBDF29688B1B003D034E /* FBSDKCoreKit.xcframework */,
-				2C89EBDD29688A93003D034E /* FBAEMKit.xcframework */,
-				2CCE0266295E50A700B86DAC /* hermes.xcframework */,
+				2CC7F7512996E96D00761580 /* FBSDKGamingServicesKit.xcframework */,
+				2CC7F74E2996E94600761580 /* FBSDKCoreKit_Basics.xcframework */,
+				2CC7F7472996E90000761580 /* FBSDKCoreKit.xcframework */,
+				2CC7F7432996E83800761580 /* glog.xcframework */,
+				2CC7F7412996E83100761580 /* libFirebaseAuth.a */,
+				2CC7F73D2996E82C00761580 /* FBAEMKit.xcframework */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				5DCACB8F33CDC322A6C60F78 /* libPods-WedPlan.a */,
 				19F6CBCC0A4E27FBF8BF4A61 /* libPods-WedPlan-WedPlanTests.a */,
@@ -177,25 +152,16 @@
 			name = Libraries;
 			sourceTree = "<group>";
 		};
-		8376CE50949B431D90ABF7A5 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				95639FA3BDFA4BAF996B9C7B /* GreatVibes-Regular.ttf */,
-				3C1CC1E4FB3C4C8C9D35FAEB /* Lobster-Regular.ttf */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				2CC7F7542996F0D600761580 /* GoogleService-Info.plist */,
 				13B07FAE1A68108700A75B9A /* WedPlan */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* WedPlanTests */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
-				8376CE50949B431D90ABF7A5 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -258,8 +224,8 @@
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
 				00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */,
 				E235C05ADACE081382539298 /* [CP] Copy Pods Resources */,
-				2CCE0269295E50A800B86DAC /* Embed Frameworks */,
-				4DC3727F7B66F5418F7FF426 /* [CP-User] [RNFB] Core Configuration */,
+				07FE8E07986B2D58943B4C50 /* [CP-User] [RNFB] Core Configuration */,
+				2CC7F74D2996E91600761580 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -320,9 +286,7 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				2C89EBF029688EE4003D034E /* GoogleService-Info.plist in Resources */,
-				A537F8EC7EF342829524C095 /* GreatVibes-Regular.ttf in Resources */,
-				43D2884CF2564F8DB11B671D /* Lobster-Regular.ttf in Resources */,
+				2CC7F7552996F0D600761580 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,7 +311,7 @@
 		};
 		00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
@@ -357,12 +321,12 @@
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-WedPlan/Pods-WedPlan-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WedPlan/Pods-WedPlan-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4DC3727F7B66F5418F7FF426 /* [CP-User] [RNFB] Core Configuration */ = {
+		07FE8E07986B2D58943B4C50 /* [CP-User] [RNFB] Core Configuration */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -577,7 +541,6 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = WedPlan/WedPlan.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = WedPlan/Info.plist;
@@ -585,6 +548,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -604,13 +568,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = WedPlan/WedPlan.entitlements;
 				CURRENT_PROJECT_VERSION = 1;
 				INFOPLIST_FILE = WedPlan/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",

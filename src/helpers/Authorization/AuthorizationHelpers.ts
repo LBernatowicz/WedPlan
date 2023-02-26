@@ -29,11 +29,13 @@ export const handleResetPassword = async (email: string) => {
 
 export const handleGoogleSignIn = async (externalAction?: () => void) => {
   await GoogleSignin.configure({
-    webClientId: Config.IOS_CLIENT_ID,
+    webClientId: Config.WEB_CLIENT_ID,
     offlineAccess: false,
   });
-  await GoogleSignin.hasPlayServices({});
-  const userInfo = await GoogleSignin.signIn();
+  await GoogleSignin.hasPlayServices({
+    showPlayServicesUpdateDialog: true,
+  });
+  const userInfo = await GoogleSignin.signIn({});
   const credential = firebase.auth.GoogleAuthProvider.credential(
     userInfo?.idToken,
   );

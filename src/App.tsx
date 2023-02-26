@@ -9,10 +9,14 @@ import { store } from './store/setupStore';
 import { PersistGate } from 'redux-persist/integration/react';
 import { persistStore } from 'redux-persist';
 import Toast from './components/Toast/Toast';
+import i18n from './config/translations/i18n';
 
 const persistor = persistStore(store);
 
+const translations = () => i18n;
+
 const App = () => {
+  translations();
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
