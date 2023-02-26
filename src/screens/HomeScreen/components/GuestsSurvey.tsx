@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { useForm, useWatch } from 'react-hook-form';
-import Button from '../../../components/Button/Button';
+import Button from '../../../components/Buttons/Button';
 import RadioButtonController from '../../../components/RadioButtonController/RadioButtonController';
+import { EButtonType } from '../../../components/Buttons/type/EButtonType';
 
 export const dataMock = [
   {
@@ -52,8 +53,12 @@ const GuestsSurvey = () => {
       </View>
       {!submit && (
         <View style={styles.buttonsContainers}>
-          <Button title={'Potwierdz'} action={() => setSubmit(!submit)} />
-          <Button title={'Odmów'} buttonType={'secondary'} />
+          <Button
+            title={'Potwierdz'}
+            buttonType={EButtonType.secondary}
+            action={() => setSubmit(!submit)}
+          />
+          <Button title={'Odmów'} />
         </View>
       )}
       {submit &&
@@ -85,6 +90,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#F8C586',
     borderRadius: 20,
     margin: 10,
+    flex: 1,
   },
   buttonsContainers: {
     flexDirection: 'row',

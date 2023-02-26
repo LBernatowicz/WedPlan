@@ -24,7 +24,7 @@ ios/.xcode.env.local
 
 .env
 .env.production
-.env.staging
+.env
 
 # Sentry
 sentry.properties

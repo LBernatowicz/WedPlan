@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { View, StyleSheet, ScrollView, Image } from 'react-native';
 
 // @ts-ignore
@@ -9,8 +9,11 @@ import invitation from '/assets/images/invitation.jpg';
 // @ts-ignore
 import CountDown from 'react-native-countdown-component';
 import GuestsSurvey from './components/GuestsSurvey';
+import Config from 'react-native-config';
 
 const HomeScreen = () => {
+  const scrollRef = useRef();
+  console.log('@@@@', Config.IOS_CLIENT_ID);
   return (
     <View style={styles.container}>
       <Image
@@ -19,6 +22,7 @@ const HomeScreen = () => {
         blurRadius={3}
       />
       <ScrollView
+        ref={scrollRef.current}
         style={styles.bodyWrapperContainer}
         contentContainerStyle={styles.bodyScrollContainerStyle}>
         <View style={styles.bodyContainer}>
@@ -45,6 +49,7 @@ const styles = StyleSheet.create({
     height: '100%',
   },
   backgroundImage: {
+    flex: 1,
     position: 'absolute',
     opacity: 0.1,
     resizeMode: 'cover',
@@ -60,6 +65,7 @@ const styles = StyleSheet.create({
   },
   bodyWrapperContainer: {
     width: '100%',
+    flex: 1,
   },
   bodyScrollContainerStyle: {
     alignItems: 'center',
@@ -69,6 +75,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
+    height: '100%',
   },
   titleText: {
     textAlign: 'center',
@@ -79,7 +86,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     position: 'absolute',
-    bottom: 150,
+    bottom: '20%',
     width: '100%',
     height: 70,
   },

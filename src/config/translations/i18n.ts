@@ -6,7 +6,7 @@ import i18n from 'i18next';
 import moment from 'moment';
 import { initReactI18next } from 'react-i18next';
 
-import pl from './pl';
+import pl from 'config/translations/pl';
 
 enum AppLocalsType {
   polish = 'pl',

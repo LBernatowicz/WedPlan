@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "970877023178",
+    "project_id": "wedplan-5c0e0",
+    "storage_bucket": "wedplan-5c0e0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:970877023178:android:be33f3e779615bed141533",
+        "android_client_info": {
+          "package_name": "com.wedplan"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "970877023178-2b4hca06im54etestjuuch7llql5k6vq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.wedplan",
+            "certificate_hash": "a0c07d056c79b12e23e420404625e30673a82ea1"
+          }
+        },
+        {
+          "client_id": "970877023178-hutr7os4nj9fk9ojk41mr3tvm6tpv1l3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4PCpsTSGnPgKHj6XFYrN-NcdG6Zrd_NY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "970877023178-hutr7os4nj9fk9ojk41mr3tvm6tpv1l3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "970877023178-5f01tuu62g78fbpgk37oh0l9d0hq1tuf.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "WedPlan"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

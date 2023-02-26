@@ -1,11 +1,12 @@
 import React from 'react';
-import { SafeAreaView, View, Text, StyleSheet } from 'react-native';
+import { SafeAreaView, View, StyleSheet } from 'react-native';
+import { IconEyeSplash } from 'assets/svg/Index';
 
 const MainScreen = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View>
-        <Text>Main screen</Text>
+        <IconEyeSplash width={150} height={150} fill={'red'} />
       </View>
     </SafeAreaView>
   );
