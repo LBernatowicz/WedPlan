@@ -81,7 +81,7 @@ const LoginScreen = () => {
   const handleNavigationToMain = () => {
     // @ts-ignore
     navigation.navigate(AppRouteTabsType.mainTabs, {
-      screen: AppRouteScreensType.welcomeScreen,
+      screen: AppRouteScreensType.mapScreen,
     });
   };
 

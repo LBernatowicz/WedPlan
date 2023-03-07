@@ -3,7 +3,7 @@ import { ParamListBase } from '@react-navigation/native';
 
 type MainTabParamList = {
   [AppRouteScreensType.homeScreen]: ParamListBase | undefined;
-  [AppRouteScreensType.welcomeScreen]: ParamListBase | undefined;
+  [AppRouteScreensType.mapScreen]: ParamListBase | undefined;
   [AppRouteScreensType.mainScreen]: ParamListBase | undefined;
 };
 

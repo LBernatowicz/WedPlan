@@ -4,6 +4,7 @@ import IconEye from './eye.icon.svg';
 import IconEyeSplash from './eyeSlash.icon.svg';
 import IconTwitter from './twitter.icon.svg';
 import IconGoogle from './google.icon.svg';
+import IconClose from './close.icon.svg';
 
 export {
   IconEye,
@@ -12,4 +13,5 @@ export {
   IconGithub,
   IconTwitter,
   IconGoogle,
+  IconClose,
 };

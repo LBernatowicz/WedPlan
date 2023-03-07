@@ -20,7 +20,7 @@ import MainScreen from '../screens/MainScreen/MainScreen';
 import SplashScreen from '../screens/SplashScreen/SplashScreen';
 import LoginScreen from '../screens/LoginScreen/LoginScreen';
 import RegisterScreen from '../screens/RegisterScreen/RegisterScreen';
-import WelcomeScreen from '../screens/WelcomeScreen/WelcomeScreen';
+import MapScreen from '../screens/MapScreen/MapScreen';
 import HomeScreen from '../screens/HomeScreen/HomeScreen';
 import ResetPasswordScreen from '../screens/ResetPasswordScreen/ResetPasswordScreen';
 
@@ -75,8 +75,8 @@ const TabNavigation = () => {
         options={{ headerShown: false }}
       />
       <Tab.Screen
-        name={AppRouteScreensType.welcomeScreen}
-        component={WelcomeScreen}
+        name={AppRouteScreensType.mapScreen}
+        component={MapScreen}
         options={{ headerShown: false }}
       />
       <Tab.Screen

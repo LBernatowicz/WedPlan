@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { useForm, useWatch } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import Button from '../../../components/Buttons/Button';
 import RadioButtonController from '../../../components/RadioButtonController/RadioButtonController';
 import { EButtonType } from '../../../components/Buttons/type/EButtonType';
@@ -33,11 +33,6 @@ export const dietTypeMock = ['Mięsna', 'Wegetariańska', 'Wegańska'];
 const GuestsSurvey = () => {
   const [submit, setSubmit] = useState<boolean>(false);
   const { control } = useForm({});
-  const radioButtonWatcher = useWatch({ control });
-
-  useEffect(() => {
-    console.log(radioButtonWatcher);
-  }, [radioButtonWatcher]);
 
   return (
     <View style={styles.informationContainer}>
