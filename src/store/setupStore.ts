@@ -13,15 +13,17 @@ import {
 } from 'redux-persist';
 
 import toastReducer from './toastSlice';
+import modalReducer from './modalSlice';
 
 const persistConfig = {
   key: 'Storage',
   storage: AsyncStorage,
-  blacklist: ['toast'],
+  blacklist: ['toast', 'modal'],
 };
 
 const rootReducer = combineReducers({
   toast: toastReducer,
+  modal: modalReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

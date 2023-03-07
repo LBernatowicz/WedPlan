@@ -9,11 +9,9 @@ import invitation from '/assets/images/invitation.jpg';
 // @ts-ignore
 import CountDown from 'react-native-countdown-component';
 import GuestsSurvey from './components/GuestsSurvey';
-import Config from 'react-native-config';
 
 const HomeScreen = () => {
   const scrollRef = useRef();
-  console.log('@@@@', Config.IOS_CLIENT_ID);
   return (
     <View style={styles.container}>
       <Image

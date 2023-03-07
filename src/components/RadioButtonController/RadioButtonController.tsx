@@ -23,6 +23,7 @@ const RadioButtonController = ({
       render={({ field: { onChange, ref, value } }) => {
         return (
           <RadioButtonGroup
+            key={name}
             control={control}
             orientation={orientation}
             onChange={onChange}
