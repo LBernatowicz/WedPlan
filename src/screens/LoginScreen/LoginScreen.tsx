@@ -130,7 +130,6 @@ const LoginScreen = () => {
       isKeyboardIsClose.remove();
     };
   }, []);
-
   useEffect(() => {
     getVersions();
     console.log('keyboard', isKeyboardVisible, lottieSize.value);
