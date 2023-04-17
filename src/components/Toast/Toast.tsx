@@ -5,12 +5,15 @@ import { colors } from 'assets/utils/colors';
 import { EToastMessageType, hideToast } from 'store/toastSlice';
 import { fontSize } from 'assets/utils/fonts';
 import { useAppDispatch, useAppSelector } from 'store/setupStore';
+import { useTranslation } from 'react-i18next';
 
 const Toast = () => {
   const toast = useAppSelector((state) => state.toast);
 
   const { title, body, toastMessageType, visible, duration } = toast;
   const dispatch = useAppDispatch();
+
+  const { t } = useTranslation();
 
   const toastMessageTypeHandler = (toastType: string | null) => {
     switch (toastType) {
@@ -46,7 +49,7 @@ const Toast = () => {
           />
           <View style={styles.contentContainer}>
             <View style={styles.titleContainer}>
-              <Text style={styles.titleText}>{title}</Text>
+              <Text style={styles.titleText}>{t(`${title}`)}</Text>
             </View>
             <View style={styles.bodyContainer}>
               <Text style={styles.bodyText}>{body}</Text>

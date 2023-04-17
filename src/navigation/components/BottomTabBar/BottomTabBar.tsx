@@ -13,6 +13,7 @@ import Animated, {
 import { useAnimatedScrollValue } from '../../../hooks/ui/useAnimatedScroll';
 import { AppRouteScreensType } from '../../types/AppRouteType';
 import BottomTabBarItem from './BottomTabBarItem';
+import { colors } from '../../../assets/utils/colors';
 
 const BottomTabBar = ({
   state,
@@ -72,7 +73,7 @@ const BottomTabBar = ({
   const showMessagesNotification = hasNewMessages || hasNewNotifications;
 
   return (
-    <Animated.View style={[animatedStyle, { backgroundColor: 'transparent' }]}>
+    <Animated.View style={[animatedStyle, styles.bottomBarContainer]}>
       <View
         testID="NavigationBar"
         style={[
@@ -111,6 +112,10 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     borderTopRightRadius: 8,
     borderTopLeftRadius: 8,
+    backgroundColor: colors.main.secondary,
+  },
+  bottomBarContainer: {
+    backgroundColor: colors.external.white,
   },
 });
 

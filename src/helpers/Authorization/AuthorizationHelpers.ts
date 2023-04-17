@@ -6,18 +6,26 @@ import {
 import Config from 'react-native-config';
 import { AccessToken, LoginManager } from 'react-native-fbsdk-next';
 
-export const handleSignIn = async (email: string, password: string) => {
+export const handleSignIn = async (
+  email: string = '',
+  password: string = '',
+  navigation: () => any,
+  errorHandling: (value: string) => any,
+) => {
   firebase
     .auth()
     .signInWithEmailAndPassword(email, password)
-    .catch((error) => console.log(error));
+    .then(() => {
+      navigation();
+    })
+    .catch((value) => value && errorHandling(value));
 };
 
 export const handleSignUp = async (email: string, password: string) => {
   firebase
     .auth()
     .createUserWithEmailAndPassword(email, password)
-    .catch((error) => console.log('@error', error));
+    .catch((error) => console.log('login with email and password: ', error));
 };
 
 export const handleResetPassword = async (email: string) => {

@@ -44,7 +44,8 @@ import Animated, {
   useSharedValue,
   withTiming,
 } from 'react-native-reanimated';
-
+import { getVersion } from 'react-native-device-info';
+import firestore from '@react-native-firebase/firestore';
 const lottie = require('assets/lottie/weddingRings.json');
 
 const LoginScreen = () => {
@@ -101,8 +102,11 @@ const LoginScreen = () => {
   const onSubmitSignIn = () => {
     formControl.email &&
       formControl.password &&
-      handleSignIn(formControl.email, formControl.password).then(
+      handleSignIn(
+        formControl.email,
+        formControl.password,
         handleNavigationToMain,
+        () => console.log('sad'),
       );
   };
 
@@ -128,6 +132,7 @@ const LoginScreen = () => {
   }, []);
 
   useEffect(() => {
+    getVersions();
     console.log('keyboard', isKeyboardVisible, lottieSize.value);
     if (isKeyboardVisible) {
       lottieSize.value = withTiming(Platform.OS === 'ios' ? 1.5 : 1.9, {
@@ -142,6 +147,10 @@ const LoginScreen = () => {
     }
   }, [isKeyboardVisible, lottieSize, lottieTranslateY]);
 
+  const getVersions = async () => {
+    const versionCollection = await firestore().collection('versions').get();
+    console.log(versionCollection.docs, 'version', getVersion());
+  };
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView
@@ -235,7 +244,9 @@ const LoginScreen = () => {
             />
           </View>
           <View style={styles.registerContainer}>
-            <Text>{t('LoginScreen.goToRegister.info')}</Text>
+            <Text style={styles.textStyle}>
+              {t('LoginScreen.goToRegister.info')}
+            </Text>
             <Button
               title={t('LoginScreen.goToRegister.register')}
               action={handleNavigationToRegister}
@@ -318,6 +329,9 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'flex-end',
     position: Platform.OS === 'ios' ? 'relative' : 'relative',
+  },
+  textStyle: {
+    color: colors.text.black,
   },
 });
 

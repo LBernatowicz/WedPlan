@@ -37,7 +37,7 @@ target 'WedPlan' do
       pod 'GoogleMaps', :modular_headers => true
       pod 'Google-Maps-iOS-Utils', :modular_headers => true
       pod 'react-native-config', :path => '../node_modules/react-native-config'
-
+      pod 'React-RCTLinking', :path => '../node_modules/react-native/Libraries/LinkingIOS'
 
 
   fabric_enabled = ENV['USE_FABRIC']

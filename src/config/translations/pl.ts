@@ -6,6 +6,10 @@ const pl = {
     fotoVideoTitle: 'Foto & Video',
   },
   // Login Screen
+  LinkingScreen: {
+    header: 'Great! Your account is waiting!',
+    or: 'Or',
+  },
   LoginScreen: {
     title: 'Login!',
     bio: 'Please log in to continue',
@@ -52,6 +56,11 @@ const pl = {
   Navigation: {
     BottomTabBar: {
       home: 'Home',
+    },
+  },
+  Toasts: {
+    ErrorTitle: {
+      EmailLoginFail: 'Login Error!',
     },
   },
 };

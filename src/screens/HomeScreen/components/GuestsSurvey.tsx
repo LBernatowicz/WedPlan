@@ -35,7 +35,7 @@ const GuestsSurvey = () => {
   const { control } = useForm({});
 
   return (
-    <View style={styles.informationContainer}>
+    <View style={styles.informationContainer} key={123}>
       <View style={styles.informationTextContainer}>
         <Text style={styles.informationTextTitle}>
           {!submit ? 'Witaj!!' : 'To już niebawem!'}
@@ -52,15 +52,16 @@ const GuestsSurvey = () => {
             title={'Potwierdz'}
             buttonType={EButtonType.secondary}
             action={() => setSubmit(!submit)}
+            externalStyle={{ flex: 1 }}
           />
-          <Button title={'Odmów'} />
+          <Button title={'Odmów'} externalStyle={{ flex: 1 }} />
         </View>
       )}
       {submit &&
         dataMock.map((guest, index) => {
           return (
             <>
-              <View style={styles.informationTextContainer}>
+              <View style={styles.informationTextContainer} key={index}>
                 <Text style={styles.informationTextTitle}>{guest.name}!</Text>
                 <Text style={styles.informationTextBody}>
                   Jakiego rodzaju dietę preferujesz?

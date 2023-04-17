@@ -17,6 +17,7 @@ type AuthorizationRootParamList = {
   [AppRouteScreensType.loginScreen]: ParamListBase | undefined;
   [AppRouteScreensType.registerScreen]: ParamListBase | undefined;
   [AppRouteScreensType.resetPasswordScreen]: ParamListBase | undefined;
+  [AppRouteScreensType.linkingScreen]: ParamListBase | undefined | any;
 };
 
 export {
