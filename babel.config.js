@@ -3,7 +3,7 @@ module.exports = {
   plugins: [
     [
       'module-resolver',
-      require.resolve('babel-plugin-module-resolver'),
+      //require.resolve('babel-plugin-module-resolver'),
       {
         root: ['./src'],
         extensions: [

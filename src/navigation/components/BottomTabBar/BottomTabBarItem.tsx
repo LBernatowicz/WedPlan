@@ -15,6 +15,7 @@ import {
   TipLocationIcon,
 } from 'assets/icons';
 import { useTranslation } from 'react-i18next';
+import { colors } from '../../../assets/utils/colors';
 
 type Props = {
   isActive: boolean;
@@ -100,7 +101,7 @@ const BottomTabBarItem = ({ isActive, routeName, onPress }: Props) => {
             width: 36,
             height: 36,
             borderRadius: 36,
-            borderColor: 'blue',
+            borderColor: colors.main.secondary,
           },
           animationStyle,
         ]}>

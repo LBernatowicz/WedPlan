@@ -1,4 +1,4 @@
-import React, { useCallback, useRef } from 'react';
+import React, { memo, useCallback, useRef } from 'react';
 import {
   Platform,
   StyleSheet,
@@ -112,4 +112,5 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Modal;
+// @ts-ignore
+export default memo(Modal);
