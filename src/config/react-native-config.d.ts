@@ -8,4 +8,6 @@ declare module 'react-native-config' {
   export const WEB_CLIENT_ID: string;
   export const GOOGLE_API_MAPS: string;
   export const GOOGLE_IOS_REVERSED_CLIENT_ID: string;
+  export const FACEBOOK_ID: string;
+  export const FACEBOOK_ID_NUMBER: string;
 }

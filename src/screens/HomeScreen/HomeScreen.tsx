@@ -32,8 +32,8 @@ const HomeScreen = () => {
               timeToShow={['D', 'H', 'M', 'S']}
             />
           </View>
+          <GuestsSurvey />
         </View>
-        <GuestsSurvey />
       </ScrollView>
     </View>
   );

@@ -20,7 +20,7 @@ const App = () => {
   translations();
   return (
     <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
+      <PersistGate persistor={persistor}>
         <SafeAreaProvider>
           <ErrorBoundary>
             <AnimatedScrollProvider>

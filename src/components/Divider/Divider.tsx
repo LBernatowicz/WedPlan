@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import hairlineWidth = StyleSheet.hairlineWidth;
+import { colors } from 'assets/utils/colors';
 
 interface dividerProps {
   text: string;
@@ -26,12 +27,13 @@ const styles = StyleSheet.create({
   },
   text: {
     marginHorizontal: 10,
+    color: colors.text.black,
   },
   divider: {
     flex: 1,
     height: 1,
     borderWidth: hairlineWidth,
-    borderColor: 'black',
+    borderColor: colors.external.black,
     paddingHorizontal: 5,
   },
 });

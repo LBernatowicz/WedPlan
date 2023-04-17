@@ -5,7 +5,6 @@ import { EButtonType } from '../../Buttons/type/EButtonType';
 import { toHoursAndMinutesParser } from '../../../helpers/Parsers/Parsers';
 import { colors } from '../../../assets/utils/colors';
 import { LatLng } from 'react-native-maps';
-import { useAppSelector } from '../../../store/setupStore';
 
 export type TNavigationDetailsProps = {
   buttonTitle: string | undefined;
@@ -24,10 +23,7 @@ const NavigationDetails = ({
   destination,
   origin,
 }: TNavigationDetailsProps) => {
-  const modalData = useAppSelector((state) => state.modal);
   const timeParser = time && toHoursAndMinutesParser(Math.ceil(time));
-
-  console.log('[MODAL]: ', modalData);
 
   const externalMapsHandler = async () => {
     if (Platform.OS === 'android') {
