@@ -44,7 +44,8 @@ import Animated, {
   useSharedValue,
   withTiming,
 } from 'react-native-reanimated';
-
+import { getVersion } from 'react-native-device-info';
+import firestore from '@react-native-firebase/firestore';
 const lottie = require('assets/lottie/weddingRings.json');
 
 const LoginScreen = () => {
@@ -105,6 +106,7 @@ const LoginScreen = () => {
         formControl.email,
         formControl.password,
         handleNavigationToMain,
+        () => console.log('sad'),
       );
   };
 
@@ -128,7 +130,9 @@ const LoginScreen = () => {
       isKeyboardIsClose.remove();
     };
   }, []);
+
   useEffect(() => {
+    getVersions();
     console.log('keyboard', isKeyboardVisible, lottieSize.value);
     if (isKeyboardVisible) {
       lottieSize.value = withTiming(Platform.OS === 'ios' ? 1.5 : 1.9, {
@@ -143,6 +147,10 @@ const LoginScreen = () => {
     }
   }, [isKeyboardVisible, lottieSize, lottieTranslateY]);
 
+  const getVersions = async () => {
+    const versionCollection = await firestore().collection('versions').get();
+    console.log(versionCollection.docs, 'version', getVersion());
+  };
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView
