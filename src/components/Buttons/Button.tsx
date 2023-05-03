@@ -1,18 +1,21 @@
 import React, { useEffect } from 'react';
 import { TouchableOpacity, StyleSheet, Text, Platform } from 'react-native';
 import { EButtonType } from './type/EButtonType';
-import { colors } from '../../assets/utils/colors';
+import { colors } from 'assets/utils/colors';
+import { StyleProps } from 'react-native-reanimated';
 
 type Props = {
   title: string;
   action?: () => void;
   buttonType?: EButtonType;
+  externalStyle?: StyleProps;
 };
 
 const Button = ({
   title,
   buttonType = EButtonType.primary,
   action = () => console.log('ok'),
+  externalStyle,
 }: Props) => {
   const selectButtonType = (type: string) => {
     switch (type) {
@@ -37,6 +40,7 @@ const Button = ({
         styles.enableButton,
         selectButtonType(buttonType),
         buttonType !== EButtonType.ghost && styles.enableShadow,
+        externalStyle,
       ]}
       onPress={action}>
       <Text style={[styles.text, selectButtonType(buttonType)]}>{title}</Text>

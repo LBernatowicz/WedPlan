@@ -6,6 +6,10 @@ const pl = {
     fotoVideoTitle: 'Foto & Video',
   },
   // Login Screen
+  LinkingScreen: {
+    header: 'Great! Your account is waiting!',
+    or: 'Or',
+  },
   LoginScreen: {
     title: 'Login!',
     bio: 'Please log in to continue',
@@ -47,11 +51,22 @@ const pl = {
       },
     },
   },
+  VersioningScreen: {
+    title: 'New update is ready!',
+    bio: 'We create new version of app with more interesting modules for you!',
+    updateButton: 'Update your App!',
+    closeAppButton: 'Shutdown App ;(',
+  },
   WelcomeScreen: 'welcome screen',
   MainScreen: 'main screen',
   Navigation: {
     BottomTabBar: {
       home: 'Home',
+    },
+  },
+  Toasts: {
+    ErrorTitle: {
+      EmailLoginFail: 'Login Error!',
     },
   },
 };

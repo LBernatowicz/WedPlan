@@ -53,6 +53,7 @@ const InputWithForm = ({
               value={value}
               secureTextEntry={secured && !hidePassword}
               onBlur={onBlur}
+              placeholderTextColor={colors.text.blue}
               style={styles.container}
               ref={ref}
               {...rest}
@@ -87,7 +88,7 @@ const InputWithForm = ({
 const styles = StyleSheet.create({
   container: {
     width: '100%',
-    backgroundColor: 'white',
+    backgroundColor: colors.external.white,
     height: 50,
     marginVertical: margins.minVerticalMargin,
     paddingHorizontal: paddings.minHorizontalPadding,
@@ -97,6 +98,7 @@ const styles = StyleSheet.create({
       height: 5,
     },
     shadowOpacity: 0.1,
+    color: colors.text.black,
   },
   errorText: {
     color: colors.text.red,
