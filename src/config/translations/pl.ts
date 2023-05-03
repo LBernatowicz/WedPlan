@@ -51,6 +51,12 @@ const pl = {
       },
     },
   },
+  VersioningScreen: {
+    title: 'New update is ready!',
+    bio: 'We create new version of app with more interesting modules for you!',
+    updateButton: 'Update your App!',
+    closeAppButton: 'Shutdown App ;(',
+  },
   WelcomeScreen: 'welcome screen',
   MainScreen: 'main screen',
   Navigation: {
