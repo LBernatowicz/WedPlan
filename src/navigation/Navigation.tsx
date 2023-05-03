@@ -25,6 +25,7 @@ import HomeScreen from 'screens/HomeScreen/HomeScreen';
 import ResetPasswordScreen from 'screens/ResetPasswordScreen/ResetPasswordScreen';
 import LinkingScreen from 'screens/LinkingScreen/LinkingScreen';
 import { linking } from './linking/Linking';
+import VersioningScreen from '../screens/VersioningScreen/VersioningScreen';
 
 const Stack = createNativeStackNavigator<AppRootNavigationParamList>();
 const Tab = createBottomTabNavigator<MainTabParamList>();
@@ -51,6 +52,11 @@ const TabAuthorization = () => {
       <Auth.Screen
         name={AppRouteScreensType.registerScreen}
         component={RegisterScreen}
+        options={{ headerShown: false, gestureEnabled: false }}
+      />
+      <Auth.Screen
+        name={AppRouteScreensType.versioningScreen}
+        component={VersioningScreen}
         options={{ headerShown: false, gestureEnabled: false }}
       />
       <Auth.Screen
@@ -97,7 +103,7 @@ const TabNavigation = () => {
 
 const AppRootNavigation = () => {
   return (
-    <Stack.Navigator initialRouteName={AppRouteTabsType.authTabs}>
+    <Stack.Navigator initialRouteName={AppRouteTabsType.mainTabs}>
       <Stack.Screen
         name={AppRouteTabsType.authTabs}
         component={TabAuthorization}

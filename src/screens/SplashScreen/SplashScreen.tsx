@@ -7,6 +7,8 @@ import { AuthorizationRootParamList } from '../../navigation/types/Navigation';
 import { colors } from '../../assets/utils/colors';
 import LottieView from 'lottie-react-native';
 import { NativeStackScreenProps } from '@react-navigation/native-stack/src/types';
+import firestore from '@react-native-firebase/firestore';
+import { getVersion } from 'react-native-device-info';
 
 const lottie = require('assets/lottie/WeddingRings2.json');
 
@@ -25,13 +27,25 @@ const SplashScreen = ({
     [],
   );
 
+  const getVersions = async () => {
+    return await firestore().collection('versions').get();
+  };
+
   const navigateToLogin = useCallback(() => {
-    replace(
-      !loginViaQrCode
-        ? AppRouteScreensType.loginScreen
-        : AppRouteScreensType.linkingScreen,
-      { params },
-    );
+    getVersions().then((data) => {
+      data.docs.map((doc) => {
+        if (doc.data().version === getVersion()) {
+          replace(
+            !loginViaQrCode
+              ? AppRouteScreensType.loginScreen
+              : AppRouteScreensType.linkingScreen,
+            { params },
+          );
+        } else {
+          replace(AppRouteScreensType.versioningScreen);
+        }
+      });
+    });
   }, [replace, loginViaQrCode, params]);
 
   return (

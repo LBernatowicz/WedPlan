@@ -7,6 +7,7 @@ enum AppRouteScreensType {
   mainScreen = 'MainScreen',
   resetPasswordScreen = 'ResetPasswordScreen',
   linkingScreen = 'LinkingScreen',
+  versioningScreen = 'VersioningScreen',
 }
 
 enum AppRouteTabsType {

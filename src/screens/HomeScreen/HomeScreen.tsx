@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 import { View, StyleSheet, ScrollView, Image } from 'react-native';
 
 // @ts-ignore
@@ -11,7 +11,22 @@ import CountDown from 'react-native-countdown-component';
 import GuestsSurvey from './components/GuestsSurvey';
 
 const HomeScreen = () => {
+  // @ts-ignore
+  const [weddingDate, setWeddingDate] = useState<number>(
+    1701531000 - new Date().getTime() / 1000,
+  );
   const scrollRef = useRef();
+
+  const reloadCounter = useCallback(() => {
+    return (
+      <CountDown
+        until={weddingDate}
+        size={22}
+        timeToShow={['D', 'H', 'M', 'S']}
+      />
+    );
+  }, [weddingDate]);
+
   return (
     <View style={styles.container}>
       <Image
@@ -25,13 +40,7 @@ const HomeScreen = () => {
         contentContainerStyle={styles.bodyScrollContainerStyle}>
         <View style={styles.bodyContainer}>
           <Image source={invitation} style={styles.invitationImage} />
-          <View style={styles.countDownContainer}>
-            <CountDown
-              until={8640000 * 4}
-              size={22}
-              timeToShow={['D', 'H', 'M', 'S']}
-            />
-          </View>
+          <View style={styles.countDownContainer}>{reloadCounter()}</View>
           <GuestsSurvey />
         </View>
       </ScrollView>
