@@ -34,7 +34,13 @@ target 'WedPlan' do
       pod 'GoogleUtilities', :modular_headers => true
       pod 'DoubleConversion', :podspec => '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
       pod 'FBSDKGamingServicesKit', :modular_headers => true
+      pod 'GoogleMaps', :modular_headers => true
+      pod 'Google-Maps-iOS-Utils', :modular_headers => true
+      pod 'react-native-config', :path => '../node_modules/react-native-config'
+      pod 'React-RCTLinking', :path => '../node_modules/react-native/Libraries/LinkingIOS'
 
+
+  fabric_enabled = ENV['USE_FABRIC']
 
   use_react_native!(
     :path => config[:reactNativePath],

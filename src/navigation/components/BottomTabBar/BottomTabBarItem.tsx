@@ -15,6 +15,7 @@ import {
   TipLocationIcon,
 } from 'assets/icons';
 import { useTranslation } from 'react-i18next';
+import { colors } from '../../../assets/utils/colors';
 
 type Props = {
   isActive: boolean;
@@ -49,7 +50,7 @@ const BottomTabBarItem = ({ isActive, routeName, onPress }: Props) => {
     switch (routeName) {
       case AppRouteScreensType.homeScreen:
         return t('BottomBar.invitationTitle');
-      case AppRouteScreensType.welcomeScreen:
+      case AppRouteScreensType.mapScreen:
         return t('BottomBar.infoTitle');
       case AppRouteScreensType.mainScreen:
         return t('BottomBar.fotoVideoTitle');
@@ -62,7 +63,7 @@ const BottomTabBarItem = ({ isActive, routeName, onPress }: Props) => {
     switch (routeName) {
       case AppRouteScreensType.homeScreen:
         return WedRingIcon;
-      case AppRouteScreensType.welcomeScreen:
+      case AppRouteScreensType.mapScreen:
         return TipLocationIcon;
       case AppRouteScreensType.mainScreen:
         return ChurchIcon;
@@ -100,7 +101,7 @@ const BottomTabBarItem = ({ isActive, routeName, onPress }: Props) => {
             width: 36,
             height: 36,
             borderRadius: 36,
-            borderColor: 'blue',
+            borderColor: colors.main.secondary,
           },
           animationStyle,
         ]}>

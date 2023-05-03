@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import { useForm, useWatch } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import Button from '../../../components/Buttons/Button';
 import RadioButtonController from '../../../components/RadioButtonController/RadioButtonController';
 import { EButtonType } from '../../../components/Buttons/type/EButtonType';
@@ -33,14 +33,9 @@ export const dietTypeMock = ['Mięsna', 'Wegetariańska', 'Wegańska'];
 const GuestsSurvey = () => {
   const [submit, setSubmit] = useState<boolean>(false);
   const { control } = useForm({});
-  const radioButtonWatcher = useWatch({ control });
-
-  useEffect(() => {
-    console.log(radioButtonWatcher);
-  }, [radioButtonWatcher]);
 
   return (
-    <View style={styles.informationContainer}>
+    <View style={styles.informationContainer} key={123}>
       <View style={styles.informationTextContainer}>
         <Text style={styles.informationTextTitle}>
           {!submit ? 'Witaj!!' : 'To już niebawem!'}
@@ -57,15 +52,16 @@ const GuestsSurvey = () => {
             title={'Potwierdz'}
             buttonType={EButtonType.secondary}
             action={() => setSubmit(!submit)}
+            externalStyle={{ flex: 1 }}
           />
-          <Button title={'Odmów'} />
+          <Button title={'Odmów'} externalStyle={{ flex: 1 }} />
         </View>
       )}
       {submit &&
         dataMock.map((guest, index) => {
           return (
             <>
-              <View style={styles.informationTextContainer}>
+              <View style={styles.informationTextContainer} key={index}>
                 <Text style={styles.informationTextTitle}>{guest.name}!</Text>
                 <Text style={styles.informationTextBody}>
                   Jakiego rodzaju dietę preferujesz?

@@ -16,13 +16,16 @@ import {
   MainTabParamList,
 } from './types/Navigation';
 import BottomTabBar from './components/BottomTabBar/BottomTabBar';
-import MainScreen from '../screens/MainScreen/MainScreen';
-import SplashScreen from '../screens/SplashScreen/SplashScreen';
-import LoginScreen from '../screens/LoginScreen/LoginScreen';
-import RegisterScreen from '../screens/RegisterScreen/RegisterScreen';
-import WelcomeScreen from '../screens/WelcomeScreen/WelcomeScreen';
-import HomeScreen from '../screens/HomeScreen/HomeScreen';
-import ResetPasswordScreen from '../screens/ResetPasswordScreen/ResetPasswordScreen';
+import MainScreen from 'screens/MainScreen/MainScreen';
+import SplashScreen from 'screens/SplashScreen/SplashScreen';
+import LoginScreen from 'screens/LoginScreen/LoginScreen';
+import RegisterScreen from 'screens/RegisterScreen/RegisterScreen';
+import MapScreen from 'screens/MapScreen/MapScreen';
+import HomeScreen from 'screens/HomeScreen/HomeScreen';
+import ResetPasswordScreen from 'screens/ResetPasswordScreen/ResetPasswordScreen';
+import LinkingScreen from 'screens/LinkingScreen/LinkingScreen';
+import { linking } from './linking/Linking';
+import VersioningScreen from '../screens/VersioningScreen/VersioningScreen';
 
 const Stack = createNativeStackNavigator<AppRootNavigationParamList>();
 const Tab = createBottomTabNavigator<MainTabParamList>();
@@ -42,8 +45,18 @@ const TabAuthorization = () => {
         options={{ headerShown: false, gestureEnabled: false }}
       />
       <Auth.Screen
+        name={AppRouteScreensType.linkingScreen}
+        component={LinkingScreen}
+        options={{ headerShown: false, gestureEnabled: false }}
+      />
+      <Auth.Screen
         name={AppRouteScreensType.registerScreen}
         component={RegisterScreen}
+        options={{ headerShown: false, gestureEnabled: false }}
+      />
+      <Auth.Screen
+        name={AppRouteScreensType.versioningScreen}
+        component={VersioningScreen}
         options={{ headerShown: false, gestureEnabled: false }}
       />
       <Auth.Screen
@@ -75,8 +88,8 @@ const TabNavigation = () => {
         options={{ headerShown: false }}
       />
       <Tab.Screen
-        name={AppRouteScreensType.welcomeScreen}
-        component={WelcomeScreen}
+        name={AppRouteScreensType.mapScreen}
+        component={MapScreen}
         options={{ headerShown: false }}
       />
       <Tab.Screen
@@ -90,7 +103,7 @@ const TabNavigation = () => {
 
 const AppRootNavigation = () => {
   return (
-    <Stack.Navigator initialRouteName={AppRouteTabsType.authTabs}>
+    <Stack.Navigator initialRouteName={AppRouteTabsType.mainTabs}>
       <Stack.Screen
         name={AppRouteTabsType.authTabs}
         component={TabAuthorization}
@@ -112,7 +125,7 @@ type Props = {
 const Navigation: FC = ({ children }: Props) => {
   const navigationRef = useNavigationContainerRef();
   return (
-    <NavigationContainer ref={navigationRef}>
+    <NavigationContainer ref={navigationRef} linking={linking}>
       <AppRootNavigation />
       {children}
     </NavigationContainer>

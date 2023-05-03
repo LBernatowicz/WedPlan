@@ -1,5 +1,12 @@
-import React from 'react';
-import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
+import React, { Ref } from 'react';
+import {
+  View,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  Platform,
+} from 'react-native';
+import { colors } from '../../assets/utils/colors';
 
 type RadioButtonGroupProps = {
   orientation?: string;
@@ -9,7 +16,7 @@ type RadioButtonGroupProps = {
   enableRadioButtonColor?: string;
   control: any;
   onChange: any;
-  ref?: React.Ref<any>;
+  ref?: Ref<any>;
   value: number;
   formData: Array<string>;
 };
@@ -124,7 +131,7 @@ const RadioButtonGroup = ({
               isActive(index),
               externalBorderColor(),
             ]}>
-            <Text>{item}</Text>
+            <Text style={styles.text}>{item}</Text>
           </TouchableOpacity>
         );
       })}
@@ -152,6 +159,15 @@ const styles = StyleSheet.create({
     backgroundColor: 'yellow',
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  text: {
+    color: colors.text.black,
+    fontWeight: '400',
+    lineHeight: 35,
+    fontSize: 14,
+    width: Platform.OS === 'android' ? '100%' : 'auto',
+    textAlign: 'center',
+    backgroundColor: 'transparent',
   },
 });
 

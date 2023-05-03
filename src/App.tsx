@@ -10,6 +10,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { persistStore } from 'redux-persist';
 import Toast from './components/Toast/Toast';
 import i18n from './config/translations/i18n';
+import Modal from './components/Modal/Modal';
 
 const persistor = persistStore(store);
 
@@ -19,12 +20,13 @@ const App = () => {
   translations();
   return (
     <Provider store={store}>
-      <PersistGate loading={null} persistor={persistor}>
+      <PersistGate persistor={persistor}>
         <SafeAreaProvider>
           <ErrorBoundary>
             <AnimatedScrollProvider>
               <Navigation />
               <Toast />
+              <Modal />
             </AnimatedScrollProvider>
           </ErrorBoundary>
         </SafeAreaProvider>

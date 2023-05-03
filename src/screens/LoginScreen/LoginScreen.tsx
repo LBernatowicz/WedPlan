@@ -44,7 +44,6 @@ import Animated, {
   useSharedValue,
   withTiming,
 } from 'react-native-reanimated';
-
 const lottie = require('assets/lottie/weddingRings.json');
 
 const LoginScreen = () => {
@@ -81,7 +80,7 @@ const LoginScreen = () => {
   const handleNavigationToMain = () => {
     // @ts-ignore
     navigation.navigate(AppRouteTabsType.mainTabs, {
-      screen: AppRouteScreensType.welcomeScreen,
+      screen: AppRouteScreensType.mapScreen,
     });
   };
 
@@ -101,8 +100,11 @@ const LoginScreen = () => {
   const onSubmitSignIn = () => {
     formControl.email &&
       formControl.password &&
-      handleSignIn(formControl.email, formControl.password).then(
+      handleSignIn(
+        formControl.email,
+        formControl.password,
         handleNavigationToMain,
+        () => console.log('sad'),
       );
   };
 
@@ -126,7 +128,6 @@ const LoginScreen = () => {
       isKeyboardIsClose.remove();
     };
   }, []);
-
   useEffect(() => {
     console.log('keyboard', isKeyboardVisible, lottieSize.value);
     if (isKeyboardVisible) {
@@ -235,7 +236,9 @@ const LoginScreen = () => {
             />
           </View>
           <View style={styles.registerContainer}>
-            <Text>{t('LoginScreen.goToRegister.info')}</Text>
+            <Text style={styles.textStyle}>
+              {t('LoginScreen.goToRegister.info')}
+            </Text>
             <Button
               title={t('LoginScreen.goToRegister.register')}
               action={handleNavigationToRegister}
@@ -318,6 +321,9 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'flex-end',
     position: Platform.OS === 'ios' ? 'relative' : 'relative',
+  },
+  textStyle: {
+    color: colors.text.black,
   },
 });
 

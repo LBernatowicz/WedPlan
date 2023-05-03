@@ -2,10 +2,12 @@ enum AppRouteScreensType {
   splashScreen = 'SplashScreen',
   loginScreen = 'LoginScreen',
   registerScreen = 'RegisterScreen',
-  welcomeScreen = 'WelcomeScreen',
+  mapScreen = 'WelcomeScreen',
   homeScreen = 'HomeScreen',
   mainScreen = 'MainScreen',
   resetPasswordScreen = 'ResetPasswordScreen',
+  linkingScreen = 'LinkingScreen',
+  versioningScreen = 'VersioningScreen',
 }
 
 enum AppRouteTabsType {
