@@ -7,10 +7,50 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0088D4BF41A829AA9551833F /* libPods-WedPlanCommonPods-WedPlan.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D0C35E81CD54AC9FC54570CA /* libPods-WedPlanCommonPods-WedPlan.a */; };
 		00E356F31AD99517003FC87E /* WedPlanTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* WedPlanTests.m */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		2C15D1032A0598BA00DB11FC /* AIRGoogleMapUrlTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7F75D29ABCE0E00761580 /* AIRGoogleMapUrlTile.m */; };
+		2C15D1042A0598BA00DB11FC /* AIRGoogleMapHeatmap.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7F78629ABCE0E00761580 /* AIRGoogleMapHeatmap.m */; };
+		2C15D1052A0598BA00DB11FC /* RCTConvert+GMSMapViewType.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7F78229ABCE0E00761580 /* RCTConvert+GMSMapViewType.m */; };
+		2C15D1062A0598BA00DB11FC /* AIRGoogleMapPolygonManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7F76029ABCE0E00761580 /* AIRGoogleMapPolygonManager.m */; };
+		2C15D1072A0598BA00DB11FC /* AIRGoogleMapOverlayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7F78529ABCE0E00761580 /* AIRGoogleMapOverlayManager.m */; };
+		2C15D1082A0598BA00DB11FC /* AIRGMSPolyline.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7F77D29ABCE0E00761580 /* AIRGMSPolyline.m */; };
+		2C15D1092A0598BA00DB11FC /* AIRGoogleMapURLTileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7F76829ABCE0E00761580 /* AIRGoogleMapURLTileManager.m */; };
+		2C15D10A2A0598BA00DB11FC /* AIRGoogleMapCalloutSubviewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7F78329ABCE0E00761580 /* AIRGoogleMapCalloutSubviewManager.m */; };
+		2C15D10B2A0598BA00DB11FC /* AIRGoogleMapMarkerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7F77529ABCE0E00761580 /* AIRGoogleMapMarkerManager.m */; };
+		2C15D10C2A0598BA00DB11FC /* AIRGoogleMapMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7F76329ABCE0E00761580 /* AIRGoogleMapMarker.m */; };
+		2C15D10D2A0598BA00DB11FC /* AIRGMSMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7F78D29ABCE0E00761580 /* AIRGMSMarker.m */; };
+		2C15D10E2A0598BA00DB11FC /* AIRGoogleMapCalloutSubview.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7F78E29ABCE0E00761580 /* AIRGoogleMapCalloutSubview.m */; };
+		2C15D10F2A0598BA00DB11FC /* AIRGoogleMapOverlay.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7F77C29ABCE0E00761580 /* AIRGoogleMapOverlay.m */; };
+		2C15D1102A0598BA00DB11FC /* AIRGoogleMapCallout.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7F78429ABCE0E00761580 /* AIRGoogleMapCallout.m */; };
+		2C15D1112A0598BA00DB11FC /* AIRGoogleMapPolylineManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7F77E29ABCE0E00761580 /* AIRGoogleMapPolylineManager.m */; };
+		2C15D1122A0598BA00DB11FC /* AIRDummyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7F75929ABCE0E00761580 /* AIRDummyView.m */; };
+		2C15D1132A0598BA00DB11FC /* AIRGoogleMapPolyline.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7F77729ABCE0E00761580 /* AIRGoogleMapPolyline.m */; };
+		2C15D1142A0598BA00DB11FC /* AIRGoogleMapManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7F77F29ABCE0E00761580 /* AIRGoogleMapManager.m */; };
+		2C15D1152A0598BA00DB11FC /* AIRGMSPolygon.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7F76729ABCE0E00761580 /* AIRGMSPolygon.m */; };
+		2C15D1162A0598BA00DB11FC /* AIRGoogleMapCircle.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7F76A29ABCE0E00761580 /* AIRGoogleMapCircle.m */; };
+		2C15D1172A0598BA00DB11FC /* AIRGoogleMap.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7F78729ABCE0E00761580 /* AIRGoogleMap.m */; };
+		2C15D1182A0598BA00DB11FC /* AIRGoogleMapPolygon.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7F78C29ABCE0E00761580 /* AIRGoogleMapPolygon.m */; };
+		2C15D1192A0598BA00DB11FC /* AIRGoogleMapCircleManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7F77229ABCE0E00761580 /* AIRGoogleMapCircleManager.m */; };
+		2C15D11A2A0598BA00DB11FC /* AIRGoogleMapWMSTileManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7F76929ABCE0E00761580 /* AIRGoogleMapWMSTileManager.m */; };
+		2C15D11B2A0598BA00DB11FC /* AIRGoogleMapCalloutManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7F77429ABCE0E00761580 /* AIRGoogleMapCalloutManager.m */; };
+		2C15D11C2A0598BA00DB11FC /* AIRGoogleMapWMSTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7F77929ABCE0E00761580 /* AIRGoogleMapWMSTile.m */; };
+		2C15D11D2A0598BA00DB11FC /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
+		2C15D11E2A0598BA00DB11FC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		2C15D11F2A0598BA00DB11FC /* AIRGoogleMapHeatmapManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7F77829ABCE0E00761580 /* AIRGoogleMapHeatmapManager.m */; };
+		2C15D1212A0598BA00DB11FC /* libreact-native-maps.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC7F7AA29ABD36800761580 /* libreact-native-maps.a */; };
+		2C15D1222A0598BA00DB11FC /* FBSDKCoreKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC7F7472996E90000761580 /* FBSDKCoreKit.xcframework */; };
+		2C15D1232A0598BA00DB11FC /* FBSDKCoreKit_Basics.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC7F74E2996E94600761580 /* FBSDKCoreKit_Basics.xcframework */; };
+		2C15D1242A0598BA00DB11FC /* FBSDKGamingServicesKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC7F7512996E96D00761580 /* FBSDKGamingServicesKit.xcframework */; };
+		2C15D1272A0598BA00DB11FC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		2C15D1282A0598BA00DB11FC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
+		2C15D1292A0598BA00DB11FC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2CC7F7542996F0D600761580 /* GoogleService-Info.plist */; };
+		2C15D12C2A0598BA00DB11FC /* FBSDKCoreKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC7F7472996E90000761580 /* FBSDKCoreKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2C15D12D2A0598BA00DB11FC /* FBSDKGamingServicesKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC7F7512996E96D00761580 /* FBSDKGamingServicesKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		2C15D12E2A0598BA00DB11FC /* FBSDKCoreKit_Basics.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC7F74E2996E94600761580 /* FBSDKCoreKit_Basics.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2CC7F74B2996E91600761580 /* FBSDKCoreKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC7F7472996E90000761580 /* FBSDKCoreKit.xcframework */; };
 		2CC7F74C2996E91600761580 /* FBSDKCoreKit.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC7F7472996E90000761580 /* FBSDKCoreKit.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		2CC7F74F2996E94600761580 /* FBSDKCoreKit_Basics.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC7F74E2996E94600761580 /* FBSDKCoreKit_Basics.xcframework */; };
@@ -46,9 +86,9 @@
 		2CC7F7A829ABCE0E00761580 /* AIRGMSMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7F78D29ABCE0E00761580 /* AIRGMSMarker.m */; };
 		2CC7F7A929ABCE0E00761580 /* AIRGoogleMapCalloutSubview.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7F78E29ABCE0E00761580 /* AIRGoogleMapCalloutSubview.m */; };
 		2CC7F7AB29ABD36800761580 /* libreact-native-maps.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC7F7AA29ABD36800761580 /* libreact-native-maps.a */; };
+		734FC7B6710C9EB6ECC04D6A /* libPods-WedPlanCommonPods-WedPlanTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 807FDA542B67284584880BB3 /* libPods-WedPlanCommonPods-WedPlanTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		A30E350E52639FB814266141 /* libPods-WedPlan-WedPlanTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FFCD8A4B4AD07F80867E9991 /* libPods-WedPlan-WedPlanTests.a */; };
-		F5102668B7890AC14C5EB3EE /* libPods-WedPlan.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B47993F26AC792CF0F847070 /* libPods-WedPlan.a */; };
+		E1DBF89CA6296B2821A27DAB /* libPods-WedPlanCommonPods-WedPlan-prod.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EF8362669F7492EB30E5A40 /* libPods-WedPlanCommonPods-WedPlan-prod.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +102,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		2C15D12B2A0598BA00DB11FC /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				2C15D12C2A0598BA00DB11FC /* FBSDKCoreKit.xcframework in Embed Frameworks */,
+				2C15D12D2A0598BA00DB11FC /* FBSDKGamingServicesKit.xcframework in Embed Frameworks */,
+				2C15D12E2A0598BA00DB11FC /* FBSDKCoreKit_Basics.xcframework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2CC7F74D2996E91600761580 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -87,6 +140,9 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = WedPlan/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = WedPlan/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = WedPlan/main.m; sourceTree = "<group>"; };
+		2B9C567113DB7FA3C8424415 /* Pods-WedPlanCommonPods-WedPlan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WedPlanCommonPods-WedPlan.release.xcconfig"; path = "Target Support Files/Pods-WedPlanCommonPods-WedPlan/Pods-WedPlanCommonPods-WedPlan.release.xcconfig"; sourceTree = "<group>"; };
+		2C15D1352A0598BA00DB11FC /* WedPlan-prod.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WedPlan-prod.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C15D1362A0598BA00DB11FC /* WedPlan prod-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "WedPlan prod-Info.plist"; path = "/Users/lukaszbernatowicz/IdeaProjects/WedPlan/ios/WedPlan prod-Info.plist"; sourceTree = "<absolute>"; };
 		2CC7F73D2996E82C00761580 /* FBAEMKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FBAEMKit.xcframework; path = Pods/FBAEMKit/XCFrameworks/FBAEMKit.xcframework; sourceTree = "<group>"; };
 		2CC7F7412996E83100761580 /* libFirebaseAuth.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libFirebaseAuth.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CC7F7432996E83800761580 /* glog.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = glog.xcframework; path = "Pods/Flipper-Glog/Frameworks/glog.xcframework"; sourceTree = "<group>"; };
@@ -151,14 +207,20 @@
 		2CC7F7AA29ABD36800761580 /* libreact-native-maps.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libreact-native-maps.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CC7F7AC29AD58AA00761580 /* hermes.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = hermes.xcframework; path = "Pods/hermes-engine/destroot/Library/Frameworks/universal/hermes.xcframework"; sourceTree = "<group>"; };
 		2CF1797A29B7BA210076D7BE /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
-		5698FFD4B3C5DE552B1B343D /* Pods-WedPlan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WedPlan.debug.xcconfig"; path = "Target Support Files/Pods-WedPlan/Pods-WedPlan.debug.xcconfig"; sourceTree = "<group>"; };
+		3FDC4A08697F1710EC37D96F /* Pods-WedPlanCommonPods-WedPlanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WedPlanCommonPods-WedPlanTests.release.xcconfig"; path = "Target Support Files/Pods-WedPlanCommonPods-WedPlanTests/Pods-WedPlanCommonPods-WedPlanTests.release.xcconfig"; sourceTree = "<group>"; };
 		69FCB9187D7F1480D7055069 /* Pods-WedPlan-WedPlanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WedPlan-WedPlanTests.release.xcconfig"; path = "Target Support Files/Pods-WedPlan-WedPlanTests/Pods-WedPlan-WedPlanTests.release.xcconfig"; sourceTree = "<group>"; };
-		803ED73B589A861AD5E4C2E6 /* Pods-WedPlan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WedPlan.release.xcconfig"; path = "Target Support Files/Pods-WedPlan/Pods-WedPlan.release.xcconfig"; sourceTree = "<group>"; };
+		6EF8362669F7492EB30E5A40 /* libPods-WedPlanCommonPods-WedPlan-prod.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WedPlanCommonPods-WedPlan-prod.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		807FDA542B67284584880BB3 /* libPods-WedPlanCommonPods-WedPlanTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WedPlanCommonPods-WedPlanTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		815328D62D832EED1A48BDCB /* Pods-WedPlanCommonPods-WedPlan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WedPlanCommonPods-WedPlan.debug.xcconfig"; path = "Target Support Files/Pods-WedPlanCommonPods-WedPlan/Pods-WedPlanCommonPods-WedPlan.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = WedPlan/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		B47993F26AC792CF0F847070 /* libPods-WedPlan.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WedPlan.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8DADF69322FA018AF0295F0A /* Pods-WedPlanCommonPods-WedPlanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WedPlanCommonPods-WedPlanTests.debug.xcconfig"; path = "Target Support Files/Pods-WedPlanCommonPods-WedPlanTests/Pods-WedPlanCommonPods-WedPlanTests.debug.xcconfig"; sourceTree = "<group>"; };
+		93F5C242DDDDB03E417A9E8F /* Pods-WedPlan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WedPlan.debug.xcconfig"; path = "Target Support Files/Pods-WedPlan/Pods-WedPlan.debug.xcconfig"; sourceTree = "<group>"; };
+		9CCDE33FE2FF6E5568D80566 /* Pods-WedPlanCommonPods-WedPlan-prod.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WedPlanCommonPods-WedPlan-prod.release.xcconfig"; path = "Target Support Files/Pods-WedPlanCommonPods-WedPlan-prod/Pods-WedPlanCommonPods-WedPlan-prod.release.xcconfig"; sourceTree = "<group>"; };
+		A2D861C1F0C5297F992B1867 /* Pods-WedPlanCommonPods-WedPlan-prod.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WedPlanCommonPods-WedPlan-prod.debug.xcconfig"; path = "Target Support Files/Pods-WedPlanCommonPods-WedPlan-prod/Pods-WedPlanCommonPods-WedPlan-prod.debug.xcconfig"; sourceTree = "<group>"; };
+		A76D00073DEF88A98930E58C /* Pods-WedPlan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WedPlan.release.xcconfig"; path = "Target Support Files/Pods-WedPlan/Pods-WedPlan.release.xcconfig"; sourceTree = "<group>"; };
+		D0C35E81CD54AC9FC54570CA /* libPods-WedPlanCommonPods-WedPlan.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WedPlanCommonPods-WedPlan.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1173D5F5DF3675E1586C2E1 /* Pods-WedPlan-WedPlanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WedPlan-WedPlanTests.debug.xcconfig"; path = "Target Support Files/Pods-WedPlan-WedPlanTests/Pods-WedPlan-WedPlanTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		FFCD8A4B4AD07F80867E9991 /* libPods-WedPlan-WedPlanTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WedPlan-WedPlanTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,7 +228,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A30E350E52639FB814266141 /* libPods-WedPlan-WedPlanTests.a in Frameworks */,
+				734FC7B6710C9EB6ECC04D6A /* libPods-WedPlanCommonPods-WedPlanTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,7 +240,19 @@
 				2CC7F74B2996E91600761580 /* FBSDKCoreKit.xcframework in Frameworks */,
 				2CC7F74F2996E94600761580 /* FBSDKCoreKit_Basics.xcframework in Frameworks */,
 				2CC7F7562997990D00761580 /* FBSDKGamingServicesKit.xcframework in Frameworks */,
-				F5102668B7890AC14C5EB3EE /* libPods-WedPlan.a in Frameworks */,
+				0088D4BF41A829AA9551833F /* libPods-WedPlanCommonPods-WedPlan.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C15D1202A0598BA00DB11FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C15D1212A0598BA00DB11FC /* libreact-native-maps.a in Frameworks */,
+				2C15D1222A0598BA00DB11FC /* FBSDKCoreKit.xcframework in Frameworks */,
+				2C15D1232A0598BA00DB11FC /* FBSDKCoreKit_Basics.xcframework in Frameworks */,
+				2C15D1242A0598BA00DB11FC /* FBSDKGamingServicesKit.xcframework in Frameworks */,
+				E1DBF89CA6296B2821A27DAB /* libPods-WedPlanCommonPods-WedPlan-prod.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,8 +363,9 @@
 				2CC7F7412996E83100761580 /* libFirebaseAuth.a */,
 				2CC7F73D2996E82C00761580 /* FBAEMKit.xcframework */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				B47993F26AC792CF0F847070 /* libPods-WedPlan.a */,
-				FFCD8A4B4AD07F80867E9991 /* libPods-WedPlan-WedPlanTests.a */,
+				D0C35E81CD54AC9FC54570CA /* libPods-WedPlanCommonPods-WedPlan.a */,
+				6EF8362669F7492EB30E5A40 /* libPods-WedPlanCommonPods-WedPlan-prod.a */,
+				807FDA542B67284584880BB3 /* libPods-WedPlanCommonPods-WedPlanTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -314,6 +389,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				2C15D1362A0598BA00DB11FC /* WedPlan prod-Info.plist */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -325,6 +401,7 @@
 			children = (
 				13B07F961A680F5B00A75B9A /* WedPlan.app */,
 				00E356EE1AD99517003FC87E /* WedPlanTests.xctest */,
+				2C15D1352A0598BA00DB11FC /* WedPlan-prod.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -332,10 +409,16 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				5698FFD4B3C5DE552B1B343D /* Pods-WedPlan.debug.xcconfig */,
-				803ED73B589A861AD5E4C2E6 /* Pods-WedPlan.release.xcconfig */,
 				D1173D5F5DF3675E1586C2E1 /* Pods-WedPlan-WedPlanTests.debug.xcconfig */,
 				69FCB9187D7F1480D7055069 /* Pods-WedPlan-WedPlanTests.release.xcconfig */,
+				93F5C242DDDDB03E417A9E8F /* Pods-WedPlan.debug.xcconfig */,
+				A76D00073DEF88A98930E58C /* Pods-WedPlan.release.xcconfig */,
+				815328D62D832EED1A48BDCB /* Pods-WedPlanCommonPods-WedPlan.debug.xcconfig */,
+				2B9C567113DB7FA3C8424415 /* Pods-WedPlanCommonPods-WedPlan.release.xcconfig */,
+				A2D861C1F0C5297F992B1867 /* Pods-WedPlanCommonPods-WedPlan-prod.debug.xcconfig */,
+				9CCDE33FE2FF6E5568D80566 /* Pods-WedPlanCommonPods-WedPlan-prod.release.xcconfig */,
+				8DADF69322FA018AF0295F0A /* Pods-WedPlanCommonPods-WedPlanTests.debug.xcconfig */,
+				3FDC4A08697F1710EC37D96F /* Pods-WedPlanCommonPods-WedPlanTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -377,7 +460,6 @@
 				2CC7F74D2996E91600761580 /* Embed Frameworks */,
 				09C8731AB089960B10946699 /* [CP] Embed Pods Frameworks */,
 				AD4FC01142FD29CD531738E4 /* [CP] Copy Pods Resources */,
-				6AB9C8DC3EE73F27DCBD16F3 /* [CP-User] [RNFB] Core Configuration */,
 			);
 			buildRules = (
 			);
@@ -386,6 +468,29 @@
 			name = WedPlan;
 			productName = WedPlan;
 			productReference = 13B07F961A680F5B00A75B9A /* WedPlan.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2C15D0FF2A0598BA00DB11FC /* WedPlan-prod */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2C15D1322A0598BA00DB11FC /* Build configuration list for PBXNativeTarget "WedPlan-prod" */;
+			buildPhases = (
+				1F9EF2D37E271AFA62C770BF /* [CP] Check Pods Manifest.lock */,
+				2C15D1012A0598BA00DB11FC /* Start Packager */,
+				2C15D1022A0598BA00DB11FC /* Sources */,
+				2C15D1202A0598BA00DB11FC /* Frameworks */,
+				2C15D1262A0598BA00DB11FC /* Resources */,
+				2C15D12A2A0598BA00DB11FC /* Bundle React Native code and images */,
+				2C15D12B2A0598BA00DB11FC /* Embed Frameworks */,
+				5972A36707F275C43100195C /* [CP] Embed Pods Frameworks */,
+				48DDEB60572239A898F7CCFF /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WedPlan-prod";
+			productName = WedPlan;
+			productReference = 2C15D1352A0598BA00DB11FC /* WedPlan-prod.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -420,6 +525,7 @@
 			targets = (
 				13B07F861A680F5B00A75B9A /* WedPlan */,
 				00E356ED1AD99517003FC87E /* WedPlanTests */,
+				2C15D0FF2A0598BA00DB11FC /* WedPlan-prod */,
 			);
 		};
 /* End PBXProject section */
@@ -439,6 +545,16 @@
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				2CC7F7552996F0D600761580 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2C15D1262A0598BA00DB11FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C15D1272A0598BA00DB11FC /* LaunchScreen.storyboard in Resources */,
+				2C15D1282A0598BA00DB11FC /* Images.xcassets in Resources */,
+				2C15D1292A0598BA00DB11FC /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -467,15 +583,89 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WedPlan/Pods-WedPlan-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-WedPlanCommonPods-WedPlan/Pods-WedPlanCommonPods-WedPlan-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WedPlan/Pods-WedPlan-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-WedPlanCommonPods-WedPlan/Pods-WedPlanCommonPods-WedPlan-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WedPlan/Pods-WedPlan-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WedPlanCommonPods-WedPlan/Pods-WedPlanCommonPods-WedPlan-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1F9EF2D37E271AFA62C770BF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WedPlanCommonPods-WedPlan-prod-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2C15D1012A0598BA00DB11FC /* Start Packager */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Start Packager";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export RCT_METRO_PORT=\"${RCT_METRO_PORT:=8081}\"\necho \"export RCT_METRO_PORT=${RCT_METRO_PORT}\" > \"${SRCROOT}/../node_modules/react-native/scripts/.packager.env\"\nif [ -z \"${RCT_NO_LAUNCH_PACKAGER+xxx}\" ] ; then\n  if nc -w 5 -z localhost ${RCT_METRO_PORT} ; then\n    if ! curl -s \"http://localhost:${RCT_METRO_PORT}/status\" | grep -q \"packager-status:running\" ; then\n      echo \"Port ${RCT_METRO_PORT} already in use, packager is either not running or not running correctly\"\n      exit 2\n    fi\n  else\n    open \"$SRCROOT/../node_modules/react-native/scripts/launchPackager.command\" || echo \"Can't start packager automatically\"\n  fi\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2C15D12A2A0598BA00DB11FC /* Bundle React Native code and images */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/.xcode.env.local",
+				"$(SRCROOT)/.xcode.env",
+			);
+			name = "Bundle React Native code and images";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nWITH_ENVIRONMENT=\"../node_modules/react-native/scripts/xcode/with-environment.sh\"\nREACT_NATIVE_XCODE=\"../node_modules/react-native/scripts/react-native-xcode.sh\"\n\n/bin/sh -c \"$WITH_ENVIRONMENT $REACT_NATIVE_XCODE\"\n";
+		};
+		48DDEB60572239A898F7CCFF /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WedPlanCommonPods-WedPlan-prod/Pods-WedPlanCommonPods-WedPlan-prod-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WedPlanCommonPods-WedPlan-prod/Pods-WedPlanCommonPods-WedPlan-prod-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WedPlanCommonPods-WedPlan-prod/Pods-WedPlanCommonPods-WedPlan-prod-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		53875A21953DF0A5348F8397 /* [CP] Check Pods Manifest.lock */ = {
@@ -493,25 +683,29 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-WedPlan-WedPlanTests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-WedPlanCommonPods-WedPlanTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6AB9C8DC3EE73F27DCBD16F3 /* [CP-User] [RNFB] Core Configuration */ = {
+		5972A36707F275C43100195C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"$(BUILT_PRODUCTS_DIR)/$(INFOPLIST_PATH)",
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WedPlanCommonPods-WedPlan-prod/Pods-WedPlanCommonPods-WedPlan-prod-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
-			name = "[CP-User] [RNFB] Core Configuration";
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WedPlanCommonPods-WedPlan-prod/Pods-WedPlanCommonPods-WedPlan-prod-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#!/usr/bin/env bash\n#\n# Copyright (c) 2016-present Invertase Limited & Contributors\n#\n# Licensed under the Apache License, Version 2.0 (the \"License\");\n# you may not use this library except in compliance with the License.\n# You may obtain a copy of the License at\n#\n#   http://www.apache.org/licenses/LICENSE-2.0\n#\n# Unless required by applicable law or agreed to in writing, software\n# distributed under the License is distributed on an \"AS IS\" BASIS,\n# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.\n# See the License for the specific language governing permissions and\n# limitations under the License.\n#\nset -e\n\n_MAX_LOOKUPS=2;\n_SEARCH_RESULT=''\n_RN_ROOT_EXISTS=''\n_CURRENT_LOOKUPS=1\n_JSON_ROOT=\"'react-native'\"\n_JSON_FILE_NAME='firebase.json'\n_JSON_OUTPUT_BASE64='e30=' # { }\n_CURRENT_SEARCH_DIR=${PROJECT_DIR}\n_PLIST_BUDDY=/usr/libexec/PlistBuddy\n_TARGET_PLIST=\"${BUILT_PRODUCTS_DIR}/${INFOPLIST_PATH}\"\n_DSYM_PLIST=\"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Info.plist\"\n\n# plist arrays\n_PLIST_ENTRY_KEYS=()\n_PLIST_ENTRY_TYPES=()\n_PLIST_ENTRY_VALUES=()\n\nfunction setPlistValue {\n  echo \"info:      setting plist entry '$1' of type '$2' in file '$4'\"\n  ${_PLIST_BUDDY} -c \"Add :$1 $2 '$3'\" $4 || echo \"info:      '$1' already exists\"\n}\n\nfunction getFirebaseJsonKeyValue () {\n  if [[ ${_RN_ROOT_EXISTS} ]]; then\n    ruby -Ku -e \"require 'rubygems';require 'json'; output=JSON.parse('$1'); puts output[$_JSON_ROOT]['$2']\"\n  else\n    echo \"\"\n  fi;\n}\n\nfunction jsonBoolToYesNo () {\n  if [[ $1 == \"false\" ]]; then\n    echo \"NO\"\n  elif [[ $1 == \"true\" ]]; then\n    echo \"YES\"\n  else echo \"NO\"\n  fi\n}\n\necho \"info: -> RNFB build script started\"\necho \"info: 1) Locating ${_JSON_FILE_NAME} file:\"\n\nif [[ -z ${_CURRENT_SEARCH_DIR} ]]; then\n  _CURRENT_SEARCH_DIR=$(pwd)\nfi;\n\nwhile true; do\n  _CURRENT_SEARCH_DIR=$(dirname \"$_CURRENT_SEARCH_DIR\")\n  if [[ \"$_CURRENT_SEARCH_DIR\" == \"/\" ]] || [[ ${_CURRENT_LOOKUPS} -gt ${_MAX_LOOKUPS} ]]; then break; fi;\n  echo \"info:      ($_CURRENT_LOOKUPS of $_MAX_LOOKUPS) Searching in '$_CURRENT_SEARCH_DIR' for a ${_JSON_FILE_NAME} file.\"\n  _SEARCH_RESULT=$(find \"$_CURRENT_SEARCH_DIR\" -maxdepth 2 -name ${_JSON_FILE_NAME} -print | /usr/bin/head -n 1)\n  if [[ ${_SEARCH_RESULT} ]]; then\n    echo \"info:      ${_JSON_FILE_NAME} found at $_SEARCH_RESULT\"\n    break;\n  fi;\n  _CURRENT_LOOKUPS=$((_CURRENT_LOOKUPS+1))\ndone\n\nif [[ ${_SEARCH_RESULT} ]]; then\n  _JSON_OUTPUT_RAW=$(cat \"${_SEARCH_RESULT}\")\n  _RN_ROOT_EXISTS=$(ruby -Ku -e \"require 'rubygems';require 'json'; output=JSON.parse('$_JSON_OUTPUT_RAW'); puts output[$_JSON_ROOT]\" || echo '')\n\n  if [[ ${_RN_ROOT_EXISTS} ]]; then\n    if ! python3 --version >/dev/null 2>&1; then echo \"python3 not found, firebase.json file processing error.\" && exit 1; fi\n    _JSON_OUTPUT_BASE64=$(python3 -c 'import json,sys,base64;print(base64.b64encode(bytes(json.dumps(json.loads(open('\"'${_SEARCH_RESULT}'\"', '\"'rb'\"').read())['${_JSON_ROOT}']), '\"'utf-8'\"')).decode())' || echo \"e30=\")\n  fi\n\n  _PLIST_ENTRY_KEYS+=(\"firebase_json_raw\")\n  _PLIST_ENTRY_TYPES+=(\"string\")\n  _PLIST_ENTRY_VALUES+=(\"$_JSON_OUTPUT_BASE64\")\n\n  # config.app_data_collection_default_enabled\n  _APP_DATA_COLLECTION_ENABLED=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"app_data_collection_default_enabled\")\n  if [[ $_APP_DATA_COLLECTION_ENABLED ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FirebaseDataCollectionDefaultEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_APP_DATA_COLLECTION_ENABLED\")\")\n  fi\n\n  # config.analytics_auto_collection_enabled\n  _ANALYTICS_AUTO_COLLECTION=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"analytics_auto_collection_enabled\")\n  if [[ $_ANALYTICS_AUTO_COLLECTION ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FIREBASE_ANALYTICS_COLLECTION_ENABLED\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_AUTO_COLLECTION\")\")\n  fi\n\n  # config.analytics_collection_deactivated\n  _ANALYTICS_DEACTIVATED=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"analytics_collection_deactivated\")\n  if [[ $_ANALYTICS_DEACTIVATED ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FIREBASE_ANALYTICS_COLLECTION_DEACTIVATED\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_DEACTIVATED\")\")\n  fi\n\n  # config.analytics_idfv_collection_enabled\n  _ANALYTICS_IDFV_COLLECTION=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"analytics_idfv_collection_enabled\")\n  if [[ $_ANALYTICS_IDFV_COLLECTION ]]; then\n    _PLIST_ENTRY_KEYS+=(\"GOOGLE_ANALYTICS_IDFV_COLLECTION_ENABLED\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_IDFV_COLLECTION\")\")\n  fi\n\n  # config.analytics_default_allow_ad_personalization_signals\n  _ANALYTICS_PERSONALIZATION=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"analytics_default_allow_ad_personalization_signals\")\n  if [[ $_ANALYTICS_PERSONALIZATION ]]; then\n    _PLIST_ENTRY_KEYS+=(\"GOOGLE_ANALYTICS_DEFAULT_ALLOW_AD_PERSONALIZATION_SIGNALS\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_PERSONALIZATION\")\")\n  fi\n\n  # config.analytics_registration_with_ad_network_enabled\n  _ANALYTICS_REGISTRATION_WITH_AD_NETWORK=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"google_analytics_registration_with_ad_network_enabled\")\n  if [[ $_ANALYTICS_REGISTRATION_WITH_AD_NETWORK ]]; then\n    _PLIST_ENTRY_KEYS+=(\"GOOGLE_ANALYTICS_REGISTRATION_WITH_AD_NETWORK_ENABLED\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_REGISTRATION_WITH_AD_NETWORK\")\")\n  fi\n\n  # config.google_analytics_automatic_screen_reporting_enabled\n  _ANALYTICS_AUTO_SCREEN_REPORTING=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"google_analytics_automatic_screen_reporting_enabled\")\n  if [[ $_ANALYTICS_AUTO_SCREEN_REPORTING ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FirebaseAutomaticScreenReportingEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_ANALYTICS_AUTO_SCREEN_REPORTING\")\")\n  fi\n\n  # config.perf_auto_collection_enabled\n  _PERF_AUTO_COLLECTION=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"perf_auto_collection_enabled\")\n  if [[ $_PERF_AUTO_COLLECTION ]]; then\n    _PLIST_ENTRY_KEYS+=(\"firebase_performance_collection_enabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_PERF_AUTO_COLLECTION\")\")\n  fi\n\n  # config.perf_collection_deactivated\n  _PERF_DEACTIVATED=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"perf_collection_deactivated\")\n  if [[ $_PERF_DEACTIVATED ]]; then\n    _PLIST_ENTRY_KEYS+=(\"firebase_performance_collection_deactivated\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_PERF_DEACTIVATED\")\")\n  fi\n\n  # config.messaging_auto_init_enabled\n  _MESSAGING_AUTO_INIT=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"messaging_auto_init_enabled\")\n  if [[ $_MESSAGING_AUTO_INIT ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FirebaseMessagingAutoInitEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_MESSAGING_AUTO_INIT\")\")\n  fi\n\n  # config.in_app_messaging_auto_colllection_enabled\n  _FIAM_AUTO_INIT=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"in_app_messaging_auto_collection_enabled\")\n  if [[ $_FIAM_AUTO_INIT ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FirebaseInAppMessagingAutomaticDataCollectionEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_FIAM_AUTO_INIT\")\")\n  fi\n\n  # config.app_check_token_auto_refresh\n  _APP_CHECK_TOKEN_AUTO_REFRESH=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"app_check_token_auto_refresh\")\n  if [[ $_APP_CHECK_TOKEN_AUTO_REFRESH ]]; then\n    _PLIST_ENTRY_KEYS+=(\"FirebaseAppCheckTokenAutoRefreshEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"$(jsonBoolToYesNo \"$_APP_CHECK_TOKEN_AUTO_REFRESH\")\")\n  fi\n\n  # config.crashlytics_disable_auto_disabler - undocumented for now - mainly for debugging, document if becomes useful\n  _CRASHLYTICS_AUTO_DISABLE_ENABLED=$(getFirebaseJsonKeyValue \"$_JSON_OUTPUT_RAW\" \"crashlytics_disable_auto_disabler\")\n  if [[ $_CRASHLYTICS_AUTO_DISABLE_ENABLED == \"true\" ]]; then\n    echo \"Disabled Crashlytics auto disabler.\" # do nothing\n  else\n    _PLIST_ENTRY_KEYS+=(\"FirebaseCrashlyticsCollectionEnabled\")\n    _PLIST_ENTRY_TYPES+=(\"bool\")\n    _PLIST_ENTRY_VALUES+=(\"NO\")\n  fi\nelse\n  _PLIST_ENTRY_KEYS+=(\"firebase_json_raw\")\n  _PLIST_ENTRY_TYPES+=(\"string\")\n  _PLIST_ENTRY_VALUES+=(\"$_JSON_OUTPUT_BASE64\")\n  echo \"warning:   A firebase.json file was not found, whilst this file is optional it is recommended to include it to configure firebase services in React Native Firebase.\"\nfi;\n\necho \"info: 2) Injecting Info.plist entries: \"\n\n# Log out the keys we're adding\nfor i in \"${!_PLIST_ENTRY_KEYS[@]}\"; do\n  echo \"    ->  $i) ${_PLIST_ENTRY_KEYS[$i]}\" \"${_PLIST_ENTRY_TYPES[$i]}\" \"${_PLIST_ENTRY_VALUES[$i]}\"\ndone\n\nfor plist in \"${_TARGET_PLIST}\" \"${_DSYM_PLIST}\" ; do\n  if [[ -f \"${plist}\" ]]; then\n\n    # paths with spaces break the call to setPlistValue. temporarily modify\n    # the shell internal field separator variable (IFS), which normally\n    # includes spaces, to consist only of line breaks\n    oldifs=$IFS\n    IFS=\"\n\"\n\n    for i in \"${!_PLIST_ENTRY_KEYS[@]}\"; do\n      setPlistValue \"${_PLIST_ENTRY_KEYS[$i]}\" \"${_PLIST_ENTRY_TYPES[$i]}\" \"${_PLIST_ENTRY_VALUES[$i]}\" \"${plist}\"\n    done\n\n    # restore the original internal field separator value\n    IFS=$oldifs\n  else\n    echo \"warning:   A Info.plist build output file was not found (${plist})\"\n  fi\ndone\n\necho \"info: <- RNFB build script finished\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WedPlanCommonPods-WedPlan-prod/Pods-WedPlanCommonPods-WedPlan-prod-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 		A655E29DD125A47D5CEA49CF /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -519,15 +713,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WedPlan-WedPlanTests/Pods-WedPlan-WedPlanTests-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-WedPlanCommonPods-WedPlanTests/Pods-WedPlanCommonPods-WedPlanTests-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WedPlan-WedPlanTests/Pods-WedPlan-WedPlanTests-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-WedPlanCommonPods-WedPlanTests/Pods-WedPlanCommonPods-WedPlanTests-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WedPlan-WedPlanTests/Pods-WedPlan-WedPlanTests-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WedPlanCommonPods-WedPlanTests/Pods-WedPlanCommonPods-WedPlanTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		AD4FC01142FD29CD531738E4 /* [CP] Copy Pods Resources */ = {
@@ -536,15 +730,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WedPlan/Pods-WedPlan-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-WedPlanCommonPods-WedPlan/Pods-WedPlanCommonPods-WedPlan-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WedPlan/Pods-WedPlan-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-WedPlanCommonPods-WedPlan/Pods-WedPlanCommonPods-WedPlan-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WedPlan/Pods-WedPlan-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WedPlanCommonPods-WedPlan/Pods-WedPlanCommonPods-WedPlan-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		E9C63A1CA004AA7B85D2424C /* [CP] Embed Pods Frameworks */ = {
@@ -553,15 +747,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WedPlan-WedPlanTests/Pods-WedPlan-WedPlanTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-WedPlanCommonPods-WedPlanTests/Pods-WedPlanCommonPods-WedPlanTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WedPlan-WedPlanTests/Pods-WedPlan-WedPlanTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-WedPlanCommonPods-WedPlanTests/Pods-WedPlanCommonPods-WedPlanTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WedPlan-WedPlanTests/Pods-WedPlan-WedPlanTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WedPlanCommonPods-WedPlanTests/Pods-WedPlanCommonPods-WedPlanTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EB8A89B1AAC57484FF3FF38B /* [CP] Check Pods Manifest.lock */ = {
@@ -579,7 +773,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-WedPlan-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-WedPlanCommonPods-WedPlan-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -652,6 +846,42 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		2C15D1022A0598BA00DB11FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2C15D1032A0598BA00DB11FC /* AIRGoogleMapUrlTile.m in Sources */,
+				2C15D1042A0598BA00DB11FC /* AIRGoogleMapHeatmap.m in Sources */,
+				2C15D1052A0598BA00DB11FC /* RCTConvert+GMSMapViewType.m in Sources */,
+				2C15D1062A0598BA00DB11FC /* AIRGoogleMapPolygonManager.m in Sources */,
+				2C15D1072A0598BA00DB11FC /* AIRGoogleMapOverlayManager.m in Sources */,
+				2C15D1082A0598BA00DB11FC /* AIRGMSPolyline.m in Sources */,
+				2C15D1092A0598BA00DB11FC /* AIRGoogleMapURLTileManager.m in Sources */,
+				2C15D10A2A0598BA00DB11FC /* AIRGoogleMapCalloutSubviewManager.m in Sources */,
+				2C15D10B2A0598BA00DB11FC /* AIRGoogleMapMarkerManager.m in Sources */,
+				2C15D10C2A0598BA00DB11FC /* AIRGoogleMapMarker.m in Sources */,
+				2C15D10D2A0598BA00DB11FC /* AIRGMSMarker.m in Sources */,
+				2C15D10E2A0598BA00DB11FC /* AIRGoogleMapCalloutSubview.m in Sources */,
+				2C15D10F2A0598BA00DB11FC /* AIRGoogleMapOverlay.m in Sources */,
+				2C15D1102A0598BA00DB11FC /* AIRGoogleMapCallout.m in Sources */,
+				2C15D1112A0598BA00DB11FC /* AIRGoogleMapPolylineManager.m in Sources */,
+				2C15D1122A0598BA00DB11FC /* AIRDummyView.m in Sources */,
+				2C15D1132A0598BA00DB11FC /* AIRGoogleMapPolyline.m in Sources */,
+				2C15D1142A0598BA00DB11FC /* AIRGoogleMapManager.m in Sources */,
+				2C15D1152A0598BA00DB11FC /* AIRGMSPolygon.m in Sources */,
+				2C15D1162A0598BA00DB11FC /* AIRGoogleMapCircle.m in Sources */,
+				2C15D1172A0598BA00DB11FC /* AIRGoogleMap.m in Sources */,
+				2C15D1182A0598BA00DB11FC /* AIRGoogleMapPolygon.m in Sources */,
+				2C15D1192A0598BA00DB11FC /* AIRGoogleMapCircleManager.m in Sources */,
+				2C15D11A2A0598BA00DB11FC /* AIRGoogleMapWMSTileManager.m in Sources */,
+				2C15D11B2A0598BA00DB11FC /* AIRGoogleMapCalloutManager.m in Sources */,
+				2C15D11C2A0598BA00DB11FC /* AIRGoogleMapWMSTile.m in Sources */,
+				2C15D11D2A0598BA00DB11FC /* AppDelegate.mm in Sources */,
+				2C15D11E2A0598BA00DB11FC /* main.m in Sources */,
+				2C15D11F2A0598BA00DB11FC /* AIRGoogleMapHeatmapManager.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -665,7 +895,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D1173D5F5DF3675E1586C2E1 /* Pods-WedPlan-WedPlanTests.debug.xcconfig */;
+			baseConfigurationReference = 8DADF69322FA018AF0295F0A /* Pods-WedPlanCommonPods-WedPlanTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -692,7 +922,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 69FCB9187D7F1480D7055069 /* Pods-WedPlan-WedPlanTests.release.xcconfig */;
+			baseConfigurationReference = 3FDC4A08697F1710EC37D96F /* Pods-WedPlanCommonPods-WedPlanTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -716,7 +946,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5698FFD4B3C5DE552B1B343D /* Pods-WedPlan.debug.xcconfig */;
+			baseConfigurationReference = 815328D62D832EED1A48BDCB /* Pods-WedPlanCommonPods-WedPlan.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -748,7 +978,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 803ED73B589A861AD5E4C2E6 /* Pods-WedPlan.release.xcconfig */;
+			baseConfigurationReference = 2B9C567113DB7FA3C8424415 /* Pods-WedPlanCommonPods-WedPlan.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -770,6 +1000,69 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = WedPlan;
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		2C15D1332A0598BA00DB11FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A2D861C1F0C5297F992B1867 /* Pods-WedPlanCommonPods-WedPlan-prod.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_BITCODE = NO;
+				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
+				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = (
+					"$(inherited)",
+					"HAVE_GOOGLE_MAPS=1",
+				);
+				INFOPLIST_FILE = "WedPlan prod-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "WedPlan-prod";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.0.2;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		2C15D1342A0598BA00DB11FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9CCDE33FE2FF6E5568D80566 /* Pods-WedPlanCommonPods-WedPlan-prod.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"HAVE_GOOGLE_MAPS=1",
+				);
+				INFOPLIST_FILE = "WedPlan prod-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "WedPlan-prod";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 0.0.2;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-lc++",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -931,6 +1224,15 @@
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
 				13B07F951A680F5B00A75B9A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2C15D1322A0598BA00DB11FC /* Build configuration list for PBXNativeTarget "WedPlan-prod" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2C15D1332A0598BA00DB11FC /* Debug */,
+				2C15D1342A0598BA00DB11FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

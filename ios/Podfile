@@ -22,7 +22,15 @@ if linkage != nil
   use_frameworks! :linkage => linkage.to_sym
 end
 
-target 'WedPlan' do
+abstract_target 'WedPlanCommonPods' do
+  config = use_native_modules!
+
+  target 'WedPlan' do
+   end
+
+   target 'WedPlan-prod' do
+   end
+
   config = use_native_modules!
 
 
@@ -38,6 +46,7 @@ target 'WedPlan' do
       pod 'Google-Maps-iOS-Utils', :modular_headers => true
       pod 'react-native-config', :path => '../node_modules/react-native-config'
       pod 'React-RCTLinking', :path => '../node_modules/react-native/Libraries/LinkingIOS'
+
 
 
   fabric_enabled = ENV['USE_FABRIC']

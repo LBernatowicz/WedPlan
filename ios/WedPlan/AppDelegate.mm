@@ -5,6 +5,7 @@
 #import <GoogleSignIn/GIDSignIn.h>
 #import <GoogleMaps/GoogleMaps.h>
 #import <React/RCTLinkingManager.h>
+#import "RNCConfig.h"
 
 
 @implementation AppDelegate
@@ -17,7 +18,8 @@
     }
    [[FBSDKApplicationDelegate sharedInstance] application:application
                           didFinishLaunchingWithOptions:launchOptions];
-   [GMSServices provideAPIKey:@"GOOGLE_API_MAPS"];
+   NSString *apiUrl = [RNCConfig envFor:@"GOOGLE_API_MAPS"];
+   [GMSServices provideAPIKey: apiUrl];
 
   // You can add your custom initial props in the dictionary below.
   // They will be passed down to the ViewController used by React Native.
