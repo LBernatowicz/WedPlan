@@ -1,4 +1,10 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, {
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import { SafeAreaView, StyleSheet, View } from 'react-native';
 import MapView, { LatLng, Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 import MapViewDirections from 'react-native-maps-directions';
@@ -8,13 +14,13 @@ import { useForm, useWatch } from 'react-hook-form';
 import RadioButtonController from 'components/RadioButtonController/RadioButtonController';
 import { TLocationDetails } from './type/type';
 
-import { useDispatch } from 'react-redux';
 import { showModal } from 'store/modalSlice';
 import { EModalNames } from 'components/Modal/type/EModalNames';
-import { useAppSelector } from 'store/setupStore';
+import { useAppDispatch, useAppSelector } from 'store/setupStore';
 import LottieView from 'lottie-react-native';
 import { getLocation } from 'helpers/Geolocation/GeolocationHelpers';
 import Config from 'react-native-config';
+import { ERadioButtonOrientation } from '../../components/RadioButtonGroup/RadioButtonGroup';
 
 const lottie = require('assets/lottie/loading.json');
 
@@ -25,8 +31,9 @@ const MapScreen = () => {
   const [distance, setDistance] = useState<number>(0);
   const [duration, setDuration] = useState<number>(0);
 
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const isModalClose = useAppSelector((state) => state.modal.visible);
+  const modalName = useAppSelector((state) => state.modal.modalName);
 
   const mapRef = useRef<MapView>(null);
   const lottieRef = useCallback(
@@ -65,7 +72,7 @@ const MapScreen = () => {
     }
   };
 
-  const radioButtonHandler = (radioButton: number) => {
+  const radioButtonHandler = useCallback((radioButton: number) => {
     switch (radioButton) {
       case 1:
         return setDestination(LocationDetails.Church);
@@ -74,7 +81,7 @@ const MapScreen = () => {
       default:
         return setDestination(null);
     }
-  };
+  }, []);
 
   const handleOpenPinDetails = () => {
     dispatch(
@@ -96,7 +103,9 @@ const MapScreen = () => {
 
   useEffect(() => {
     radioButtonHandler(radioButtonWatcher);
-    isModalClose && handleOpenPinDetails();
+    isModalClose &&
+      modalName === EModalNames.navigationDetails &&
+      handleOpenPinDetails();
     traceRout();
   }, [radioButtonWatcher, traceRout]);
 
@@ -111,6 +120,18 @@ const MapScreen = () => {
   useEffect(() => {
     getLocation(setOrigin);
   }, []);
+
+  const radioButtons = useMemo(() => {
+    return (
+      <RadioButtonController
+        key={'destination'}
+        name={'destination'}
+        control={control}
+        orientation={ERadioButtonOrientation.row}
+        formData={['Church', 'Wedding']}
+      />
+    );
+  }, [control]);
 
   return (
     <SafeAreaView style={styles.container}>
@@ -151,13 +172,7 @@ const MapScreen = () => {
         )}
       </MapView>
       <View style={styles.switchNavigationDirectionContainer}>
-        <RadioButtonController
-          key={'destination'}
-          name={'destination'}
-          control={control}
-          orientation={'row'}
-          formData={['Church', 'Wedding']}
-        />
+        {radioButtons}
       </View>
       {origin === null && (
         <View style={styles.loadingContainer}>

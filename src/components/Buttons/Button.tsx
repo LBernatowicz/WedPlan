@@ -4,11 +4,12 @@ import { EButtonType } from './type/EButtonType';
 import { colors } from 'assets/utils/colors';
 import { StyleProps } from 'react-native-reanimated';
 
-type Props = {
+export type TButtonProps = {
   title: string;
-  action?: () => void;
+  action?: () => any;
   buttonType?: EButtonType;
   externalStyle?: StyleProps;
+  disabled?: boolean;
 };
 
 const Button = ({
@@ -16,7 +17,8 @@ const Button = ({
   buttonType = EButtonType.primary,
   action = () => console.log('ok'),
   externalStyle,
-}: Props) => {
+  disabled = false,
+}: TButtonProps) => {
   const selectButtonType = (type: string) => {
     switch (type) {
       case EButtonType.primary:
@@ -36,8 +38,9 @@ const Button = ({
 
   return (
     <TouchableOpacity
+      disabled={disabled}
       style={[
-        styles.enableButton,
+        disabled ? styles.disableButton : styles.enableButton,
         selectButtonType(buttonType),
         buttonType !== EButtonType.ghost && styles.enableShadow,
         externalStyle,
@@ -52,7 +55,17 @@ const styles = StyleSheet.create({
   enableButton: {
     marginHorizontal: 15,
     marginVertical: 10,
-    height: 50,
+    height: 45,
+    textAlign: 'center',
+    borderRadius: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  disableButton: {
+    opacity: 0.5,
+    marginHorizontal: 15,
+    marginVertical: 10,
+    height: 45,
     textAlign: 'center',
     borderRadius: 10,
     justifyContent: 'center',
@@ -61,7 +74,7 @@ const styles = StyleSheet.create({
   text: {
     color: colors.text.black,
     fontWeight: '500',
-    lineHeight: 40,
+    lineHeight: 45,
     fontSize: 14,
     borderRadius: 10,
     width: Platform.OS === 'android' ? '100%' : 'auto',
@@ -78,9 +91,11 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
   },
   primaryButton: {
+    height: 45,
     backgroundColor: colors.main.primary,
   },
   secondaryButton: {
+    height: 45,
     backgroundColor: colors.main.secondary,
     borderRadius: 10,
   },

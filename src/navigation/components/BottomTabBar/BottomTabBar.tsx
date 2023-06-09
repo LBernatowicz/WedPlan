@@ -116,6 +116,11 @@ const styles = StyleSheet.create({
   },
   bottomBarContainer: {
     backgroundColor: colors.external.white,
+    shadowOffset: {
+      width: 1,
+      height: 1,
+    },
+    shadowOpacity: 0.1,
   },
 });
 

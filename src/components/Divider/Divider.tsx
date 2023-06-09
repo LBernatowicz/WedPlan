@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     paddingHorizontal: '5%',
-    marginVertical: '5%',
+    marginVertical: '2%',
   },
   text: {
     marginHorizontal: 10,
@@ -32,6 +32,7 @@ const styles = StyleSheet.create({
   divider: {
     flex: 1,
     height: 1,
+    backgroundColor: colors.external.black,
     borderWidth: hairlineWidth,
     borderColor: colors.external.black,
     paddingHorizontal: 5,

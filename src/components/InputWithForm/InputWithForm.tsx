@@ -32,11 +32,20 @@ const InputWithForm = ({
   ...rest
 }: TInputWithForm | TextInputProps) => {
   const [hidePassword, setHidePassword] = useState<boolean>(true);
+  const [isFocus, setIsFocus] = useState<boolean>(false);
   useEffect(() => {
     if (hidePassword) {
-      setTimeout(() => setHidePassword(false), 1000);
+      setTimeout(() => setHidePassword(false), 4000);
     }
   }, [hidePassword]);
+
+  const handleFocusStyle = () => {
+    setIsFocus(true);
+  };
+
+  const handleBlurStyle = () => {
+    setIsFocus(false);
+  };
   return (
     <Controller
       control={control}
@@ -51,10 +60,20 @@ const InputWithForm = ({
             <TextInput
               onChangeText={onChange}
               value={value}
+              autoCapitalize={'none'}
+              autoCorrect={false}
               secureTextEntry={secured && !hidePassword}
-              onBlur={onBlur}
+              onBlur={() => {
+                onBlur();
+                handleBlurStyle();
+              }}
+              onFocus={handleFocusStyle}
               placeholderTextColor={colors.text.blue}
-              style={styles.container}
+              style={[
+                styles.container,
+                isFocus && styles.focusContainer,
+                error && styles.errorContainer,
+              ]}
               ref={ref}
               {...rest}
             />
@@ -99,6 +118,14 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.1,
     color: colors.text.black,
+  },
+  focusContainer: {
+    borderWidth: 1,
+    borderColor: colors.external.blue,
+  },
+  errorContainer: {
+    borderWidth: 1,
+    borderColor: colors.external.red,
   },
   errorText: {
     color: colors.text.red,

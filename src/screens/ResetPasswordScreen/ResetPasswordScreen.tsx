@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback } from 'react';
 import { useForm, useWatch } from 'react-hook-form';
 import { useNavigation } from '@react-navigation/native';
 import LottieView from 'lottie-react-native';
@@ -15,13 +15,17 @@ import { EButtonType } from 'components/Buttons/type/EButtonType';
 import { paddings } from 'assets/utils/paddings';
 import { fontSize } from 'assets/utils/fonts';
 import { colors } from 'assets/utils/colors';
+import { useAppDispatch } from '../../store/setupStore';
+import { EToastMessageType, showToast } from '../../store/toastSlice';
+import { EToastHeaderTitle } from '../../components/Toast/type/EToastHeaderTitle';
+import { useTranslation } from 'react-i18next';
 
 const lottie = require('assets/lottie/Couple.json');
 
 const ResetPasswordScreen = () => {
   const navigation = useNavigation();
-
-  const [emailSend, setEmailSend] = useState<boolean>(false);
+  const dispatch = useAppDispatch();
+  const { t } = useTranslation();
 
   const { control } = useForm({});
 
@@ -41,10 +45,31 @@ const ResetPasswordScreen = () => {
 
   const onResetPassword = () => {
     formControl.email &&
-      handleResetPassword(formControl.email).then(() => {
-        setEmailSend(true);
-        setInterval(handleNavigationToLogin, 1000);
-      });
+      handleResetPassword(formControl.email)
+        .then(() => {
+          console.log(formControl.email);
+          dispatch(
+            showToast({
+              toastMessageType: EToastMessageType.success,
+              title: EToastHeaderTitle.ForgetPasswordHeader,
+              body: t('Toasts.ForgetPasswordBody'),
+              inModal: false,
+              duration: 5000,
+            }),
+          );
+          handleNavigationToLogin();
+        })
+        .catch(() => {
+          dispatch(
+            showToast({
+              toastMessageType: EToastMessageType.error,
+              title: EToastHeaderTitle.EmailIsFailHeader,
+              body: t('Toasts.EmailIsFailBody'),
+              inModal: false,
+              duration: 5000,
+            }),
+          );
+        });
   };
 
   return (
@@ -58,10 +83,8 @@ const ResetPasswordScreen = () => {
         />
       </View>
       <View style={styles.inputsContainer}>
-        <Text style={styles.headerText}>Reset your password!</Text>
-        <Text style={styles.secondaryText}>
-          Check your email to change password
-        </Text>
+        <Text style={styles.headerText}>{t('ResetPassword.header')}</Text>
+        <Text style={styles.secondaryText}>{t('ResetPassword.subTitle')}</Text>
         <InputWithForm
           control={control}
           name={'email'}
@@ -71,16 +94,15 @@ const ResetPasswordScreen = () => {
       </View>
       <View style={styles.buttonContainer}>
         <Button
-          title={'Register'}
+          title={t('ResetPassword.resetButton')}
           action={onResetPassword}
           buttonType={EButtonType.secondary}
         />
       </View>
-      {emailSend && <Text>Email send successfully !</Text>}
       <View style={styles.registerContainer}>
-        <Text>You can create account here!</Text>
+        <Text>{t('ResetPassword.loginSubtitle')}</Text>
         <Button
-          title={'Login'}
+          title={t('ResetPassword.loginButton')}
           action={handleNavigationToLogin}
           buttonType={EButtonType.ghost}
         />

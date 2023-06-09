@@ -1,4 +1,4 @@
-import React, { memo, useCallback, useRef } from 'react';
+import React, { useCallback, useMemo, useRef } from 'react';
 import {
   Platform,
   StyleSheet,
@@ -12,9 +12,14 @@ import { colors } from '../../assets/utils/colors';
 import { IconClose } from '../../assets/svg/Index';
 import Animated, { SlideInDown, SlideOutDown } from 'react-native-reanimated';
 import { EModalNames, modalNameHandler } from './type/EModalNames';
-import NavigationDetails from './templates/NavigationDetails';
+import NavigationDetails from './templates/NavigationDetails/NavigationDetails';
+import GuestsSurvey from './templates/GuestsSurvey/GuestsSurvey';
 
-const Modal = () => {
+type Props = {
+  text?: string;
+};
+
+const Modal = ({ text = 'test' }: Props) => {
   //selectors
   const modal = useAppSelector((state) => state.modal);
 
@@ -28,8 +33,8 @@ const Modal = () => {
 
   const modalRef = useRef(null);
 
-  const modalTemplateHandler = (name: string) => {
-    switch (name) {
+  const modalTemplateHandler = useMemo(() => {
+    switch (modalName) {
       case EModalNames.navigationDetails:
         return (
           <NavigationDetails
@@ -41,10 +46,12 @@ const Modal = () => {
             destination={body && body.destination}
           />
         );
+      case EModalNames.guestSurvey:
+        return <GuestsSurvey />;
       default:
         return undefined;
     }
-  };
+  }, [body, modalName]);
 
   return (
     visible && (
@@ -58,12 +65,10 @@ const Modal = () => {
             {modalName && modalNameHandler(modalName)}
           </Text>
           <TouchableOpacity style={styles.exitIcon} onPress={hideModalHandler}>
-            <IconClose width={15} height={15} fill={colors.main.secondary} />
+            <IconClose width={15} height={15} />
           </TouchableOpacity>
         </View>
-        <View style={styles.body}>
-          {modalName && modalTemplateHandler(modalName)}
-        </View>
+        <View style={styles.body}>{modalName && modalTemplateHandler}</View>
       </Animated.View>
     )
   );
@@ -112,5 +117,4 @@ const styles = StyleSheet.create({
   },
 });
 
-// @ts-ignore
-export default memo(Modal);
+export default Modal;

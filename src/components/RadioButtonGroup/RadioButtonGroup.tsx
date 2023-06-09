@@ -1,12 +1,17 @@
 import React, { Ref } from 'react';
 import {
-  View,
+  Platform,
   StyleSheet,
   Text,
   TouchableOpacity,
-  Platform,
+  View,
 } from 'react-native';
-import { colors } from '../../assets/utils/colors';
+import { colors } from 'assets/utils/colors';
+
+export enum ERadioButtonOrientation {
+  row = 'row',
+  column = 'column',
+}
 
 type RadioButtonGroupProps = {
   orientation?: string;
@@ -16,21 +21,23 @@ type RadioButtonGroupProps = {
   enableRadioButtonColor?: string;
   control: any;
   onChange: any;
-  ref?: Ref<any>;
+  externalRef: Ref<any>;
   value: number;
   formData: Array<string>;
+  disabled?: boolean;
 };
 
 const RadioButtonGroup = ({
-  orientation = 'row',
+  orientation = ERadioButtonOrientation.row,
   borderWidth = 1,
-  borderColor = '#F7CE5B',
-  disabledRadioButtonColor = 'white',
-  enableRadioButtonColor = '#F7CE5B',
+  borderColor = colors.main.secondary,
+  disabledRadioButtonColor = colors.external.white,
+  enableRadioButtonColor = colors.main.secondary,
   onChange,
-  ref,
+  externalRef,
   value,
   formData,
+  disabled = false,
 }: RadioButtonGroupProps) => {
   const externalBorderColor = () => {
     return {
@@ -38,21 +45,24 @@ const RadioButtonGroup = ({
     };
   };
 
-  const flexOrientation = () => (orientation === 'column' ? 'column' : 'row');
+  const flexOrientation = () =>
+    orientation === 'column'
+      ? ERadioButtonOrientation.column
+      : ERadioButtonOrientation.row;
 
   const columnOrientation = (itemIndex: number) => {
     switch (itemIndex) {
       case 0:
         return {
           borderWidth: borderWidth,
-          borderTopLeftRadius: 15,
-          borderTopRightRadius: 15,
+          borderTopLeftRadius: 10,
+          borderTopRightRadius: 10,
         };
       case formData.length - 1:
         return {
           borderWidth: borderWidth,
-          borderBottomLeftRadius: 15,
-          borderBottomRightRadius: 15,
+          borderBottomLeftRadius: 10,
+          borderBottomRightRadius: 10,
           borderTopWidth: 0,
         };
       default:
@@ -68,14 +78,14 @@ const RadioButtonGroup = ({
       case 0:
         return {
           borderWidth: borderWidth,
-          borderTopLeftRadius: 15,
-          borderBottomLeftRadius: 15,
+          borderTopLeftRadius: 10,
+          borderBottomLeftRadius: 10,
         };
       case formData.length - 1:
         return {
           borderWidth: borderWidth,
-          borderTopRightRadius: 15,
-          borderBottomRightRadius: 15,
+          borderTopRightRadius: 10,
+          borderBottomRightRadius: 10,
           borderLeftWidth: 0,
         };
       default:
@@ -109,8 +119,6 @@ const RadioButtonGroup = ({
     }
   };
 
-  console.log('@@');
-
   return (
     <View
       style={[
@@ -121,11 +129,14 @@ const RadioButtonGroup = ({
       {formData.map((item, index) => {
         return (
           <TouchableOpacity
-            ref={ref}
+            disabled={disabled}
+            key={index.toString()}
+            ref={externalRef}
             onPress={() => {
               onChange(index + 1);
             }}
             style={[
+              disabled && styles.disableRadioButtons,
               styles.radioButtonContainer,
               radioButtonsOrientation(orientation, index),
               isActive(index),
@@ -141,10 +152,12 @@ const RadioButtonGroup = ({
 
 const styles = StyleSheet.create({
   radioButtonGroupContainer: {
-    padding: 5,
-    flexDirection: 'row',
-    width: '100%',
-    backgroundColor: 'transparent',
+    width: 'auto',
+    backgroundColor: colors.external.white,
+    borderRadius: 10,
+  },
+  disableRadioButtons: {
+    opacity: 0.4,
   },
   enableShadow: {
     shadowOffset: {
@@ -156,7 +169,6 @@ const styles = StyleSheet.create({
   radioButtonContainer: {
     height: 50,
     flex: 1,
-    backgroundColor: 'yellow',
     justifyContent: 'center',
     alignItems: 'center',
   },

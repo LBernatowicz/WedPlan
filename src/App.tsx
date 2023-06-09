@@ -18,6 +18,7 @@ const translations = () => i18n;
 
 const App = () => {
   translations();
+
   return (
     <Provider store={store}>
       <PersistGate persistor={persistor}>

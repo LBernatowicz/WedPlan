@@ -7,6 +7,7 @@ export const requestLocationPermission = async () => {
       PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
     )
       .then((granted) => {
+        console.log('android permissions: ', granted);
         if (granted === 'granted') {
           return true;
         } else {
@@ -25,7 +26,6 @@ export const requestLocationPermission = async () => {
 export const getLocation = async (setState: any) => {
   const response = await requestLocationPermission()
     .then((res) => {
-      console.log('res is:', res);
       if (res) {
         Geolocation.getCurrentPosition(
           (position) => {
@@ -34,13 +34,11 @@ export const getLocation = async (setState: any) => {
               longitude: position.coords.longitude,
             });
           },
-          (error) => {
-            console.log(error.code, error.message);
-          },
+          (error) => {},
           { enableHighAccuracy: true, timeout: 15000, maximumAge: 10000 },
         );
       }
     })
     .catch((err) => console.log(`[Geolocation Error], ${err}`));
-  console.log('asd', response);
+  return response;
 };

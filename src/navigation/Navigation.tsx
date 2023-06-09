@@ -16,7 +16,7 @@ import {
   MainTabParamList,
 } from './types/Navigation';
 import BottomTabBar from './components/BottomTabBar/BottomTabBar';
-import MainScreen from 'screens/MainScreen/MainScreen';
+import SettingsScreen from 'screens/SettingsScreen/SettingsScreen';
 import SplashScreen from 'screens/SplashScreen/SplashScreen';
 import LoginScreen from 'screens/LoginScreen/LoginScreen';
 import RegisterScreen from 'screens/RegisterScreen/RegisterScreen';
@@ -81,20 +81,22 @@ const TabNavigation = () => {
     [],
   );
   return (
-    <Tab.Navigator tabBar={tabBar}>
-      <Tab.Screen
-        name={AppRouteScreensType.homeScreen}
-        component={HomeScreen}
-        options={{ headerShown: false }}
-      />
+    <Tab.Navigator
+      tabBar={tabBar}
+      initialRouteName={AppRouteScreensType.homeScreen}>
       <Tab.Screen
         name={AppRouteScreensType.mapScreen}
         component={MapScreen}
         options={{ headerShown: false }}
       />
       <Tab.Screen
-        name={AppRouteScreensType.mainScreen}
-        component={MainScreen}
+        name={AppRouteScreensType.homeScreen}
+        component={HomeScreen}
+        options={{ headerShown: false }}
+      />
+      <Tab.Screen
+        name={AppRouteScreensType.settingScreen}
+        component={SettingsScreen}
         options={{ headerShown: false }}
       />
     </Tab.Navigator>
@@ -103,7 +105,7 @@ const TabNavigation = () => {
 
 const AppRootNavigation = () => {
   return (
-    <Stack.Navigator initialRouteName={AppRouteTabsType.mainTabs}>
+    <Stack.Navigator initialRouteName={AppRouteTabsType.authTabs}>
       <Stack.Screen
         name={AppRouteTabsType.authTabs}
         component={TabAuthorization}

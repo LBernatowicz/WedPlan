@@ -41,6 +41,7 @@ const LinkingScreen =
 
     const route = useRoute<LinkingScreenRouteProp | any>();
     const { linkingLogin, linkingPassword } = route.params.params;
+    console.log(linkingLogin, linkingPassword);
 
     const dispatch = useAppDispatch();
 
@@ -64,7 +65,7 @@ const LinkingScreen =
         dispatch(
           showToast({
             toastMessageType: EToastMessageType.error,
-            title: EToastHeaderTitle.emailLoginFail,
+            title: EToastHeaderTitle.EmailLoginFail,
             body: errorText.toString(),
             inModal: false,
             duration: 5000,
@@ -76,11 +77,8 @@ const LinkingScreen =
     const onSubmitSignIn = useCallback(() => {
       linkingLogin &&
         linkingPassword &&
-        handleSignIn(
-          linkingLogin,
-          linkingPassword,
-          handleNavigationToMain,
-          errorLoginHandler,
+        handleSignIn(linkingLogin, linkingPassword).then(
+          () => handleNavigationToMain,
         );
     }, [
       errorLoginHandler,

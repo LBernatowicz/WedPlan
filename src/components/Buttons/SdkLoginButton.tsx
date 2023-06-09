@@ -2,6 +2,7 @@ import React, { ReactElement, useEffect, useState } from 'react';
 import { StyleProp, StyleSheet, TouchableOpacity } from 'react-native';
 import { colors } from 'assets/utils/colors';
 import {
+  IconApple,
   IconFacebook,
   IconGithub,
   IconGoogle,
@@ -10,7 +11,7 @@ import {
 
 interface ISdkLoginProps {
   size: 'small' | 'medium' | 'large';
-  icon: 'facebook' | 'twitter' | 'github' | 'google';
+  icon: 'facebook' | 'twitter' | 'github' | 'google' | 'apple';
   action: () => void;
 }
 
@@ -73,6 +74,12 @@ const SdkLoginButton = ({ size, icon, action }: ISdkLoginProps) => {
         return setIconType({
           icon: <IconGoogle width={35} height={35} />,
           bgColor: colors.external.white,
+          externalStyle: { marginHorizontal: 5 },
+        });
+      case 'apple':
+        return setIconType({
+          icon: <IconApple width={25} height={25} />,
+          bgColor: colors.external.appleWhite,
           externalStyle: { marginHorizontal: 5 },
         });
       default:

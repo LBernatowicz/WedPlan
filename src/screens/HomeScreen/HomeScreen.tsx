@@ -1,49 +1,64 @@
-import React, { useCallback, useRef, useState } from 'react';
-import { View, StyleSheet, ScrollView, Image } from 'react-native';
+import React, { useEffect } from 'react';
+import { View, StyleSheet, Image } from 'react-native';
 
-// @ts-ignore
-import background from '/assets/images/homeScreenBackground.jpg';
-// @ts-ignore
-import invitation from '/assets/images/invitation.jpg';
-
-// @ts-ignore
-import CountDown from 'react-native-countdown-component';
-import GuestsSurvey from './components/GuestsSurvey';
+import {
+  RootState,
+  useAppDispatch,
+  useAppSelector,
+} from '../../store/setupStore';
+import { showModal } from '../../store/modalSlice';
+import { EModalNames } from '../../components/Modal/type/EModalNames';
+import HomeHeader from './components/HomeHeader/HomeHeader';
+import { colors } from '../../assets/utils/colors';
+import HomeBody from './components/HomeBoddy/HomeBody';
+import LinearGradient from 'react-native-linear-gradient';
+import HomeFooter from './components/HomeFooter/HomeFooter';
 
 const HomeScreen = () => {
-  // @ts-ignore
-  const [weddingDate, setWeddingDate] = useState<number>(
-    1701531000 - new Date().getTime() / 1000,
+  const users = useAppSelector((store: RootState) => store.global.loggedUser);
+  const isModalVisible = useAppSelector(
+    (store: RootState) => store.modal.visible,
   );
-  const scrollRef = useRef();
+  const dispatch = useAppDispatch();
 
-  const reloadCounter = useCallback(() => {
-    return (
-      <CountDown
-        until={weddingDate}
-        size={22}
-        timeToShow={['D', 'H', 'M', 'S']}
-      />
-    );
-  }, [weddingDate]);
+  const background = require('assets/images/background1.jpeg');
+
+  useEffect(() => {
+    users.isFilled &&
+      dispatch(
+        showModal({
+          modalName: EModalNames.guestSurvey,
+          inModal: false,
+        }),
+      );
+  }, [dispatch, users]);
 
   return (
-    <View style={styles.container}>
-      <Image
-        source={background}
-        style={styles.backgroundImage}
-        blurRadius={3}
-      />
-      <ScrollView
-        ref={scrollRef.current}
-        style={styles.bodyWrapperContainer}
-        contentContainerStyle={styles.bodyScrollContainerStyle}>
+    <View style={{ backgroundColor: colors.external.white }}>
+      <View style={styles.container}>
         <View style={styles.bodyContainer}>
-          <Image source={invitation} style={styles.invitationImage} />
-          <View style={styles.countDownContainer}>{reloadCounter()}</View>
-          <GuestsSurvey />
+          <HomeHeader />
+          <HomeBody />
+          <LinearGradient
+            style={{
+              width: '100%',
+              flex: 4.5,
+              backgroundColor: colors.main.deepBlue,
+            }}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 0.9, y: 0 }}
+            colors={[colors.main.deepBlue, colors.external.white]}>
+            <HomeFooter />
+          </LinearGradient>
         </View>
-      </ScrollView>
+      </View>
+      {isModalVisible && (
+        <Image
+          source={background}
+          style={styles.blurBackground}
+          blurRadius={100}
+        />
+      )}
     </View>
   );
 };
@@ -55,62 +70,20 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
   },
-  backgroundImage: {
-    flex: 1,
-    position: 'absolute',
-    opacity: 0.1,
-    resizeMode: 'cover',
-    width: '100%',
-    height: '100%',
-  },
-  invitationImage: {
-    marginTop: 150,
-    width: '100%',
-    height: 600,
-    resizeMode: 'cover',
-    flex: 1,
-  },
-  bodyWrapperContainer: {
-    width: '100%',
-    flex: 1,
-  },
-  bodyScrollContainerStyle: {
-    alignItems: 'center',
-  },
   bodyContainer: {
-    backgroundColor: 'white',
+    flex: 1,
+    backgroundColor: 'transparent',
     justifyContent: 'center',
     alignItems: 'center',
     width: '100%',
     height: '100%',
   },
-  titleText: {
-    textAlign: 'center',
-    fontFamily: 'GreatVibes-Regular',
-    fontSize: 100,
-  },
-  countDownContainer: {
-    justifyContent: 'center',
-    alignItems: 'center',
+  blurBackground: {
     position: 'absolute',
-    bottom: '20%',
+    height: '100%',
     width: '100%',
-    height: 70,
-  },
-  informationTextContainer: {
-    margin: 15,
-  },
-  informationTextTitle: {
-    fontSize: 21,
-    fontWeight: '600',
-  },
-  informationTextBody: {
-    fontSize: 14,
-    fontWeight: '500',
-  },
-  buttonsContainers: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    backgroundColor: colors.external.white,
+    opacity: 0.5,
   },
 });
 
