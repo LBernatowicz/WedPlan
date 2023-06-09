@@ -52,7 +52,7 @@ const BottomTabBarItem = ({ isActive, routeName, onPress }: Props) => {
         return t('BottomBar.invitationTitle');
       case AppRouteScreensType.mapScreen:
         return t('BottomBar.infoTitle');
-      case AppRouteScreensType.mainScreen:
+      case AppRouteScreensType.settingScreen:
         return t('BottomBar.fotoVideoTitle');
       default:
         return '';
@@ -65,7 +65,7 @@ const BottomTabBarItem = ({ isActive, routeName, onPress }: Props) => {
         return WedRingIcon;
       case AppRouteScreensType.mapScreen:
         return TipLocationIcon;
-      case AppRouteScreensType.mainScreen:
+      case AppRouteScreensType.settingScreen:
         return ChurchIcon;
       default:
         return HashIconImg;

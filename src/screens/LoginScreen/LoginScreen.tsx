@@ -8,6 +8,7 @@ import {
   StatusBar,
   StyleSheet,
   Text,
+  useWindowDimensions,
   View,
 } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
@@ -35,21 +36,28 @@ import {
 import { fontSize } from 'assets/utils/fonts';
 import { colors } from 'assets/utils/colors';
 import SdkLoginButton from 'components/Buttons/SdkLoginButton';
-import { EToastMessageType, showToast } from 'store/toastSlice';
-import { useAppDispatch } from 'store/setupStore';
 import { useTranslation } from 'react-i18next';
 import Animated, {
   Easing,
-  useAnimatedStyle,
   useSharedValue,
   withTiming,
 } from 'react-native-reanimated';
-const lottie = require('assets/lottie/weddingRings.json');
+import { useAppDispatch } from '../../store/setupStore';
+import { fetchUsers } from '../../store/userSlice';
+import { addLoggedUser } from '../../store/globalSlice';
+import { TInitialUsersCollectionType } from '../HomeScreen/types/TInitialForm.type';
+import { EToastMessageType, showToast } from '../../store/toastSlice';
+import { EToastHeaderTitle } from '../../components/Toast/type/EToastHeaderTitle';
+
+const lottie = require('assets/lottie/Couple.json');
+
+const lottieLoading = require('assets/lottie/loading.json');
 
 const LoginScreen = () => {
   const [isKeyboardVisible, setKeyboardVisible] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const { t } = useTranslation();
-  const dispatch = useAppDispatch();
+  const screenHeight = useWindowDimensions().height;
   const { control, handleSubmit } = useForm({
     defaultValues: {
       email: '',
@@ -57,10 +65,11 @@ const LoginScreen = () => {
     },
   });
   const navigation = useNavigation();
+  const dispatch = useAppDispatch();
 
   const formControl = useWatch({ control });
 
-  const lottieSize = useSharedValue(2);
+  const lottieSize = useSharedValue(1);
   const lottieTranslateY = useSharedValue(0);
 
   const lottieRef = useCallback(
@@ -68,52 +77,102 @@ const LoginScreen = () => {
     [],
   );
 
-  const lottieResizerStyle = useAnimatedStyle(() => {
-    return {
-      transform: [
-        { translateY: lottieTranslateY.value },
-        { scale: lottieSize.value },
-      ],
-    };
-  });
-
   const handleNavigationToMain = () => {
     // @ts-ignore
     navigation.navigate(AppRouteTabsType.mainTabs, {
-      screen: AppRouteScreensType.mapScreen,
+      screen: AppRouteScreensType.homeScreen,
     });
   };
-
   const handleNavigationToResetPassword = () => {
     // @ts-ignore
     navigation.navigate(AppRouteTabsType.authTabs, {
       screen: AppRouteScreensType.resetPasswordScreen,
     });
   };
-
   const handleNavigationToRegister = () => {
     // @ts-ignore
     navigation.navigate(AppRouteTabsType.authTabs, {
       screen: AppRouteScreensType.registerScreen,
     });
   };
+
+  const handleAccountData = (data: any) => {
+    try {
+      dispatch(fetchUsers())
+        .then((usersData: any) => {
+          const currentlyLoggedUser = usersData.payload.find(
+            (loggedUser: TInitialUsersCollectionType) => loggedUser.id === data,
+          );
+
+          if (currentlyLoggedUser) {
+            dispatch(addLoggedUser(currentlyLoggedUser));
+          } else {
+            console.log('Nie było takiego Usera do tej proy');
+          }
+        })
+        .catch((error) => console.log(error));
+      //console.log('User Email: ', data);
+
+      handleNavigationToMain();
+    } catch (error) {
+      console.log(`[Error] error login ${error}`);
+    }
+    setIsLoading(false);
+  };
+
   const onSubmitSignIn = () => {
     formControl.email &&
       formControl.password &&
-      handleSignIn(
-        formControl.email,
-        formControl.password,
-        handleNavigationToMain,
-        () => console.log('sad'),
-      );
+      handleSignIn(formControl.email, formControl.password)
+        .then(async (data: any) => {
+          setIsLoading(true);
+          await handleAccountData(data?.user.email);
+        })
+        .catch(() => {
+          setIsLoading(false);
+          dispatch(
+            showToast({
+              toastMessageType: EToastMessageType.error,
+              title: EToastHeaderTitle.EmailIsFailHeader,
+              body: t('Toasts.WrongEmailOrPassword'),
+              inModal: false,
+              duration: 5000,
+            }),
+          );
+        });
   };
 
   const onFacebookSignIn = () => {
-    handlerFacebookSignIn(handleNavigationToMain);
+    handlerFacebookSignIn()
+      .then(async (currentLoggedEmail) => {
+        setIsLoading(true);
+        await handleAccountData(currentLoggedEmail);
+      })
+      .catch((error) => {
+        setIsLoading(false);
+        console.log('Error: ', error);
+      });
   };
 
   const onGoogleSignIn = () => {
-    handleGoogleSignIn(handleNavigationToMain);
+    handleGoogleSignIn()
+      .then(() => setIsLoading(true))
+      .then(async (currentLoggedEmail) => {
+        setIsLoading(true);
+        await handleAccountData(currentLoggedEmail);
+      })
+      .catch(() => {
+        setIsLoading(false);
+        dispatch(
+          showToast({
+            toastMessageType: EToastMessageType.error,
+            title: EToastHeaderTitle.EmailIsFailHeader,
+            body: t('Toasts.WrongEmailOrPassword'),
+            inModal: false,
+            duration: 5000,
+          }),
+        );
+      });
   };
 
   useEffect(() => {
@@ -129,9 +188,8 @@ const LoginScreen = () => {
     };
   }, []);
   useEffect(() => {
-    console.log('keyboard', isKeyboardVisible, lottieSize.value);
     if (isKeyboardVisible) {
-      lottieSize.value = withTiming(Platform.OS === 'ios' ? 1.5 : 1.9, {
+      lottieSize.value = withTiming(Platform.OS === 'ios' ? 1 : 1.9, {
         easing: Easing.bounce,
       });
       lottieTranslateY.value = withTiming(Platform.OS === 'ios' ? -40 : 0);
@@ -150,18 +208,23 @@ const LoginScreen = () => {
         contentContainerStyle={styles.contentContainerStyle}
         scrollEnabled={false}>
         <StatusBar animated={true} hidden={true} />
-        <Animated.View style={[styles.logoContainer, lottieResizerStyle]}>
+        <Animated.View style={[styles.logoContainer]}>
           <LottieView
             ref={lottieRef}
             source={lottie}
             loop={false}
-            style={styles.lottie}
+            style={[
+              styles.lottie,
+              { width: screenHeight <= 700 ? '75%' : '95%' },
+              isKeyboardVisible && { opacity: 0 },
+            ]}
           />
         </Animated.View>
         <KeyboardAvoidingView
           style={[
             styles.keyboardContainer,
             Platform.OS === 'android' && isKeyboardVisible && { top: 100 },
+            screenHeight <= 700 && { bottom: 20 },
           ]}
           keyboardVerticalOffset={Platform.OS === 'ios' ? 40 : 0}
           behavior={'position'}>
@@ -189,6 +252,7 @@ const LoginScreen = () => {
               title={t('LoginScreen.button.login')}
               action={handleSubmit(onSubmitSignIn)}
               buttonType={EButtonType.secondary}
+              disabled={!(!!formControl.email && !!formControl.password)}
             />
             <Button
               title={t('LoginScreen.button.forgotPassword')}
@@ -197,13 +261,14 @@ const LoginScreen = () => {
             />
           </View>
         </KeyboardAvoidingView>
+
         <View
           style={[
             styles.bottomMenu,
             Platform.OS === 'android' &&
               isKeyboardVisible && { bottom: '100%' },
           ]}>
-          <Divider text={t('LoginScreen.divider')} />
+          {screenHeight >= 700 && <Divider text={t('LoginScreen.divider')} />}
           <View style={styles.externalLoginContainer}>
             <SdkLoginButton
               size={ESizeButton.small}
@@ -217,22 +282,8 @@ const LoginScreen = () => {
             />
             <SdkLoginButton
               size={ESizeButton.small}
-              icon={ESdkButtonType.twitter}
-              action={() => console.log('ds')}
-            />
-            <SdkLoginButton
-              size={ESizeButton.small}
-              icon={ESdkButtonType.github}
-              action={() =>
-                dispatch(
-                  showToast({
-                    toastMessageType: EToastMessageType.default,
-                    title: '1',
-                    body: '2',
-                    inModal: false,
-                  }),
-                )
-              }
+              icon={ESdkButtonType.apple}
+              action={onFacebookSignIn}
             />
           </View>
           <View style={styles.registerContainer}>
@@ -247,6 +298,16 @@ const LoginScreen = () => {
           </View>
         </View>
       </ScrollView>
+      {isLoading && (
+        <View style={styles.loadingContainer}>
+          <LottieView
+            source={lottieLoading}
+            autoPlay={true}
+            style={styles.lottieLoading}
+            ref={lottieRef}
+          />
+        </View>
+      )}
     </SafeAreaView>
   );
 };
@@ -258,17 +319,16 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   logoContainer: {
-    position: 'relative',
     flex: 1,
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
     alignItems: 'center',
+    width: '100%',
+    //marginBottom: 10,
   },
   lottie: {
-    position: 'absolute',
-    top: 10,
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
+    width: '75%',
     alignItems: 'center',
-    flex: 1,
   },
   buttonContainer: {
     justifyContent: 'center',
@@ -324,6 +384,23 @@ const styles = StyleSheet.create({
   },
   textStyle: {
     color: colors.text.black,
+  },
+  loadingContainer: {
+    backgroundColor: colors.external.white,
+    opacity: 0.3,
+    position: 'absolute',
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+    height: '100%',
+  },
+  lottieLoading: {
+    position: 'absolute',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+    height: 150,
+    width: 150,
+    flex: 1,
   },
 });
 

@@ -14,16 +14,20 @@ import {
 
 import toastReducer from './toastSlice';
 import modalReducer from './modalSlice';
+import userReducer from './userSlice';
+import globalReducer from './globalSlice';
 
 const persistConfig = {
   key: 'Storage',
   storage: AsyncStorage,
-  blacklist: ['toast', 'modal'],
+  blacklist: ['toast', 'modal', 'users', 'global'],
 };
 
 const rootReducer = combineReducers({
   toast: toastReducer,
   modal: modalReducer,
+  users: userReducer,
+  global: globalReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

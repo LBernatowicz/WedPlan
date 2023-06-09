@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { EModalNames } from '../components/Modal/type/EModalNames';
-import { TNavigationDetailsProps } from '../components/Modal/templates/NavigationDetails';
+import { TNavigationDetailsProps } from '../components/Modal/templates/NavigationDetails/NavigationDetails';
 
 export type ModalAction = {
   type: string;

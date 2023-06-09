@@ -4,21 +4,36 @@ import {
   statusCodes,
 } from '@react-native-google-signin/google-signin';
 import Config from 'react-native-config';
-import { AccessToken, LoginManager } from 'react-native-fbsdk-next';
+import { AccessToken, LoginManager, Profile } from 'react-native-fbsdk-next';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+export const handleAutoLogin = async () => {
+  return new Promise<void>(async (resolve, rejected) => {
+    try {
+      await firebase
+        .auth()
+        .onAuthStateChanged((user: any) =>
+          user ? resolve(user.email) : rejected('no'),
+        );
+    } catch (Error) {
+      console.log('error', Error);
+    }
+  });
+};
 
 export const handleSignIn = async (
   email: string = '',
   password: string = '',
-  navigation: () => any,
-  errorHandling: (value: string) => any,
 ) => {
-  firebase
-    .auth()
-    .signInWithEmailAndPassword(email, password)
-    .then(() => {
-      navigation();
-    })
-    .catch((value) => value && errorHandling(value));
+  return new Promise<void>(async (resolve, reject) => {
+    try {
+      console.log(email, password);
+      await firebase.auth().signInWithEmailAndPassword(email, password);
+      resolve();
+    } catch (Error) {
+      reject(Error);
+    }
+  });
 };
 
 export const handleSignUp = async (email: string, password: string) => {
@@ -26,32 +41,48 @@ export const handleSignUp = async (email: string, password: string) => {
     .auth()
     .createUserWithEmailAndPassword(email, password)
     .catch((error) => console.log('login with email and password: ', error));
+  const currentUser = firebase.auth().currentUser;
+  if (currentUser) {
+    const token = await currentUser.getIdToken();
+    await AsyncStorage.setItem('firebaseToken', token);
+    console.log('[Email]: ', token);
+  } else {
+    console.log('Google login failed: Current user is null');
+  }
 };
 
 export const handleResetPassword = async (email: string) => {
-  firebase
-    .auth()
-    .sendPasswordResetEmail(email)
-    .catch((error) => console.log('@error', error));
+  return new Promise<any>(async (reject) => {
+    try {
+      await firebase.auth().sendPasswordResetEmail(email);
+    } catch (error) {
+      reject(error);
+    }
+  });
 };
 
-export const handleGoogleSignIn = async (externalAction?: () => void) => {
-  await GoogleSignin.configure({
-    webClientId: Config.WEB_CLIENT_ID,
-    offlineAccess: false,
-  });
-  await GoogleSignin.hasPlayServices({
-    showPlayServicesUpdateDialog: true,
-  });
-  const userInfo = await GoogleSignin.signIn({});
-  const credential = firebase.auth.GoogleAuthProvider.credential(
-    userInfo?.idToken,
-  );
+export const handleGoogleSignIn = () => {
+  return new Promise<any>(async (resolve, reject) => {
+    try {
+      await firebase.auth().signOut();
+      await GoogleSignin.configure({
+        webClientId: Config.WEB_CLIENT_ID,
+        offlineAccess: false,
+      });
 
-  await firebase
-    .auth()
-    .signInWithCredential(credential)
-    .catch((error) => {
+      await GoogleSignin.hasPlayServices({
+        showPlayServicesUpdateDialog: true,
+      });
+
+      const userInfo = await GoogleSignin.signIn({});
+      const credential = firebase.auth.GoogleAuthProvider.credential(
+        userInfo.idToken,
+      );
+
+      await firebase.auth().signInWithCredential(credential);
+
+      resolve(userInfo.user.email);
+    } catch (error) {
       if (error.code === statusCodes.SIGN_IN_CANCELLED) {
         console.log('User Cancelled the Login Flow');
       } else if (error.code === statusCodes.IN_PROGRESS) {
@@ -61,38 +92,61 @@ export const handleGoogleSignIn = async (externalAction?: () => void) => {
       } else {
         console.log(error.message);
       }
-    })
-    .then(() => {
-      externalAction && externalAction();
-    });
+      reject(error);
+    }
+  });
+};
+export const handleLogOut = () => {
+  return new Promise<any>(async (resolve, reject) => {
+    try {
+      await firebase.auth().signOut();
+      resolve('ok');
+    } catch (error) {
+      reject(error);
+      console.log('[LOGUOT]: ', error);
+    }
+  });
 };
 
 export const loginWithFacebook = async (token: string) => {
   const credential = firebase.auth.FacebookAuthProvider.credential(token);
 
-  firebase
+  await firebase
     .auth()
     .signInWithCredential(credential)
-    .catch((error) =>
-      console.log('Facebook login with credential faild: ' + error),
-    );
+    .catch((error) => console.log(error));
 };
 
-export const handlerFacebookSignIn = async (externalAction?: () => void) => {
-  LoginManager.logInWithPermissions(['public_profile', 'email'])
-    .then((result) => {
-      if (result.isCancelled) {
-      } else {
-        AccessToken.getCurrentAccessToken()
-          .then((data) => {
-            data?.accessToken &&
-              loginWithFacebook(data?.accessToken).then((response) => {
-                console.log('powinno sie dodac: ' + response);
-                externalAction && externalAction();
-              });
-          })
-          .catch((error) => console.log('Unexpected error: ' + error));
-      }
-    })
-    .catch((error) => console.log('Login fail with error: ' + error));
+export const handlerFacebookSignIn = () => {
+  return new Promise<any>((resolve, reject) => {
+    LoginManager.logInWithPermissions(['public_profile', 'email'])
+      .then((result) => {
+        if (result.isCancelled) {
+        } else {
+          AccessToken.getCurrentAccessToken()
+            .then((data) => {
+              if (data?.accessToken) {
+                loginWithFacebook(data.accessToken)
+                  .then(() => {
+                    Profile.getCurrentProfile().then((loggedUserData) => {
+                      resolve(loggedUserData?.email);
+                    });
+                  })
+                  .catch((error) => {
+                    console.log('Unexpected error: ' + error);
+                    reject(error);
+                  });
+              }
+            })
+            .catch((error) => {
+              console.log('Unexpected error: ' + error);
+              reject(error);
+            });
+        }
+      })
+      .catch((error) => {
+        console.log('Login fail with error: ' + error);
+        reject(error);
+      });
+  });
 };

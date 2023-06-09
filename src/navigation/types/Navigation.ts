@@ -2,9 +2,9 @@ import { AppRouteScreensType, AppRouteTabsType } from './AppRouteType';
 import { ParamListBase } from '@react-navigation/native';
 
 type MainTabParamList = {
-  [AppRouteScreensType.homeScreen]: ParamListBase | undefined;
   [AppRouteScreensType.mapScreen]: ParamListBase | undefined;
-  [AppRouteScreensType.mainScreen]: ParamListBase | undefined;
+  [AppRouteScreensType.homeScreen]: ParamListBase | undefined;
+  [AppRouteScreensType.settingScreen]: ParamListBase | undefined;
 };
 
 type AppRootNavigationParamList = {

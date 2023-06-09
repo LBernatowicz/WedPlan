@@ -1,19 +1,23 @@
 import React from 'react';
-import RadioButtonGroup from '../RadioButtonGroup/RadioButtonGroup';
+import RadioButtonGroup, {
+  ERadioButtonOrientation,
+} from '../RadioButtonGroup/RadioButtonGroup';
 import { Control, Controller } from 'react-hook-form';
 
 type TRadioButtonController = {
   control: Control<any>;
   name: string;
-  orientation?: 'row' | 'column';
+  orientation?: ERadioButtonOrientation;
   formData: any;
+  disabled?: boolean;
 };
 
 const RadioButtonController = ({
   control,
   name,
-  orientation = 'row',
+  orientation = ERadioButtonOrientation.row,
   formData,
+  disabled,
 }: TRadioButtonController) => {
   console.log('render buttonu');
   return (
@@ -23,11 +27,12 @@ const RadioButtonController = ({
       render={({ field: { onChange, ref, value } }) => {
         return (
           <RadioButtonGroup
+            disabled={disabled}
             key={name}
             control={control}
             orientation={orientation}
             onChange={onChange}
-            ref={ref}
+            externalRef={ref}
             value={value}
             formData={formData}
           />

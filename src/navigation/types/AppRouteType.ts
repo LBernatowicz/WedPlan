@@ -4,7 +4,7 @@ enum AppRouteScreensType {
   registerScreen = 'RegisterScreen',
   mapScreen = 'WelcomeScreen',
   homeScreen = 'HomeScreen',
-  mainScreen = 'MainScreen',
+  settingScreen = 'SettingScreen',
   resetPasswordScreen = 'ResetPasswordScreen',
   linkingScreen = 'LinkingScreen',
   versioningScreen = 'VersioningScreen',

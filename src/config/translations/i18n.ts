@@ -7,9 +7,11 @@ import moment from 'moment';
 import { initReactI18next } from 'react-i18next';
 
 import pl from 'config/translations/pl';
+import en from 'config/translations/en';
 
 enum AppLocalsType {
   polish = 'pl',
+  english = 'en',
 }
 
 moment.locale(AppLocalsType.polish);
@@ -65,6 +67,9 @@ i18n.use(initReactI18next).init({
   resources: {
     [AppLocalsType.polish]: {
       translation: pl,
+    },
+    [AppLocalsType.english]: {
+      translation: en,
     },
   },
 });

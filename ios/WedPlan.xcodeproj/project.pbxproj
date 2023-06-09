@@ -12,6 +12,7 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		181F309ECB5B4B498FB3D56E /* Lobster-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6D1FBC3CF9DD4747854D97C8 /* Lobster-Regular.ttf */; };
 		2C15D1032A0598BA00DB11FC /* AIRGoogleMapUrlTile.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7F75D29ABCE0E00761580 /* AIRGoogleMapUrlTile.m */; };
 		2C15D1042A0598BA00DB11FC /* AIRGoogleMapHeatmap.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7F78629ABCE0E00761580 /* AIRGoogleMapHeatmap.m */; };
 		2C15D1052A0598BA00DB11FC /* RCTConvert+GMSMapViewType.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7F78229ABCE0E00761580 /* RCTConvert+GMSMapViewType.m */; };
@@ -86,9 +87,21 @@
 		2CC7F7A829ABCE0E00761580 /* AIRGMSMarker.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7F78D29ABCE0E00761580 /* AIRGMSMarker.m */; };
 		2CC7F7A929ABCE0E00761580 /* AIRGoogleMapCalloutSubview.m in Sources */ = {isa = PBXBuildFile; fileRef = 2CC7F78E29ABCE0E00761580 /* AIRGoogleMapCalloutSubview.m */; };
 		2CC7F7AB29ABD36800761580 /* libreact-native-maps.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2CC7F7AA29ABD36800761580 /* libreact-native-maps.a */; };
+		646C76B374564BDC97125F06 /* NanumMyeongjo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ABFB803ACD70487DB2807992 /* NanumMyeongjo.ttf */; };
+		6C7253F84F6E49B9ABD9C20B /* GreatVibes-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 358F0053B5BF4E198014E34C /* GreatVibes-Regular.ttf */; };
 		734FC7B6710C9EB6ECC04D6A /* libPods-WedPlanCommonPods-WedPlanTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 807FDA542B67284584880BB3 /* libPods-WedPlanCommonPods-WedPlanTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		E1DBF89CA6296B2821A27DAB /* libPods-WedPlanCommonPods-WedPlan-prod.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6EF8362669F7492EB30E5A40 /* libPods-WedPlanCommonPods-WedPlan-prod.a */; };
+		84516E2E3B1C46769EA67A2F /* CormorantGaramond-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A69F60F2FBDB4CAE8FCA1A07 /* CormorantGaramond-Bold.ttf */; };
+		369706F2AAE84C8F8D728AD9 /* CormorantGaramond-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B75CD77E1D94467BA8E9B9EC /* CormorantGaramond-BoldItalic.ttf */; };
+		487B50C34207434B887DE28D /* CormorantGaramond-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 118C867C31BD47BBB242B891 /* CormorantGaramond-Italic.ttf */; };
+		76D5C83CC3914A9D90F21F03 /* CormorantGaramond-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 97F51674D067456689DF0312 /* CormorantGaramond-Light.ttf */; };
+		AA83A7888B4848B5B11636CD /* CormorantGaramond-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2D77565C2DD741739D50E4C0 /* CormorantGaramond-LightItalic.ttf */; };
+		7AF5E8BC311F46D9A11B0B40 /* CormorantGaramond-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BCBE299CCBDE443FA8869596 /* CormorantGaramond-Medium.ttf */; };
+		D0729D73670C4C938C6800B3 /* CormorantGaramond-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 38D014DD6582496C8BA13337 /* CormorantGaramond-MediumItalic.ttf */; };
+		0FC81EC09FD94B98B38B0B0F /* CormorantGaramond-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C536780B1934E0E92999A18 /* CormorantGaramond-Regular.ttf */; };
+		2AA97F08E66F4EC39B4D1C72 /* CormorantGaramond-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7D9C78B59D3E432885A590A3 /* CormorantGaramond-SemiBold.ttf */; };
+		1B9743187CC2408DA79FBE54 /* CormorantGaramond-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BA3C369B76DE4BB2B5165996 /* CormorantGaramond-SemiBoldItalic.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -207,8 +220,10 @@
 		2CC7F7AA29ABD36800761580 /* libreact-native-maps.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libreact-native-maps.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CC7F7AC29AD58AA00761580 /* hermes.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = hermes.xcframework; path = "Pods/hermes-engine/destroot/Library/Frameworks/universal/hermes.xcframework"; sourceTree = "<group>"; };
 		2CF1797A29B7BA210076D7BE /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		358F0053B5BF4E198014E34C /* GreatVibes-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "GreatVibes-Regular.ttf"; path = "../src/assets/fonts/GreatVibes-Regular.ttf"; sourceTree = "<group>"; };
 		3FDC4A08697F1710EC37D96F /* Pods-WedPlanCommonPods-WedPlanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WedPlanCommonPods-WedPlanTests.release.xcconfig"; path = "Target Support Files/Pods-WedPlanCommonPods-WedPlanTests/Pods-WedPlanCommonPods-WedPlanTests.release.xcconfig"; sourceTree = "<group>"; };
 		69FCB9187D7F1480D7055069 /* Pods-WedPlan-WedPlanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WedPlan-WedPlanTests.release.xcconfig"; path = "Target Support Files/Pods-WedPlan-WedPlanTests/Pods-WedPlan-WedPlanTests.release.xcconfig"; sourceTree = "<group>"; };
+		6D1FBC3CF9DD4747854D97C8 /* Lobster-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Lobster-Regular.ttf"; path = "../src/assets/fonts/Lobster-Regular.ttf"; sourceTree = "<group>"; };
 		6EF8362669F7492EB30E5A40 /* libPods-WedPlanCommonPods-WedPlan-prod.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WedPlanCommonPods-WedPlan-prod.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		807FDA542B67284584880BB3 /* libPods-WedPlanCommonPods-WedPlanTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WedPlanCommonPods-WedPlanTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		815328D62D832EED1A48BDCB /* Pods-WedPlanCommonPods-WedPlan.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WedPlanCommonPods-WedPlan.debug.xcconfig"; path = "Target Support Files/Pods-WedPlanCommonPods-WedPlan/Pods-WedPlanCommonPods-WedPlan.debug.xcconfig"; sourceTree = "<group>"; };
@@ -218,9 +233,20 @@
 		9CCDE33FE2FF6E5568D80566 /* Pods-WedPlanCommonPods-WedPlan-prod.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WedPlanCommonPods-WedPlan-prod.release.xcconfig"; path = "Target Support Files/Pods-WedPlanCommonPods-WedPlan-prod/Pods-WedPlanCommonPods-WedPlan-prod.release.xcconfig"; sourceTree = "<group>"; };
 		A2D861C1F0C5297F992B1867 /* Pods-WedPlanCommonPods-WedPlan-prod.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WedPlanCommonPods-WedPlan-prod.debug.xcconfig"; path = "Target Support Files/Pods-WedPlanCommonPods-WedPlan-prod/Pods-WedPlanCommonPods-WedPlan-prod.debug.xcconfig"; sourceTree = "<group>"; };
 		A76D00073DEF88A98930E58C /* Pods-WedPlan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WedPlan.release.xcconfig"; path = "Target Support Files/Pods-WedPlan/Pods-WedPlan.release.xcconfig"; sourceTree = "<group>"; };
+		ABFB803ACD70487DB2807992 /* NanumMyeongjo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = NanumMyeongjo.ttf; path = ../src/assets/fonts/NanumMyeongjo.ttf; sourceTree = "<group>"; };
 		D0C35E81CD54AC9FC54570CA /* libPods-WedPlanCommonPods-WedPlan.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-WedPlanCommonPods-WedPlan.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1173D5F5DF3675E1586C2E1 /* Pods-WedPlan-WedPlanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WedPlan-WedPlanTests.debug.xcconfig"; path = "Target Support Files/Pods-WedPlan-WedPlanTests/Pods-WedPlan-WedPlanTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		A69F60F2FBDB4CAE8FCA1A07 /* CormorantGaramond-Bold.ttf */ = {isa = PBXFileReference; name = "CormorantGaramond-Bold.ttf"; path = "../src/assets/fonts/CormorantGaramond-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		B75CD77E1D94467BA8E9B9EC /* CormorantGaramond-BoldItalic.ttf */ = {isa = PBXFileReference; name = "CormorantGaramond-BoldItalic.ttf"; path = "../src/assets/fonts/CormorantGaramond-BoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		118C867C31BD47BBB242B891 /* CormorantGaramond-Italic.ttf */ = {isa = PBXFileReference; name = "CormorantGaramond-Italic.ttf"; path = "../src/assets/fonts/CormorantGaramond-Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		97F51674D067456689DF0312 /* CormorantGaramond-Light.ttf */ = {isa = PBXFileReference; name = "CormorantGaramond-Light.ttf"; path = "../src/assets/fonts/CormorantGaramond-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		2D77565C2DD741739D50E4C0 /* CormorantGaramond-LightItalic.ttf */ = {isa = PBXFileReference; name = "CormorantGaramond-LightItalic.ttf"; path = "../src/assets/fonts/CormorantGaramond-LightItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BCBE299CCBDE443FA8869596 /* CormorantGaramond-Medium.ttf */ = {isa = PBXFileReference; name = "CormorantGaramond-Medium.ttf"; path = "../src/assets/fonts/CormorantGaramond-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		38D014DD6582496C8BA13337 /* CormorantGaramond-MediumItalic.ttf */ = {isa = PBXFileReference; name = "CormorantGaramond-MediumItalic.ttf"; path = "../src/assets/fonts/CormorantGaramond-MediumItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4C536780B1934E0E92999A18 /* CormorantGaramond-Regular.ttf */ = {isa = PBXFileReference; name = "CormorantGaramond-Regular.ttf"; path = "../src/assets/fonts/CormorantGaramond-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7D9C78B59D3E432885A590A3 /* CormorantGaramond-SemiBold.ttf */ = {isa = PBXFileReference; name = "CormorantGaramond-SemiBold.ttf"; path = "../src/assets/fonts/CormorantGaramond-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BA3C369B76DE4BB2B5165996 /* CormorantGaramond-SemiBoldItalic.ttf */ = {isa = PBXFileReference; name = "CormorantGaramond-SemiBoldItalic.ttf"; path = "../src/assets/fonts/CormorantGaramond-SemiBoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -390,6 +416,7 @@
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
 				2C15D1362A0598BA00DB11FC /* WedPlan prod-Info.plist */,
+				C44F35D481094D549A45E799 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -421,6 +448,27 @@
 				3FDC4A08697F1710EC37D96F /* Pods-WedPlanCommonPods-WedPlanTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		C44F35D481094D549A45E799 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				358F0053B5BF4E198014E34C /* GreatVibes-Regular.ttf */,
+				6D1FBC3CF9DD4747854D97C8 /* Lobster-Regular.ttf */,
+				ABFB803ACD70487DB2807992 /* NanumMyeongjo.ttf */,
+				A69F60F2FBDB4CAE8FCA1A07 /* CormorantGaramond-Bold.ttf */,
+				B75CD77E1D94467BA8E9B9EC /* CormorantGaramond-BoldItalic.ttf */,
+				118C867C31BD47BBB242B891 /* CormorantGaramond-Italic.ttf */,
+				97F51674D067456689DF0312 /* CormorantGaramond-Light.ttf */,
+				2D77565C2DD741739D50E4C0 /* CormorantGaramond-LightItalic.ttf */,
+				BCBE299CCBDE443FA8869596 /* CormorantGaramond-Medium.ttf */,
+				38D014DD6582496C8BA13337 /* CormorantGaramond-MediumItalic.ttf */,
+				4C536780B1934E0E92999A18 /* CormorantGaramond-Regular.ttf */,
+				7D9C78B59D3E432885A590A3 /* CormorantGaramond-SemiBold.ttf */,
+				BA3C369B76DE4BB2B5165996 /* CormorantGaramond-SemiBoldItalic.ttf */,
+			);
+			name = Resources;
+			path = "";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -545,6 +593,19 @@
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				2CC7F7552996F0D600761580 /* GoogleService-Info.plist in Resources */,
+				6C7253F84F6E49B9ABD9C20B /* GreatVibes-Regular.ttf in Resources */,
+				181F309ECB5B4B498FB3D56E /* Lobster-Regular.ttf in Resources */,
+				646C76B374564BDC97125F06 /* NanumMyeongjo.ttf in Resources */,
+				84516E2E3B1C46769EA67A2F /* CormorantGaramond-Bold.ttf in Resources */,
+				369706F2AAE84C8F8D728AD9 /* CormorantGaramond-BoldItalic.ttf in Resources */,
+				487B50C34207434B887DE28D /* CormorantGaramond-Italic.ttf in Resources */,
+				76D5C83CC3914A9D90F21F03 /* CormorantGaramond-Light.ttf in Resources */,
+				AA83A7888B4848B5B11636CD /* CormorantGaramond-LightItalic.ttf in Resources */,
+				7AF5E8BC311F46D9A11B0B40 /* CormorantGaramond-Medium.ttf in Resources */,
+				D0729D73670C4C938C6800B3 /* CormorantGaramond-MediumItalic.ttf in Resources */,
+				0FC81EC09FD94B98B38B0B0F /* CormorantGaramond-Regular.ttf in Resources */,
+				2AA97F08E66F4EC39B4D1C72 /* CormorantGaramond-SemiBold.ttf in Resources */,
+				1B9743187CC2408DA79FBE54 /* CormorantGaramond-SemiBoldItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -951,6 +1012,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 84D43374XL;
 				ENABLE_BITCODE = NO;
 				GCC_PREPROCESSOR_DEFINITIONS = "$(inherited)";
 				"GCC_PREPROCESSOR_DEFINITIONS[arch=*]" = (
@@ -983,6 +1045,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 84D43374XL;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
 					"HAVE_GOOGLE_MAPS=1",
@@ -1020,6 +1083,7 @@
 				);
 				INFOPLIST_FILE = "WedPlan prod-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "WedPlan-prod";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1051,6 +1115,7 @@
 				);
 				INFOPLIST_FILE = "WedPlan prod-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "WedPlan-prod";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
